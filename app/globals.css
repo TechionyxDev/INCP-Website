@@ -12,6 +12,37 @@
   --text-silver: #777777;
   --accent: #8A0000;
   --accent-hover: #600000;
+
+  /* ── Embedded product demo (app UI) ──────────────────────────────
+     The interactive INCP panel renders in the site's own restricted
+     palette: scarlet for severity/accent, silver + neutrals for
+     everything else. Severity reads as depth of red, not new hues. */
+  --a-bg: #F4F4F4;
+  --a-card: #FFFFFF;
+  --a-raised: #F0F0F0;
+  --a-border: #E5E5E5;
+  --a-border-strong: #CFCFCF;
+  --a-text: #050505;
+  --a-text-2: #454545;
+  --a-muted: #777777;
+  --a-faint: #A3A3A3;
+  --a-accent: #8A0000;
+  --a-accent-soft: rgba(138, 0, 0, 0.09);
+  --a-danger: #8A0000;
+  --a-danger-soft: rgba(138, 0, 0, 0.10);
+  --a-warning: #B04A4A;
+  --a-warning-soft: rgba(176, 74, 74, 0.10);
+  --a-success: #2E2E2E;
+  --a-success-soft: rgba(5, 5, 5, 0.06);
+  --a-slate-soft: rgba(5, 5, 5, 0.05);
+  --a-c1: #8A0000;
+  --a-c2: #A32222;
+  --a-c3: #B94A4A;
+  --a-c4: #CE7373;
+  --a-c5: #8C8C8C;
+  --a-c6: #A5A5A5;
+  --a-c7: #BDBDBD;
+  --a-c8: #D4D4D4;
 }
 
 [data-theme="dark"] {
@@ -24,6 +55,34 @@
   --text-silver: #888888;
   --accent: #8A0000;
   --accent-hover: #600000;
+
+  /* ── Embedded product demo (app UI) ── */
+  --a-bg: #050505;
+  --a-card: #0C0C0C;
+  --a-raised: #161616;
+  --a-border: #222222;
+  --a-border-strong: #333333;
+  --a-text: #FFFFFF;
+  --a-text-2: #C0C0C0;
+  --a-muted: #888888;
+  --a-faint: #5F5F5F;
+  --a-accent: #A81111;
+  --a-accent-soft: rgba(168, 17, 17, 0.16);
+  --a-danger: #A81111;
+  --a-danger-soft: rgba(168, 17, 17, 0.16);
+  --a-warning: #C97676;
+  --a-warning-soft: rgba(201, 118, 118, 0.13);
+  --a-success: #E8E8E8;
+  --a-success-soft: rgba(255, 255, 255, 0.08);
+  --a-slate-soft: rgba(255, 255, 255, 0.06);
+  --a-c1: #A81111;
+  --a-c2: #BE3535;
+  --a-c3: #D05C5C;
+  --a-c4: #E08585;
+  --a-c5: #7A7A7A;
+  --a-c6: #949494;
+  --a-c7: #AEAEAE;
+  --a-c8: #C8C8C8;
 }
 
 * {

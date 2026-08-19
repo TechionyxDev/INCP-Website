@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { PlatformOverview } from "@/components/PlatformOverview";
-import { LiveFeatures } from "@/components/LiveFeatures";
+import { InteractiveDemo } from "@/components/InteractiveDemo";
 import { SecuritySection } from "@/components/SecuritySection";
 import { PricingSection } from "@/components/PricingSection";
 import { Footer } from "@/components/Footer";
@@ -13,7 +13,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <PlatformOverview />
-        <LiveFeatures />
+        <InteractiveDemo />
         <SecuritySection />
         <PricingSection />
       </main>

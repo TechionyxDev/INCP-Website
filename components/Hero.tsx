@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 
@@ -47,20 +46,6 @@ export function Hero() {
           </div>
         </ScrollReveal>
 
-        {/* Minimal Screenshot Frame */}
-        <ScrollReveal delay={400} className="mt-16 sm:mt-20">
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--bg-soft)] p-2 sm:p-3 shadow-sm">
-            <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-black">
-              <Image
-                src="/images/screenshot-dashboard.png"
-                alt="INCP Production Platform"
-                fill
-                priority
-                className="object-cover object-top"
-              />
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );
