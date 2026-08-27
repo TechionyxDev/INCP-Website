@@ -39,7 +39,7 @@ export function Solutions() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-strong font-mono">
               Solutions
             </span>
           </ScrollReveal>
@@ -52,7 +52,7 @@ export function Solutions() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted leading-relaxed">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted-strong leading-relaxed">
               From heavy resource extraction to nationwide distribution networks, INCP provides
               the control and auditability required by modern operational leaders.
             </p>
@@ -74,7 +74,7 @@ export function Solutions() {
                   <h3 className="mt-5 text-xl font-bold text-[var(--text)] tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="mt-2.5 text-sm text-muted leading-relaxed">
+                  <p className="mt-2.5 text-sm text-muted-strong leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -93,7 +93,7 @@ export function Solutions() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-2.5 py-1 text-[11px] font-mono text-muted"
+                        className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-2.5 py-1 text-[11px] font-mono text-muted-strong"
                       >
                         {tag}
                       </span>

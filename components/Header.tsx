@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
-export function Header() {
+export function Header(): React.JSX.Element {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -23,16 +23,8 @@ export function Header() {
     { label: "Pricing", href: "#pricing" },
   ];
 
-  /* Until it condenses, the header floats over the dark #082533 hero in
-     BOTH themes, so it cannot use --text (which is near-black in light
-     theme and would be invisible there). Over the hero it is pinned to
-     the on-brand light tones; once scrolled onto the page background it
-     switches back to the theme-aware tokens. */
-  const overHero = !scrolled;
-  const primaryText = overHero ? "text-on-brand" : "text-foreground";
-  const secondaryText = overHero
-    ? "text-brand-muted hover:text-on-brand"
-    : "text-muted-text hover:text-foreground";
+  /* The serene hero sits on the page background, so the header can use
+     the theme-aware tokens throughout; no over-hero inversion needed. */
 
   return (
     <header
@@ -46,12 +38,8 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Minimal Wordmark */}
           <a href="#" className="flex items-center gap-2 group">
-            <span
-              className={`h-3 w-3 rounded-full ${
-                overHero ? "bg-brand-muted" : "bg-brand-solid"
-              }`}
-            />
-            <span className={`font-bold text-lg tracking-tight ${primaryText}`}>
+            <span className="h-3 w-3 rounded-full bg-brand-solid" />
+            <span className={`font-bold text-lg tracking-tight text-foreground`}>
               INCP
             </span>
           </a>
@@ -62,7 +50,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`${secondaryText} transition-colors`}
+                className="text-muted-strong hover:text-foreground transition-colors"
               >
                 {link.label}
               </a>
@@ -71,13 +59,13 @@ export function Header() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-4 text-sm">
-            <ThemeToggle overHero={overHero} />
+            <ThemeToggle />
 
             <a
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className={`hidden sm:inline-flex items-center gap-1 ${secondaryText} transition-colors`}
+              className="hidden sm:inline-flex items-center gap-1 text-muted-strong hover:text-foreground transition-colors"
             >
               <span>Live App</span>
               <ArrowUpRight className="h-3.5 w-3.5" />
@@ -93,7 +81,7 @@ export function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`md:hidden ${primaryText}`}
+              className="md:hidden text-foreground"
               aria-label="Toggle navigation"
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -104,16 +92,14 @@ export function Header() {
         {/* Mobile Menu */}
         {mobileOpen && (
           <div
-            className={`md:hidden mt-4 pt-4 border-t flex flex-col gap-3 text-sm animate-fade-in ${
-              overHero ? "border-white/15" : "border-border"
-            }`}
+            className="md:hidden mt-4 pt-4 border-t border-border flex flex-col gap-3 text-sm animate-fade-in"
           >
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className={`py-1 ${secondaryText}`}
+                className="py-1 text-muted-strong hover:text-foreground"
               >
                 {link.label}
               </a>
@@ -122,9 +108,7 @@ export function Header() {
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className={`py-1 font-semibold flex items-center justify-between ${
-                overHero ? "text-on-brand" : "text-brand-text"
-              }`}
+              className="py-1 font-semibold flex items-center justify-between text-brand-text"
             >
               <span>Open Live App</span>
               <ArrowUpRight className="h-4 w-4" />

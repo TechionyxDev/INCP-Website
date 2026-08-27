@@ -25,16 +25,17 @@ const config: Config = {
         muted: {
           DEFAULT: rgb("text-2"),
           foreground: rgb("text-2"),
-          /* Contrast-safe muted for small text in both themes. */
-          text: rgb("muted-text"),
+          /* Use `strong` for body copy on cards; the base token is
+             3.33:1 on the dark #3F4F62 card and fails as small text. */
+          strong: rgb("text-2-strong"),
         },
         border: {
           DEFAULT: rgb("border"),
           hover: rgb("border-hover"),
+          subtle: rgb("border-subtle"),
         },
         ring: rgb("ring"),
         "on-brand": rgb("on-brand"),
-        "hero-edge": rgb("hero-edge"),
 
         /* ── Brand ───────────────────────────────────────────────── */
         brand: {
@@ -43,9 +44,9 @@ const config: Config = {
           accent: rgb("brand-accent"),
           muted: rgb("brand-muted"),
           foreground: rgb("on-brand"),
-          /* Use `solid` for filled buttons and `text` for brand-coloured
-             type; both stay legible in dark theme where the raw brand
-             is only 1.84:1 against the background. */
+          /* `solid` for filled controls, `text` for brand-coloured type.
+             Both stay legible in dark theme, where the raw brand is
+             1.62:1 against the background. */
           solid: rgb("brand-solid"),
           "solid-hover": rgb("brand-solid-hover"),
           text: rgb("brand-text"),

@@ -82,7 +82,7 @@ export function DeploymentTiers() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-6 text-sm sm:text-base text-muted leading-relaxed font-sans">
+            <p className="mt-6 text-sm sm:text-base text-muted-strong leading-relaxed font-sans">
               Every tier includes the core immutable ledger, zero-trust RBAC, and automated CSV migration pipelines.
             </p>
           </ScrollReveal>
@@ -98,7 +98,7 @@ export function DeploymentTiers() {
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between font-mono text-xs text-muted pb-4 border-b border-[var(--border)]">
+                  <div className="flex items-center justify-between font-mono text-xs text-muted-strong pb-4 border-b border-[var(--border)]">
                     <span className="text-brand-text font-bold font-mono">{plan.nodes}</span>
                     {plan.highlight && (
                       <span className="text-[10px] bg-brand-solid text-brand-foreground px-2 py-0.5 font-bold uppercase">
@@ -110,7 +110,7 @@ export function DeploymentTiers() {
                   <h3 className="mt-6 text-2xl font-bold text-[var(--text)] tracking-tight font-sans">
                     {plan.name}
                   </h3>
-                  <p className="mt-2 text-xs text-muted font-sans leading-relaxed">
+                  <p className="mt-2 text-xs text-muted-strong font-sans leading-relaxed">
                     {plan.desc}
                   </p>
 
@@ -118,7 +118,7 @@ export function DeploymentTiers() {
                     Custom Deployment
                   </div>
 
-                  <ul className="mt-6 space-y-3 font-mono text-xs text-muted">
+                  <ul className="mt-6 space-y-3 font-mono text-xs text-muted-strong">
                     {plan.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">
                         <Check className="h-4 w-4 text-brand-text shrink-0 mt-0.5" />
@@ -154,7 +154,7 @@ export function DeploymentTiers() {
             <h3 className="mt-3 text-2xl sm:text-3xl font-extrabold text-[var(--text)] font-sans">
               Schedule a technical network walkthrough.
             </h3>
-            <p className="mt-3 text-xs sm:text-sm text-muted font-sans">
+            <p className="mt-3 text-xs sm:text-sm text-muted-strong font-sans">
               Our systems engineers will model your active location topology and demonstrate atomic
               reconciliation on live hardware.
             </p>
@@ -171,7 +171,7 @@ export function DeploymentTiers() {
               <form onSubmit={handleSubmit} className="mt-8 space-y-4 text-left font-mono text-xs">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-muted uppercase mb-1.5 font-bold">Work Email</label>
+                    <label className="block text-muted-strong uppercase mb-1.5 font-bold">Work Email</label>
                     <input
                       type="email"
                       required
@@ -182,7 +182,7 @@ export function DeploymentTiers() {
                     />
                   </div>
                   <div>
-                    <label className="block text-muted uppercase mb-1.5 font-bold">Enterprise Organization</label>
+                    <label className="block text-muted-strong uppercase mb-1.5 font-bold">Enterprise Organization</label>
                     <input
                       type="text"
                       required
@@ -195,7 +195,7 @@ export function DeploymentTiers() {
                 </div>
 
                 <div>
-                  <label className="block text-muted uppercase mb-1.5 font-bold">Operating Locations Scale</label>
+                  <label className="block text-muted-strong uppercase mb-1.5 font-bold">Operating Locations Scale</label>
                   <select
                     value={nodes}
                     onChange={(e) => setNodes(e.target.value)}
@@ -218,7 +218,7 @@ export function DeploymentTiers() {
               </form>
             )}
 
-            <p className="mt-4 text-[11px] font-mono text-muted">
+            <p className="mt-4 text-[11px] font-mono text-muted-strong">
               Mutual NDA provided upon request · ISO 27001 / SOC 2 Ready
             </p>
           </div>

@@ -23,7 +23,7 @@ const VARIANTS: Record<BadgeVariant, string> = {
   default: "border-border bg-surface-1 text-foreground",
   accent: "border-brand-solid/40 bg-brand-solid/12 text-brand-text",
   brand: "border-brand-solid bg-brand-solid text-brand-foreground",
-  outline: "border-border bg-transparent text-muted-text",
+  outline: "border-border bg-transparent text-muted-strong",
   success: "border-success/40 bg-success/12 text-success-text",
   warning: "border-warning/40 bg-warning/12 text-warning-text",
   info: "border-info/40 bg-info/12 text-info-text",

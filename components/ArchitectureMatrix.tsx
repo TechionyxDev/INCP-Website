@@ -37,7 +37,7 @@ export function ArchitectureMatrix() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted leading-relaxed font-sans">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted-strong leading-relaxed font-sans">
               Inspect how the 3-tier organizational topology, 6-tier RBAC security engine, shift
               discrepancy algorithms, and rolling depletion forecasts operate together.
             </p>
@@ -52,7 +52,7 @@ export function ArchitectureMatrix() {
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
                 activeTab === "topology"
                   ? "bg-brand-solid text-brand-foreground shadow-lg shadow-brand"
-                  : "text-muted hover:text-foreground hover:bg-[var(--surface-2)]"
+                  : "text-muted-strong hover:text-foreground hover:bg-[var(--surface-2)]"
               }`}
             >
               <GitFork className="h-3.5 w-3.5" />
@@ -63,7 +63,7 @@ export function ArchitectureMatrix() {
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
                 activeTab === "shifts"
                   ? "bg-brand-solid text-brand-foreground shadow-lg shadow-brand"
-                  : "text-muted hover:text-foreground hover:bg-[var(--surface-2)]"
+                  : "text-muted-strong hover:text-foreground hover:bg-[var(--surface-2)]"
               }`}
             >
               <Clock className="h-3.5 w-3.5" />
@@ -74,7 +74,7 @@ export function ArchitectureMatrix() {
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
                 activeTab === "predictive"
                   ? "bg-brand-solid text-brand-foreground shadow-lg shadow-brand"
-                  : "text-muted hover:text-foreground hover:bg-[var(--surface-2)]"
+                  : "text-muted-strong hover:text-foreground hover:bg-[var(--surface-2)]"
               }`}
             >
               <TrendingUp className="h-3.5 w-3.5" />
@@ -85,7 +85,7 @@ export function ArchitectureMatrix() {
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
                 activeTab === "rbac"
                   ? "bg-brand-solid text-brand-foreground shadow-lg shadow-brand"
-                  : "text-muted hover:text-foreground hover:bg-[var(--surface-2)]"
+                  : "text-muted-strong hover:text-foreground hover:bg-[var(--surface-2)]"
               }`}
             >
               <Shield className="h-3.5 w-3.5" />
@@ -102,12 +102,12 @@ export function ArchitectureMatrix() {
                 <div>
                   <div className="text-xs font-mono text-brand-text font-bold uppercase">Tier 01 // Level 1</div>
                   <h3 className="mt-2 text-xl font-bold text-foreground font-sans">HQ Global Command</h3>
-                  <p className="mt-3 text-xs text-muted leading-relaxed font-sans">
+                  <p className="mt-3 text-xs text-muted-strong leading-relaxed font-sans">
                     Master catalogue governance, global supplier contracts, multi-tenant billing, and
                     cross-hub rebalancing policy definitions.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[var(--border)] text-[11px] font-mono text-muted">
+                <div className="mt-6 pt-4 border-t border-[var(--border)] text-[11px] font-mono text-muted-strong">
                   • 100% Global Visibility
                 </div>
               </div>
@@ -116,7 +116,7 @@ export function ArchitectureMatrix() {
                 <div>
                   <div className="text-xs font-mono text-brand-text font-bold uppercase">Tier 02 // Level 2</div>
                   <h3 className="mt-2 text-xl font-bold text-foreground font-sans">Regional Consolidation Hubs</h3>
-                  <p className="mt-3 text-xs text-muted leading-relaxed font-sans">
+                  <p className="mt-3 text-xs text-muted-strong leading-relaxed font-sans">
                     High-volume cross-dock facilities that buffer stock for remote clusters, receive bulk
                     PO shipments, and approve field site requisition orders.
                   </p>
@@ -130,12 +130,12 @@ export function ArchitectureMatrix() {
                 <div>
                   <div className="text-xs font-mono text-brand-text font-bold uppercase">Tier 03 // Level 3</div>
                   <h3 className="mt-2 text-xl font-bold text-foreground font-sans">Operational Field Sites & Mines</h3>
-                  <p className="mt-3 text-xs text-muted leading-relaxed font-sans">
+                  <p className="mt-3 text-xs text-muted-strong leading-relaxed font-sans">
                     Direct consumption points: extraction quarries, construction yards, and production
                     lines with mobile QR checkout and shift logs.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[var(--border)] text-[11px] font-mono text-muted">
+                <div className="mt-6 pt-4 border-t border-[var(--border)] text-[11px] font-mono text-muted-strong">
                   • Mobile Barcode & Shift Reconciliation
                 </div>
               </div>
@@ -151,12 +151,12 @@ export function ArchitectureMatrix() {
                 <h3 className="mt-2 text-2xl font-bold text-foreground font-sans">
                   The Zero-Drift Shift Reconciliation Engine
                 </h3>
-                <p className="mt-4 text-sm text-muted leading-relaxed font-sans">
+                <p className="mt-4 text-sm text-muted-strong leading-relaxed font-sans">
                   At the start of every shift, INCP captures a cryptographic Opening Snapshot. When
                   workers log material usage or tool checkout, the closing algorithm automatically
                   computes discrepancies.
                 </p>
-                <div className="mt-6 space-y-2.5 font-mono text-xs text-muted">
+                <div className="mt-6 space-y-2.5 font-mono text-xs text-muted-strong">
                   <div className="flex items-center gap-2">
                     <Check className="h-4 w-4 text-brand-text" />
                     <span>Opening Snapshot Auto-Freezing</span>
@@ -171,7 +171,7 @@ export function ArchitectureMatrix() {
                   </div>
                 </div>
               </div>
-              <div className="p-5 rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] font-mono text-xs text-muted">
+              <div className="p-5 rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] font-mono text-xs text-muted-strong">
                 <div className="text-foreground font-bold pb-2 border-b border-[var(--border)]">
                   SHIFT LOG #SH-49102 // CLOSED
                 </div>
@@ -205,11 +205,11 @@ export function ArchitectureMatrix() {
                 <h3 className="mt-2 text-2xl font-bold text-foreground font-sans">
                   Rolling Consumption Forecasting
                 </h3>
-                <p className="mt-4 text-sm text-muted leading-relaxed font-sans">
+                <p className="mt-4 text-sm text-muted-strong leading-relaxed font-sans">
                   INCP combines historical consumption velocity with supplier lead time scorecards to
                   calculate exact stockout risks before reorder points are breached.
                 </p>
-                <div className="mt-6 space-y-2.5 font-mono text-xs text-muted">
+                <div className="mt-6 space-y-2.5 font-mono text-xs text-muted-strong">
                   <div className="flex items-center gap-2">
                     <Check className="h-4 w-4 text-brand-text" />
                     <span>Weighted Rolling 7-Day & 30-Day Velocity</span>
@@ -224,7 +224,7 @@ export function ArchitectureMatrix() {
                   </div>
                 </div>
               </div>
-              <div className="p-5 rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] font-mono text-xs text-muted">
+              <div className="p-5 rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] font-mono text-xs text-muted-strong">
                 <div className="text-foreground font-bold pb-2 border-b border-[var(--border)]">
                   DEPLETION RISK MONITOR // ACTIVE
                 </div>
@@ -251,27 +251,27 @@ export function ArchitectureMatrix() {
               <div className="p-4 rounded-xl border border-[var(--border)] bg-[var(--surface-2)]">
                 <div className="text-brand-text font-bold">LEVEL 01</div>
                 <div className="text-foreground font-bold mt-1">Super Admin</div>
-                <div className="text-[10px] text-muted mt-2">Full platform config, TOTP 2FA enforced.</div>
+                <div className="text-[10px] text-muted-strong mt-2">Full platform config, TOTP 2FA enforced.</div>
               </div>
               <div className="p-4 rounded-xl border border-[var(--border)] bg-[var(--surface-2)]">
                 <div className="text-brand-text font-bold">LEVEL 02</div>
                 <div className="text-foreground font-bold mt-1">HQ Admin</div>
-                <div className="text-[10px] text-muted mt-2">Catalogue, Global POs, Audit logs.</div>
+                <div className="text-[10px] text-muted-strong mt-2">Catalogue, Global POs, Audit logs.</div>
               </div>
               <div className="p-4 rounded-xl border border-[var(--border)] bg-[var(--surface-2)]">
                 <div className="text-brand-text font-bold">LEVEL 03</div>
                 <div className="text-foreground font-bold mt-1">Hub Manager</div>
-                <div className="text-[10px] text-muted mt-2">Transfer approvals, Hub stock orders.</div>
+                <div className="text-[10px] text-muted-strong mt-2">Transfer approvals, Hub stock orders.</div>
               </div>
               <div className="p-4 rounded-xl border border-[var(--border)] bg-[var(--surface-2)]">
                 <div className="text-brand-text font-bold">LEVEL 04</div>
                 <div className="text-foreground font-bold mt-1">Site Manager</div>
-                <div className="text-[10px] text-muted mt-2">Site receipts, ITSM ticket creation.</div>
+                <div className="text-[10px] text-muted-strong mt-2">Site receipts, ITSM ticket creation.</div>
               </div>
               <div className="p-4 rounded-xl border border-[var(--border)] bg-[var(--surface-2)]">
                 <div className="text-brand-text font-bold">LEVEL 05</div>
                 <div className="text-foreground font-bold mt-1">Shift Supervisor</div>
-                <div className="text-[10px] text-muted mt-2">Opening snapshots, shift close signoff.</div>
+                <div className="text-[10px] text-muted-strong mt-2">Opening snapshots, shift close signoff.</div>
               </div>
               <div className="p-4 rounded-xl border border-brand-solid/40 bg-brand-muted/20">
                 <div className="text-brand-text font-bold">LEVEL 06</div>

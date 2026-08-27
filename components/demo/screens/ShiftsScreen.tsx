@@ -239,7 +239,7 @@ export function ShiftsScreen() {
           </div>
           <div className="flex flex-col gap-3">
             {DISCREPANCY_PATTERNS.map((p) => {
-              const max = DISCREPANCY_PATTERNS[0].occurrences;
+              const max = DISCREPANCY_PATTERNS[0]?.occurrences ?? 1;
               return (
                 <div key={p.item} className="grid grid-cols-[1.4fr_2fr_auto] items-center gap-4">
                   <span className="text-[11px] font-bold truncate" style={{ color: "var(--a-text)" }}>

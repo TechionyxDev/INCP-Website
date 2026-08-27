@@ -76,7 +76,7 @@ export function Platform() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-strong font-mono">
               The Platform
             </span>
           </ScrollReveal>
@@ -89,7 +89,7 @@ export function Platform() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted leading-relaxed">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted-strong leading-relaxed">
               INCP combines eight modular engines into a cohesive control center — giving operations
               leaders immediate visibility across HQ, regional hubs, and field sites.
             </p>
@@ -107,7 +107,7 @@ export function Platform() {
                 className="object-cover object-top hover:scale-[1.01] transition-transform duration-500"
               />
             </div>
-            <div className="mt-3 px-2 flex flex-wrap items-center justify-between text-xs text-muted font-mono gap-2">
+            <div className="mt-3 px-2 flex flex-wrap items-center justify-between text-xs text-muted-strong font-mono gap-2">
               <span>Actual Production Screenshot · Live Dashboard Overview</span>
               <span>17 Modules · 90+ REST Endpoints</span>
             </div>
@@ -124,7 +124,7 @@ export function Platform() {
                     <div className="h-10 w-10 rounded-xl bg-brand-solid/10 text-brand-text flex items-center justify-center border border-brand-solid/20 group-hover:scale-105 transition-transform">
                       <item.icon className="h-5 w-5" />
                     </div>
-                    <span className="font-mono text-xs text-muted">
+                    <span className="font-mono text-xs text-muted-strong">
                       {item.num}
                     </span>
                   </div>
@@ -132,7 +132,7 @@ export function Platform() {
                   <h3 className="mt-4 text-base font-semibold text-[var(--text)] tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-xs text-muted leading-relaxed">
+                  <p className="mt-2 text-xs text-muted-strong leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -141,7 +141,7 @@ export function Platform() {
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-md border border-[var(--border)] bg-[var(--surface-2)] px-2 py-0.5 text-[10px] font-mono text-muted"
+                      className="rounded-md border border-[var(--border)] bg-[var(--surface-2)] px-2 py-0.5 text-[10px] font-mono text-muted-strong"
                     >
                       {tag}
                     </span>

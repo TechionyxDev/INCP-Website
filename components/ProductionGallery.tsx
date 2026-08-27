@@ -85,6 +85,8 @@ export function ProductionGallery() {
     },
   ];
 
+  const activeMod = modules[activeModule] ?? modules[0];
+
   return (
     <section id="showcase" className="relative py-28 sm:py-36 border-t border-[var(--border)]">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
@@ -134,7 +136,7 @@ export function ProductionGallery() {
                 <div className="flex items-center justify-between">
                   <mod.icon
                     className={`h-5 w-5 ${
-                      activeModule === idx ? "text-brand-text" : "text-muted"
+                      activeModule === idx ? "text-brand-text" : "text-muted-strong"
                     }`}
                   />
                   <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-brand-muted/20 text-brand-text font-bold">
@@ -156,13 +158,13 @@ export function ProductionGallery() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-[var(--border)] gap-2">
               <div>
                 <h3 className="text-xl font-bold text-foreground font-sans">
-                  {modules[activeModule].title}
+                  {activeMod?.title}
                 </h3>
-                <p className="text-xs text-muted mt-0.5 font-mono">
-                  {modules[activeModule].subtitle}
+                <p className="text-xs text-muted-strong mt-0.5 font-mono">
+                  {activeMod?.subtitle}
                 </p>
               </div>
-              <div className="flex items-center gap-2 text-xs font-mono text-muted">
+              <div className="flex items-center gap-2 text-xs font-mono text-muted-strong">
                 <span className="h-2 w-2 rounded-full bg-brand-solid animate-pulse" />
                 <span>INCP Cluster Node Live</span>
               </div>
@@ -171,16 +173,16 @@ export function ProductionGallery() {
             {/* High-Resolution Screenshot Viewer */}
             <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-surface-2 shadow-inner">
               <Image
-                src={modules[activeModule].image}
-                alt={modules[activeModule].title}
+                src={activeMod?.image ?? ""}
+                alt={activeMod?.title ?? ""}
                 fill
                 className="object-cover object-top hover:scale-[1.01] transition-transform duration-500"
               />
             </div>
 
             {/* Module Technical Capability Specs */}
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs text-muted">
-              {modules[activeModule].specs.map((spec, i) => (
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs text-muted-strong">
+              {(activeMod?.specs ?? []).map((spec, i) => (
                 <div
                   key={i}
                   className="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--surface-2)] flex items-start gap-2.5"

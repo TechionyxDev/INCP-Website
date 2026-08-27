@@ -62,7 +62,7 @@ export function Security() {
           {/* Left Column: Heading & Visual */}
           <div className="lg:col-span-5">
             <ScrollReveal delay={0}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-strong font-mono">
                 Enterprise Security
               </span>
             </ScrollReveal>
@@ -75,7 +75,7 @@ export function Security() {
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <p className="mt-5 text-base text-muted leading-relaxed">
+              <p className="mt-5 text-base text-muted-strong leading-relaxed">
                 INCP treats every physical item movement and data transaction with financial-grade
                 immutability. Every API request is rate-limited, authenticated, and audited.
               </p>
@@ -105,7 +105,7 @@ export function Security() {
                   <h3 className="mt-4 text-base font-semibold text-[var(--text)] tracking-tight">
                     {feat.title}
                   </h3>
-                  <p className="mt-2 text-xs text-muted leading-relaxed">
+                  <p className="mt-2 text-xs text-muted-strong leading-relaxed">
                     {feat.desc}
                   </p>
                 </div>

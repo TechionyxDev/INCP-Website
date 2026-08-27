@@ -75,7 +75,7 @@ export function SecurityMatrix() {
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <p className="mt-5 text-base text-muted leading-relaxed font-sans">
+              <p className="mt-5 text-base text-muted-strong leading-relaxed font-sans">
                 Every movement event, inventory reservation, and shift reconciliation is
                 cryptographically signed, authenticated, rate-limited, and audited to SOC 2 compliance standards.
               </p>
@@ -103,7 +103,7 @@ export function SecurityMatrix() {
                       <div className="h-10 w-10 rounded-xl bg-brand-solid/10 text-brand-text flex items-center justify-center border border-brand-solid/20">
                         <item.icon className="h-5 w-5" />
                       </div>
-                      <span className="font-mono text-[10px] text-muted uppercase font-bold px-2 py-0.5 rounded bg-[var(--surface-2)] border border-[var(--border)]">
+                      <span className="font-mono text-[10px] text-muted-strong uppercase font-bold px-2 py-0.5 rounded bg-[var(--surface-2)] border border-[var(--border)]">
                         {item.code}
                       </span>
                     </div>
@@ -111,12 +111,12 @@ export function SecurityMatrix() {
                     <h3 className="mt-4 text-base font-bold text-foreground tracking-tight font-sans">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-xs text-muted leading-relaxed font-sans">
+                    <p className="mt-2 text-xs text-muted-strong leading-relaxed font-sans">
                       {item.desc}
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-[var(--border)] flex items-center justify-between text-[10px] font-mono text-muted">
+                  <div className="mt-4 pt-3 border-t border-[var(--border)] flex items-center justify-between text-[10px] font-mono text-muted-strong">
                     <span>Enforced at DB Layer</span>
                     <span className="text-brand-text font-bold">ACTIVE</span>
                   </div>

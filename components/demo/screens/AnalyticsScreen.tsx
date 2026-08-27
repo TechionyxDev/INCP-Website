@@ -12,6 +12,8 @@ type Range = "7d" | "30d" | "90d";
 function AreaChart({ range }: { range: Range }) {
   const data = CONSUMPTION[range];
   const [hover, setHover] = useState<number | null>(null);
+  // Resolve once so the JSX below narrows cleanly under noUncheckedIndexedAccess.
+  const hoveredPoint = hover === null ? undefined : data[hover];
   const { ref, width } = useMeasuredWidth<HTMLDivElement>();
 
   const W = Math.max(420, Math.round(width));
@@ -80,16 +82,16 @@ function AreaChart({ range }: { range: Range }) {
           </text>
         ))}
 
-        {hover !== null && (
+        {hover !== null && hoveredPoint && (
           <g>
             <line x1={x(hover)} x2={x(hover)} y1={P.t} y2={H - P.b} stroke="var(--a-border-strong)" strokeWidth="1" />
-            <circle cx={x(hover)} cy={y(data[hover].issued)} r="4" fill="var(--a-c1)" />
-            <circle cx={x(hover)} cy={y(data[hover].received)} r="4" fill="var(--a-c5)" />
+            <circle cx={x(hover)} cy={y(hoveredPoint.issued)} r="4" fill="var(--a-c1)" />
+            <circle cx={x(hover)} cy={y(hoveredPoint.received)} r="4" fill="var(--a-c5)" />
           </g>
         )}
       </svg>
 
-      {hover !== null && (
+      {hover !== null && hoveredPoint && (
         <div
           className="pointer-events-none absolute top-2 rounded-lg border px-3 py-2 text-[10px] shadow-lg"
           style={{
@@ -100,14 +102,14 @@ function AreaChart({ range }: { range: Range }) {
             transform: `translateX(${hover > data.length / 2 ? "-110%" : "10%"})`,
           }}
         >
-          <div className="font-bold mb-1">{data[hover].label}</div>
+          <div className="font-bold mb-1">{hoveredPoint.label}</div>
           <div className="flex items-center gap-1.5">
             <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--a-c1)" }} />
-            Issued <strong className="tabular-nums">{data[hover].issued.toLocaleString()}</strong>
+            Issued <strong className="tabular-nums">{hoveredPoint.issued.toLocaleString()}</strong>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--a-c5)" }} />
-            Received <strong className="tabular-nums">{data[hover].received.toLocaleString()}</strong>
+            Received <strong className="tabular-nums">{hoveredPoint.received.toLocaleString()}</strong>
           </div>
         </div>
       )}
@@ -130,6 +132,8 @@ function Donut() {
       return seg;
     });
   }, [total]);
+
+  const hoveredSegment = hover === null ? undefined : segments[hover];
 
   return (
     <div className="flex flex-col items-center">
@@ -156,14 +160,14 @@ function Donut() {
         <div className="absolute inset-0 grid place-items-center text-center">
           <div>
             <div className="text-[9px] uppercase tracking-[0.14em]" style={{ color: "var(--a-muted)" }}>
-              {hover === null ? "Total" : segments[hover].name}
+              {hover === null || !hoveredSegment ? "Total" : hoveredSegment.name}
             </div>
             <div className="text-[18px] font-bold tabular-nums" style={{ color: "var(--a-text)" }}>
-              ${((hover === null ? total : segments[hover].value) / 1000).toFixed(2)}M
+              ${((hover === null || !hoveredSegment ? total : hoveredSegment.value) / 1000).toFixed(2)}M
             </div>
-            {hover !== null && (
+            {hover !== null && hoveredSegment && (
               <div className="text-[10px] tabular-nums" style={{ color: "var(--a-muted)" }}>
-                {(segments[hover].frac * 100).toFixed(1)}% of value
+                {(hoveredSegment.frac * 100).toFixed(1)}% of value
               </div>
             )}
           </div>

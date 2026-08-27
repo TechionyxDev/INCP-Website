@@ -44,7 +44,7 @@ export function SecuritySection() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-4 text-base text-muted leading-relaxed">
+            <p className="mt-4 text-base text-muted-strong leading-relaxed">
               Designed from the database schema up to meet strict data sovereignty and compliance requirements for high-consequence operations.
             </p>
           </ScrollReveal>
@@ -58,7 +58,7 @@ export function SecuritySection() {
                 <h3 className="mt-4 text-lg font-semibold text-[var(--text)]">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-muted leading-relaxed">
+                <p className="mt-2 text-sm text-muted-strong leading-relaxed">
                   {item.desc}
                 </p>
               </div>

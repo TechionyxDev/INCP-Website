@@ -72,7 +72,7 @@ export function LiveLedger() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted leading-relaxed font-sans">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted-strong leading-relaxed font-sans">
               When shift workers or rogue admins attempt to alter inventory numbers after the fact,
               traditional databases quietly overwrite history. INCP uses PostgreSQL kernel-level
               triggers that enforce an append-only, cryptographic movement ledger.
@@ -87,7 +87,7 @@ export function LiveLedger() {
             <div className="h-full rounded-3xl border-2 border-brand-solid/50 bg-surface-1 p-6 flex flex-col justify-between shadow-2xl">
               <div>
                 {/* Window Bar */}
-                <div className="flex items-center justify-between pb-4 border-b border-[var(--border)] font-mono text-xs text-muted">
+                <div className="flex items-center justify-between pb-4 border-b border-[var(--border)] font-mono text-xs text-muted-strong">
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-brand-solid" />
                     <span className="h-3 w-3 rounded-full bg-brand-muted" />
@@ -135,19 +135,19 @@ export function LiveLedger() {
                     )}
                     {terminalLog.type === "neutral" && (
                       <>
-                        <Terminal className="h-4 w-4 text-muted" />
-                        <span className="text-muted">{terminalLog.title}</span>
+                        <Terminal className="h-4 w-4 text-muted-strong" />
+                        <span className="text-muted-strong">{terminalLog.title}</span>
                       </>
                     )}
                   </div>
-                  <p className="mt-2.5 text-xs text-muted leading-relaxed break-all">
+                  <p className="mt-2.5 text-xs text-muted-strong leading-relaxed break-all">
                     {terminalLog.detail}
                   </p>
                 </div>
               </div>
 
               {/* Code Snippet Trigger Definition */}
-              <div className="mt-6 pt-4 border-t border-[var(--border)] font-mono text-[11px] text-muted flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-[var(--border)] font-mono text-[11px] text-muted-strong flex items-center justify-between">
                 <span className="flex items-center gap-1.5">
                   <FileCode className="h-3.5 w-3.5 text-brand-text" />
                   Database Trigger: <code>trg_prevent_ledger_mutation()</code>
@@ -164,7 +164,7 @@ export function LiveLedger() {
                 <h3 className="text-lg font-bold text-[var(--text)] tracking-tight font-sans">
                   Atomic State Transition Lifecycle
                 </h3>
-                <p className="mt-1.5 text-xs text-muted">
+                <p className="mt-1.5 text-xs text-muted-strong">
                   Every inventory unit transitions through strict mathematical states:
                 </p>
 
@@ -175,7 +175,7 @@ export function LiveLedger() {
                     </span>
                     <div>
                       <div className="text-foreground font-bold">AVAILABLE STOCK</div>
-                      <div className="text-[11px] text-muted mt-0.5">
+                      <div className="text-[11px] text-muted-strong mt-0.5">
                         Free balance on location. Visible in global replenishment queries.
                       </div>
                     </div>
@@ -189,7 +189,7 @@ export function LiveLedger() {
                       <div className="text-foreground font-bold flex items-center gap-1.5">
                         <Lock className="h-3 w-3 text-brand-text" /> LOCKED RESERVATION
                       </div>
-                      <div className="text-[11px] text-muted mt-0.5">
+                      <div className="text-[11px] text-muted-strong mt-0.5">
                         Transfers lock reserve atomically to prevent double-dispatch race conditions.
                       </div>
                     </div>
@@ -201,7 +201,7 @@ export function LiveLedger() {
                     </span>
                     <div>
                       <div className="text-foreground font-bold">IN-TRANSIT CUSTODY</div>
-                      <div className="text-[11px] text-muted mt-0.5">
+                      <div className="text-[11px] text-muted-strong mt-0.5">
                         Carrier driver assigned. Location coordinates tracked until delivery signoff.
                       </div>
                     </div>
@@ -213,7 +213,7 @@ export function LiveLedger() {
                     </span>
                     <div>
                       <div className="text-foreground font-bold">DELIVERED & RECONCILED</div>
-                      <div className="text-[11px] text-muted mt-0.5">
+                      <div className="text-[11px] text-muted-strong mt-0.5">
                         Destination opening snapshot updated with tamper-proof receipt record.
                       </div>
                     </div>
@@ -221,7 +221,7 @@ export function LiveLedger() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[var(--border)] flex items-center justify-between text-xs font-mono text-muted">
+              <div className="mt-6 pt-4 border-t border-[var(--border)] flex items-center justify-between text-xs font-mono text-muted-strong">
                 <span>Race Condition Proof</span>
                 <span className="text-brand-text font-bold">PostgreSQL Row Locks</span>
               </div>

@@ -55,7 +55,7 @@ export function EngineeringSpec() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-6 text-sm sm:text-base text-muted leading-relaxed font-sans">
+            <p className="mt-6 text-sm sm:text-base text-muted-strong leading-relaxed font-sans">
               Traditional ERPs treat multi-site inventory as static balance records. INCP treats
               every physical movement, shift handover, and supply order as an atomic, immutable event.
             </p>
@@ -66,9 +66,9 @@ export function EngineeringSpec() {
         <div className="mt-14 border border-[var(--border)] bg-[var(--surface-1)] overflow-x-auto">
           <table className="w-full text-left border-collapse font-mono text-xs">
             <thead>
-              <tr className="border-b border-[var(--border)] bg-[var(--surface-2)] text-muted">
+              <tr className="border-b border-[var(--border)] bg-[var(--surface-2)] text-muted-strong">
                 <th className="py-4 px-6 font-bold uppercase w-1/4">Operational Layer</th>
-                <th className="py-4 px-6 font-bold uppercase w-3/8 text-muted">
+                <th className="py-4 px-6 font-bold uppercase w-3/8 text-muted-strong">
                   Conventional ERP / Siloed Spreadsheets
                 </th>
                 <th className="py-4 px-6 font-bold uppercase w-3/8 text-brand-text bg-brand-solid/5">
@@ -82,7 +82,7 @@ export function EngineeringSpec() {
                   <td className="py-5 px-6 font-bold text-[var(--text)] font-sans text-sm">
                     {row.dimension}
                   </td>
-                  <td className="py-5 px-6 text-muted font-sans text-xs leading-relaxed">
+                  <td className="py-5 px-6 text-muted-strong font-sans text-xs leading-relaxed">
                     <div className="flex items-start gap-2.5">
                       <X className="h-4 w-4 text-brand-text shrink-0 mt-0.5" />
                       <span>{row.traditional}</span>

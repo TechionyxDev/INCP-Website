@@ -2,14 +2,14 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="py-16 border-t border-[var(--border)] bg-[var(--bg)] text-xs text-muted">
+    <footer className="py-16 border-t border-[var(--border)] bg-[var(--bg)] text-xs text-muted-strong">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
           {/* Brand */}
           <div className="flex items-center gap-2.5">
             <span className="h-2.5 w-2.5 rounded-full bg-brand-solid" />
             <span className="font-bold text-sm text-[var(--text)]">INCP</span>
-            <span className="text-muted">· Inventory Network Coordination Platform</span>
+            <span className="text-muted-strong">· Inventory Network Coordination Platform</span>
           </div>
 
           {/* Links */}

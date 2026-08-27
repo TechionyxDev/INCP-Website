@@ -76,7 +76,7 @@ export function PricingSection() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-4 text-base text-muted leading-relaxed">
+            <p className="mt-4 text-base text-muted-strong leading-relaxed">
               Every plan includes our immutable movement ledger, zero-trust RBAC, and responsive web interface.
             </p>
           </ScrollReveal>
@@ -100,7 +100,7 @@ export function PricingSection() {
                   <h3 className="mt-3 text-2xl font-bold text-[var(--text)]">
                     {plan.name}
                   </h3>
-                  <p className="mt-2 text-sm text-muted leading-relaxed">
+                  <p className="mt-2 text-sm text-muted-strong leading-relaxed">
                     {plan.desc}
                   </p>
 
@@ -139,7 +139,7 @@ export function PricingSection() {
             <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text)]">
               Schedule a personalized walkthrough.
             </h3>
-            <p className="mt-3 text-sm text-muted leading-relaxed">
+            <p className="mt-3 text-sm text-muted-strong leading-relaxed">
               See how your locations model in real-time with our logistics engineering team.
             </p>
 
@@ -156,7 +156,7 @@ export function PricingSection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your work email"
-                  className="flex-1 h-12 rounded-full bg-[var(--surface-2)] border border-[var(--border)] px-5 text-sm text-[var(--text)] placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
+                  className="flex-1 h-12 rounded-full bg-[var(--surface-2)] border border-[var(--border)] px-5 text-sm text-[var(--text)] placeholder:text-muted-strong focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
                 />
                 <button
                   type="submit"
@@ -168,7 +168,7 @@ export function PricingSection() {
               </form>
             )}
 
-            <p className="mt-4 text-xs text-muted">
+            <p className="mt-4 text-xs text-muted-strong">
               Confidential · Mutual NDA provided upon request
             </p>
           </div>

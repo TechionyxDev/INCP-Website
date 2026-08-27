@@ -74,7 +74,7 @@ export function CoreEngines() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-6 text-sm sm:text-base text-muted leading-relaxed font-sans">
+            <p className="mt-6 text-sm sm:text-base text-muted-strong leading-relaxed font-sans">
               Designed as independent, hardened subsystems that interlock cleanly through shared
               domain invariants and atomic PostgreSQL transactions.
             </p>
@@ -87,7 +87,7 @@ export function CoreEngines() {
             <ScrollReveal key={eng.num} delay={idx * 60}>
               <div className="h-full p-8 border-r border-b border-[var(--border)] bg-[var(--surface-1)] flex flex-col justify-between hover:bg-[var(--surface-2)] transition-colors">
                 <div>
-                  <div className="flex items-center justify-between font-mono text-xs text-muted pb-4 border-b border-[var(--border)]">
+                  <div className="flex items-center justify-between font-mono text-xs text-muted-strong pb-4 border-b border-[var(--border)]">
                     <span className="text-brand-text font-bold font-mono">// ENGINE {eng.num}</span>
                     <span>ACTIVE</span>
                   </div>
@@ -95,14 +95,14 @@ export function CoreEngines() {
                   <h3 className="mt-6 text-xl font-bold text-[var(--text)] tracking-tight font-sans">
                     {eng.title}
                   </h3>
-                  <div className="mt-1 text-xs font-mono text-muted">{eng.subtitle}</div>
+                  <div className="mt-1 text-xs font-mono text-muted-strong">{eng.subtitle}</div>
 
-                  <p className="mt-4 text-xs sm:text-sm text-muted leading-relaxed font-sans">
+                  <p className="mt-4 text-xs sm:text-sm text-muted-strong leading-relaxed font-sans">
                     {eng.desc}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-[var(--border)] space-y-1.5 font-mono text-xs text-muted">
+                <div className="mt-8 pt-6 border-t border-[var(--border)] space-y-1.5 font-mono text-xs text-muted-strong">
                   {eng.specs.map((s) => (
                     <div key={s} className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 bg-brand-solid" />

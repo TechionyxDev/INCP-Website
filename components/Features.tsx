@@ -17,7 +17,7 @@ export function Features() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-strong font-mono">
               Features
             </span>
           </ScrollReveal>
@@ -30,7 +30,7 @@ export function Features() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted leading-relaxed">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted-strong leading-relaxed">
               Explore how real-time stock balances, transfer dispatches, shift logs, and predictive
               alerts synchronize across the entire network.
             </p>
@@ -49,7 +49,7 @@ export function Features() {
                 <h3 className="mt-4 text-xl font-bold text-[var(--text)] tracking-tight">
                   Inventory State & Reorder Points
                 </h3>
-                <p className="mt-2 text-sm text-muted max-w-xl">
+                <p className="mt-2 text-sm text-muted-strong max-w-xl">
                   Granular SKU catalogue with atomic reservations, criticality classifications, and
                   custom reorder thresholds per location.
                 </p>
@@ -76,7 +76,7 @@ export function Features() {
                 <h3 className="mt-4 text-xl font-bold text-[var(--text)] tracking-tight">
                   Multi-Tier Transfers
                 </h3>
-                <p className="mt-2 text-sm text-muted">
+                <p className="mt-2 text-sm text-muted-strong">
                   Move items with custody verification from pending approval through in-transit to delivery.
                 </p>
               </div>
@@ -102,7 +102,7 @@ export function Features() {
                 <h3 className="mt-4 text-xl font-bold text-[var(--text)] tracking-tight">
                   14 Analytics Endpoints
                 </h3>
-                <p className="mt-2 text-sm text-muted">
+                <p className="mt-2 text-sm text-muted-strong">
                   Instant network summaries, consumption trends, supplier spend, and PDF/CSV reporting.
                 </p>
               </div>
@@ -128,7 +128,7 @@ export function Features() {
                 <h3 className="mt-4 text-xl font-bold text-[var(--text)] tracking-tight">
                   Shift Logs & Chain of Custody
                 </h3>
-                <p className="mt-2 text-sm text-muted max-w-xl">
+                <p className="mt-2 text-sm text-muted-strong max-w-xl">
                   Opening snapshot freezing, material consumption tracking, tool checkout, and automatic
                   discrepancy detection to identify theft patterns.
                 </p>
@@ -151,25 +151,25 @@ export function Features() {
           <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand-solid transition-colors">
             <Lock className="h-5 w-5 text-brand-text mx-auto" />
             <div className="mt-2 text-sm font-semibold text-[var(--text)]">6-Tier RBAC</div>
-            <div className="text-xs text-muted mt-1">Super Admin to Site Official</div>
+            <div className="text-xs text-muted-strong mt-1">Super Admin to Site Official</div>
           </div>
 
           <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand-solid transition-colors">
             <UploadCloud className="h-5 w-5 text-brand-text mx-auto" />
             <div className="mt-2 text-sm font-semibold text-[var(--text)]">CSV Bulk Import</div>
-            <div className="text-xs text-muted mt-1">Items, Locations, Suppliers, Stock</div>
+            <div className="text-xs text-muted-strong mt-1">Items, Locations, Suppliers, Stock</div>
           </div>
 
           <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand-solid transition-colors">
             <FileSpreadsheet className="h-5 w-5 text-brand-text mx-auto" />
             <div className="mt-2 text-sm font-semibold text-[var(--text)]">SLA Breach Jobs</div>
-            <div className="text-xs text-muted mt-1">Auto-escalation every 15 min</div>
+            <div className="text-xs text-muted-strong mt-1">Auto-escalation every 15 min</div>
           </div>
 
           <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand-solid transition-colors">
             <FileText className="h-5 w-5 text-brand-text mx-auto" />
             <div className="mt-2 text-sm font-semibold text-[var(--text)]">PDF & CSV Reports</div>
-            <div className="text-xs text-muted mt-1">Styled chromedp & lite exports</div>
+            <div className="text-xs text-muted-strong mt-1">Styled chromedp & lite exports</div>
           </div>
         </div>
       </div>

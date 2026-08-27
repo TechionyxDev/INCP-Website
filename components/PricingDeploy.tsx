@@ -92,7 +92,7 @@ export function PricingDeploy() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 text-base sm:text-lg text-muted leading-relaxed font-sans">
+            <p className="mt-5 text-base sm:text-lg text-muted-strong leading-relaxed font-sans">
               Every plan includes the core immutable ledger, zero-trust RBAC, and automated CSV migration pipelines.
             </p>
           </ScrollReveal>
@@ -125,7 +125,7 @@ export function PricingDeploy() {
                   <h3 className="mt-2 text-2xl font-bold text-[var(--text)] tracking-tight font-sans">
                     {tier.name}
                   </h3>
-                  <p className="mt-2.5 text-xs text-muted leading-relaxed font-sans">
+                  <p className="mt-2.5 text-xs text-muted-strong leading-relaxed font-sans">
                     {tier.desc}
                   </p>
 
@@ -133,7 +133,7 @@ export function PricingDeploy() {
                     <span className="text-3xl font-extrabold text-[var(--text)] tracking-tight">
                       {tier.price}
                     </span>
-                    <span className="text-xs text-muted">{tier.subprice}</span>
+                    <span className="text-xs text-muted-strong">{tier.subprice}</span>
                   </div>
 
                   <ul className="mt-6 space-y-3">
@@ -187,7 +187,7 @@ export function PricingDeploy() {
               <h3 className="mt-6 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight font-sans">
                 Schedule a live multi-node walkthrough.
               </h3>
-              <p className="mt-4 text-sm text-muted font-sans">
+              <p className="mt-4 text-sm text-muted-strong font-sans">
                 Our logistics systems engineers will model your active facility topology and
                 demonstrate atomic PostgreSQL reconciliation in real-time.
               </p>
@@ -201,7 +201,7 @@ export function PricingDeploy() {
                 <form onSubmit={handleSubmit} className="mt-8 space-y-4 text-left">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-muted mb-1.5 uppercase">
+                      <label className="block text-xs font-mono text-muted-strong mb-1.5 uppercase">
                         Work Email
                       </label>
                       <input
@@ -210,11 +210,11 @@ export function PricingDeploy() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="vp.logistics@enterprise.com"
-                        className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
+                        className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground placeholder:text-muted-strong/60 focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-mono text-muted mb-1.5 uppercase">
+                      <label className="block text-xs font-mono text-muted-strong mb-1.5 uppercase">
                         Enterprise Name
                       </label>
                       <input
@@ -223,13 +223,13 @@ export function PricingDeploy() {
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
                         placeholder="Apex Logistics Corp"
-                        className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
+                        className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground placeholder:text-muted-strong/60 focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-muted mb-1.5 uppercase">
+                    <label className="block text-xs font-mono text-muted-strong mb-1.5 uppercase">
                       Estimated Operating Nodes
                     </label>
                     <select
@@ -254,7 +254,7 @@ export function PricingDeploy() {
                 </form>
               )}
 
-              <p className="mt-4 text-[11px] font-mono text-muted">
+              <p className="mt-4 text-[11px] font-mono text-muted-strong">
                 Mutual NDA provided upon request · ISO 27001 / SOC 2 Ready
               </p>
             </div>

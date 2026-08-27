@@ -15,7 +15,7 @@ export function ScrollReveal({ children, delay = 0, className = "" }: ScrollReve
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setIsVisible(true);
           observer.unobserve(entry.target);
         }

@@ -51,6 +51,8 @@ export function ProductionShowcase() {
     },
   ];
 
+  const activeScreen = screens[activeTab] ?? screens[0];
+
   return (
     <section id="production" className="py-24 sm:py-32 border-b border-[var(--border)] bg-band">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-8">
@@ -92,7 +94,7 @@ export function ProductionShowcase() {
               className={`py-3.5 px-6 font-bold uppercase tracking-wider transition-colors border-b-2 -mb-[1px] ${
                 activeTab === idx
                   ? "border-brand-solid text-brand-text bg-[var(--surface-1)]"
-                  : "border-transparent text-muted hover:text-[var(--text)]"
+                  : "border-transparent text-muted-strong hover:text-[var(--text)]"
               }`}
             >
               {`0${idx + 1} // ${item.label}`}
@@ -106,31 +108,31 @@ export function ProductionShowcase() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between p-6 border-b border-[var(--border)] gap-4">
             <div>
               <h3 className="text-2xl font-bold text-[var(--text)] font-sans">
-                {screens[activeTab].title}
+                {activeScreen?.title}
               </h3>
-              <p className="mt-1 text-xs text-muted font-sans max-w-2xl">
-                {screens[activeTab].desc}
+              <p className="mt-1 text-xs text-muted-strong font-sans max-w-2xl">
+                {activeScreen?.desc}
               </p>
             </div>
-            <div className="font-mono text-xs text-muted sm:text-right shrink-0">
+            <div className="font-mono text-xs text-muted-strong sm:text-right shrink-0">
               <div className="text-brand-text font-bold">REST ENDPOINT</div>
-              <div className="text-[11px] text-[var(--text)] mt-0.5">{screens[activeTab].endpoint}</div>
+              <div className="text-[11px] text-[var(--text)] mt-0.5">{activeScreen?.endpoint}</div>
             </div>
           </div>
 
           {/* Screenshot Viewport */}
           <div className="relative aspect-[16/9] w-full bg-surface-2">
             <Image
-              src={screens[activeTab].image}
-              alt={screens[activeTab].title}
+              src={activeScreen?.image ?? ""}
+              alt={activeScreen?.title ?? ""}
               fill
               className="object-cover object-top"
             />
           </div>
 
           {/* Bottom Capabilities Row */}
-          <div className="p-6 border-t border-[var(--border)] bg-[var(--surface-2)] grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs text-muted">
-            {screens[activeTab].features.map((f) => (
+          <div className="p-6 border-t border-[var(--border)] bg-[var(--surface-2)] grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs text-muted-strong">
+            {(activeScreen?.features ?? []).map((f) => (
               <div key={f} className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-brand-text shrink-0" />
                 <span className="text-[var(--text)] font-sans">{f}</span>

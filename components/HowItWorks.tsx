@@ -28,7 +28,7 @@ export function HowItWorks() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-strong font-mono">
               How It Works
             </span>
           </ScrollReveal>
@@ -41,7 +41,7 @@ export function HowItWorks() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted leading-relaxed">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted-strong leading-relaxed">
               Deploy INCP in days — not quarters. Connect your physical nodes, seed data cleanly,
               and empower every site official with audited digital workflows.
             </p>
@@ -58,7 +58,7 @@ export function HowItWorks() {
                     <div className="h-12 w-12 rounded-2xl bg-brand-solid/10 text-brand-text flex items-center justify-center border border-brand-solid/20 group-hover:scale-110 transition-transform">
                       <step.icon className="h-6 w-6" />
                     </div>
-                    <span className="font-mono text-xl font-bold text-muted">
+                    <span className="font-mono text-xl font-bold text-muted-strong">
                       {step.num}
                     </span>
                   </div>
@@ -66,7 +66,7 @@ export function HowItWorks() {
                   <h3 className="mt-6 text-xl font-bold text-[var(--text)] tracking-tight">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-sm text-muted leading-relaxed">
+                  <p className="mt-3 text-sm text-muted-strong leading-relaxed">
                     {step.desc}
                   </p>
                 </div>

@@ -3,83 +3,90 @@
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════════════════
-   INCP DESIGN SYSTEM — premium moody aesthetic.
-   Muted plum brand on deep petrol-teal surfaces.
+   INCP DESIGN SYSTEM — premium serene aesthetic.
+   Desaturated plum brand over cool slate-blue surfaces, tuned for
+   long dashboard sessions and low eye-strain.
 
    Every token ships twice:
      --token       → ready-to-use CSS colour
      --token-rgb   → space-separated channels, so Tailwind opacity
-                     modifiers (bg-brand-solid/12) work against the variable.
+                     modifiers (bg-brand/12) resolve against the variable.
 
-   Brand + semantic hues are theme-invariant. Surfaces, text and borders
-   flip on the `data-theme` attribute. Dark is the default.
+   ── Note on the dark surface ladder ────────────────────────────────
+   Unusually, dark surface-1 (#3F4F62) is LIGHTER than surface-2
+   (#2B3745):
 
-   ── Why there are `-text` and `-solid` variants ────────────────────
-   The supplied palette is tuned for FILLS on a dark canvas. Several
-   colours are unusable as text or as a button surface without help:
+       bg #1A2129  <  surface-2 #2B3745  <  surface-1 #3F4F62
 
-     • Brand #483C50 on the dark bg #04121A is 1.84:1. Unreadable as
-       text, and nearly invisible as a button silhouette. Dark theme
-       therefore uses --brand-solid (a lifted plum, 3.14:1 vs the bg) for
-       CTA fills, and --brand-text (#A899B1, 5.94:1) for brand-coloured
-       text. Light theme uses #483C50 directly for both (9.8:1).
-     • Muted #BDB6BE is 9.58:1 on the dark bg but only 1.89:1 on the
-       light bg, so light theme darkens it for text use.
-     • Error #BE123C is 2.53:1 on dark surface-1, the worst of the four
-       semantics, so dark theme lifts all four to `-text` variants.
+   Surface-1 is the card, so cards are the brightest plane and are the
+   hardest surface to put colour on. Every derived variant below is
+   validated against #3F4F62, not against the page background, because
+   that is the worst realistic case.
 
-   In every case the supplied hex is preserved for its intended role;
-   the derived variants only cover roles the original cannot serve.
+   ── Why derived variants exist ─────────────────────────────────────
+   The supplied palette is built for fills. Several colours cannot serve
+   as text or as a button surface without help. The spec hex is always
+   kept for the role it does work in:
+
+     • Brand #4E3C52 is 1.62:1 on the dark bg — a filled CTA would have
+       no silhouette. Dark uses --brand-solid (#7C6579, the spec accent,
+       3.09:1). Light uses the literal #4E3C52 / #352938.
+     • All four semantics land at 1.6–2.6:1 on the #3F4F62 card, which
+       is where metric cards live. Dark lifts them to pale --*-text
+       variants (4.6–5.5:1); fills keep the spec values.
+     • Text-secondary #9CA4AE is 3.33:1 on that same card, and on the
+       light side #717C8C is 3.91:1 on the page background. Both are
+       nudged for text use only.
    ═══════════════════════════════════════════════════════════════════ */
 
 :root {
   /* ── Brand (hues are theme-invariant) ─────────────────────────── */
-  --brand: #483C50;          --brand-rgb: 72 60 80;
-  --brand-hover: #352C3B;    --brand-hover-rgb: 53 44 59;
-  --brand-accent: #082533;   --brand-accent-rgb: 8 37 51;
-  --brand-muted: #BDB6BE;    --brand-muted-rgb: 189 182 190;
-  --on-brand: #F7F5F6;       --on-brand-rgb: 247 245 246;
+  --brand: #4E3C52;          --brand-rgb: 78 60 82;
+  --brand-hover: #352938;    --brand-hover-rgb: 53 41 56;
+  --brand-accent: #7C6579;   --brand-accent-rgb: 124 101 121;
+  --brand-muted: #9CA4AE;    --brand-muted-rgb: 156 164 174;
+  --on-brand: #F3F5F7;       --on-brand-rgb: 243 245 247;
 
   /* Role-specific brand variants (see header note). */
-  --brand-solid: #483C50;      --brand-solid-rgb: 72 60 80;
-  --brand-solid-hover: #352C3B; --brand-solid-hover-rgb: 53 44 59;
-  --brand-text: #483C50;       --brand-text-rgb: 72 60 80;
-  --muted-text: #6E6474;       --muted-text-rgb: 110 100 116;
+  --brand-solid: #4E3C52;       --brand-solid-rgb: 78 60 82;
+  --brand-solid-hover: #352938; --brand-solid-hover-rgb: 53 41 56;
+  --brand-text: #4E3C52;        --brand-text-rgb: 78 60 82;
 
-  /* ── Semantic (spec values, used for fills/indicators) ─────────── */
-  --success: #0D9488;        --success-rgb: 13 148 136;
+  /* ── Semantic fills (spec values) ─────────────────────────────── */
+  --success: #059669;        --success-rgb: 5 150 105;
   --warning: #D97706;        --warning-rgb: 217 119 6;
-  --info: #0284C7;           --info-rgb: 2 132 199;
-  --danger: #BE123C;         --danger-rgb: 190 18 60;
+  --info: #2563EB;           --info-rgb: 37 99 235;
+  --danger: #DC2626;         --danger-rgb: 220 38 38;
 
-  /* Semantic text variants — light theme darkens for 4.5:1 on white. */
-  --success-text: #0B7A70;   --success-text-rgb: 11 122 112;
-  --warning-text: #9A5406;   --warning-text-rgb: 154 84 6;
-  --info-text: #026FA6;      --info-text-rgb: 2 111 166;
-  --danger-text: #BE123C;    --danger-text-rgb: 190 18 60;
+  /* Semantic text: darkened so small type clears 4.5:1 on white. */
+  --success-text: #047857;   --success-text-rgb: 4 120 87;
+  --warning-text: #B45309;   --warning-text-rgb: 180 83 9;
+  --info-text: #2563EB;      --info-text-rgb: 37 99 235;
+  --danger-text: #D01F1F;    --danger-text-rgb: 208 31 31;
 
   /* ── Light theme surfaces ─────────────────────────────────────── */
-  --bg: #FBF9FA;             --bg-rgb: 251 249 250;
+  --bg: #F5F6F8;             --bg-rgb: 245 246 248;
   --surface-1: #FFFFFF;      --surface-1-rgb: 255 255 255;
-  --surface-2: #F2ECEF;      --surface-2-rgb: 242 236 239;
-  --text: #082533;           --text-rgb: 8 37 51;
-  --text-2: #483C50;         --text-2-rgb: 72 60 80;
-  --border: #BDB6BE;         --border-rgb: 189 182 190;
-  --border-hover: #9E96A0;   --border-hover-rgb: 158 150 160;
+  --surface-2: #EAECEF;      --surface-2-rgb: 234 236 239;
+  --text: #3F4F62;           --text-rgb: 63 79 98;
+  --text-2: #717C8C;         --text-2-rgb: 113 124 140;
+  /* #717C8C is 3.91:1 on the page background; nudged for body copy. */
+  --text-2-strong: #5C6675;  --text-2-strong-rgb: 92 102 117;
+  --border: #9CA4AE;         --border-rgb: 156 164 174;
+  --border-hover: #7D8794;   --border-hover-rgb: 125 135 148;
+  /* Hairline for dense table rows, where the full border is too loud. */
+  --border-subtle: #DFE3E8;  --border-subtle-rgb: 223 227 232;
 
-  /* Alternating full-bleed section tint; sits just off --bg so long
-     sections read as a shift in light, not as a slab. */
-  --band: #F5F1F3;           --band-rgb: 245 241 243;
+  --band: #EFF1F4;           --band-rgb: 239 241 244;
 
-  /* Focus ring. Needs >=3:1 against whatever surface it lands on;
-     the brand itself is the strongest option on a light canvas. */
-  --ring: #483C50;           --ring-rgb: 72 60 80;
-  --hero-edge: #082533;      --hero-edge-rgb: 8 37 51;
+  /* Focus ring: the spec assigns the accent to this role, and it holds
+     up on light surfaces (4.86:1 on bg, 5.26:1 on white). */
+  --ring: #7C6579;           --ring-rgb: 124 101 121;
 
-  --shadow-sm: 0 1px 2px rgb(8 37 51 / 0.06);
-  --shadow-md: 0 4px 14px -2px rgb(8 37 51 / 0.09);
-  --shadow-lg: 0 18px 40px -12px rgb(8 37 51 / 0.16);
-  --shadow-brand: 0 12px 28px -12px rgb(72 60 80 / 0.45);
+  --shadow-sm: 0 1px 2px rgb(63 79 98 / 0.06);
+  --shadow-md: 0 4px 14px -2px rgb(63 79 98 / 0.10);
+  --shadow-lg: 0 18px 40px -12px rgb(63 79 98 / 0.16);
+  --shadow-brand: 0 12px 28px -12px rgb(78 60 82 / 0.42);
 
   /* ── Embedded product demo (app UI) ───────────────────────────── */
   --a-bg: var(--bg);
@@ -88,11 +95,11 @@
   --a-border: var(--border);
   --a-border-strong: var(--border-hover);
   --a-text: var(--text);
-  --a-text-2: var(--text-2);
-  --a-muted: #6E6474;
-  --a-faint: #6E6474;
+  --a-text-2: var(--text-2-strong);
+  --a-muted: #5C6675;
+  --a-faint: #667082;
   --a-accent: var(--brand);
-  --a-on-accent: #F7F5F6;
+  --a-on-accent: #F3F5F7;
   --a-accent-soft: rgb(var(--brand-rgb) / 0.10);
   --a-success: var(--success-text);
   --a-success-soft: rgb(var(--success-rgb) / 0.13);
@@ -103,71 +110,71 @@
   --a-danger: var(--danger-text);
   --a-danger-soft: rgb(var(--danger-rgb) / 0.11);
   --a-slate-soft: rgb(var(--text-rgb) / 0.05);
-  /* Chart ramp: plum → petrol → teal, the moody triad. */
-  --a-c1: #483C50;
-  --a-c2: #6E5C7B;
-  --a-c3: #0B7A70;
-  --a-c4: #026FA6;
-  --a-c5: #9A5406;
-  --a-c6: #7C7280;
-  --a-c7: #A899B1;
-  --a-c8: #BDB6BE;
+  /* Serene ramp: plum → slate → muted teal, no high-chroma jumps. */
+  --a-c1: #4E3C52;
+  --a-c2: #7C6579;
+  --a-c3: #3F4F62;
+  --a-c4: #047857;
+  --a-c5: #2563EB;
+  --a-c6: #B45309;
+  --a-c7: #717C8C;
+  --a-c8: #9CA4AE;
 }
 
 [data-theme="dark"] {
   /* ── Dark theme surfaces (default) ────────────────────────────── */
-  --bg: #04121A;             --bg-rgb: 4 18 26;
-  --surface-1: #082533;      --surface-1-rgb: 8 37 51;
-  --surface-2: #153648;      --surface-2-rgb: 21 54 72;
-  --text: #F7F5F6;           --text-rgb: 247 245 246;
-  --text-2: #CEBEC6;         --text-2-rgb: 206 190 198;
-  --border: #1E3F54;         --border-rgb: 30 63 84;
-  --border-hover: #2F5771;   --border-hover-rgb: 47 87 113;
+  --bg: #1A2129;             --bg-rgb: 26 33 41;
+  --surface-1: #3F4F62;      --surface-1-rgb: 63 79 98;
+  --surface-2: #2B3745;      --surface-2-rgb: 43 55 69;
+  --text: #F3F5F7;           --text-rgb: 243 245 247;
+  --text-2: #9CA4AE;         --text-2-rgb: 156 164 174;
+  /* #9CA4AE is only 3.33:1 on the #3F4F62 card, so body copy on cards
+     uses this lifted tone (5.03:1) while the spec value stays for
+     inactive/decorative use on darker planes. */
+  --text-2-strong: #C3C9D1;  --text-2-strong-rgb: 195 201 209;
+  --border: #4F6075;         --border-rgb: 79 96 117;
+  --border-hover: #64778F;   --border-hover-rgb: 100 119 143;
+  --border-subtle: #46586D;  --border-subtle-rgb: 70 88 109;
 
-  --band: #071A24;           --band-rgb: 7 26 36;
+  --band: #212A34;           --band-rgb: 33 42 52;
 
-  /* #483C50 is only 1.84:1 on the bg, so a CTA painted with it reads as
-     a hole rather than a button. Lifted to 3.14:1 while holding the hue;
-     white labels still clear 6:1 on it. */
-  --brand-solid: #6E5C7B;      --brand-solid-rgb: 110 92 123;
-  --brand-solid-hover: #5A4B63; --brand-solid-hover-rgb: 90 75 99;
-  --brand-text: #A899B1;       --brand-text-rgb: 168 153 177;
-  --muted-text: #BDB6BE;       --muted-text-rgb: 189 182 190;
+  /* #4E3C52 is 1.62:1 on the bg, so the filled CTA would read as a
+     hole. Promoted to the spec accent, which is a true 3.09:1 shape. */
+  --brand-solid: #7C6579;       --brand-solid-rgb: 124 101 121;
+  --brand-solid-hover: #8A7287; --brand-solid-hover-rgb: 138 114 135;
+  --brand-text: #CDBFCA;        --brand-text-rgb: 205 191 202;
 
-  /* Semantic text lifted for >=4.5:1 on surface-1. */
-  --success-text: #14B8A6;   --success-text-rgb: 20 184 166;
-  --warning-text: #F59E0B;   --warning-text-rgb: 245 158 11;
-  --info-text: #38BDF8;      --info-text-rgb: 56 189 248;
-  --danger-text: #FB7185;    --danger-text-rgb: 251 113 133;
+  /* Semantic text lifted to clear 4.5:1 on the bright #3F4F62 card. */
+  --success-text: #6EE7B7;   --success-text-rgb: 110 231 183;
+  --warning-text: #FBBF24;   --warning-text-rgb: 251 191 36;
+  --info-text: #93C5FD;      --info-text-rgb: 147 197 253;
+  --danger-text: #FEB2B2;    --danger-text-rgb: 254 178 178;
 
-  /* On a dark canvas a light ring is far more visible than the brand. */
-  --ring: #C6BACD;           --ring-rgb: 198 186 205;
+  /* The accent is only 1.59:1 on the card, so the ring is lifted to a
+     pale plum that stays visible on every dark plane (3.7–7.2:1). */
+  --ring: #B9A7B6;           --ring-rgb: 185 167 182;
 
-  /* The hero uses the spec's #082533. Against the #04121A page that is
-     only 1.2:1, so in dark theme the band is separated by an explicit
-     edge + plum wash rather than by luminance alone. */
-  --hero-edge: #24506B;      --hero-edge-rgb: 36 80 107;
-
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.5);
-  --shadow-md: 0 4px 16px -2px rgb(0 0 0 / 0.6);
-  --shadow-lg: 0 20px 48px -12px rgb(0 0 0 / 0.75);
-  --shadow-brand: 0 14px 32px -14px rgb(0 0 0 / 0.8);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 16px -2px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 20px 48px -12px rgb(0 0 0 / 0.62);
+  --shadow-brand: 0 14px 32px -14px rgb(0 0 0 / 0.7);
 
   /* ── Embedded product demo (app UI) ───────────────────────────── */
-  --a-muted: #A4B4BF;
-  --a-faint: #8497A5;
-  --a-accent: #A899B1;
-  --a-on-accent: #14101A;
-  --a-accent-soft: rgb(var(--brand-muted-rgb) / 0.14);
+  --a-text-2: #C3C9D1;
+  --a-muted: #BCC3CC;
+  --a-faint: #9CA4AE;
+  --a-accent: #CDBFCA;
+  --a-on-accent: #241C26;
+  --a-accent-soft: rgb(var(--brand-accent-rgb) / 0.22);
   --a-slate-soft: rgb(255 255 255 / 0.06);
-  --a-c1: #A899B1;
-  --a-c2: #14B8A6;
-  --a-c3: #38BDF8;
-  --a-c4: #F59E0B;
-  --a-c5: #FB7185;
-  --a-c6: #BDB6BE;
-  --a-c7: #7C8FA0;
-  --a-c8: #2F5771;
+  --a-c1: #CDBFCA;
+  --a-c2: #6EE7B7;
+  --a-c3: #93C5FD;
+  --a-c4: #FBBF24;
+  --a-c5: #FEB2B2;
+  --a-c6: #C3C9D1;
+  --a-c7: #9CA4AE;
+  --a-c8: #64778F;
 }
 
 * {
@@ -196,16 +203,10 @@ body {
 }
 
 ::selection {
-  background-color: var(--brand);
-  color: var(--on-brand);
-}
-
-[data-theme="dark"] ::selection {
   background-color: var(--brand-solid);
   color: var(--on-brand);
 }
 
-/* High-visibility focus ring, theme-aware. */
 :focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
@@ -235,5 +236,17 @@ select {
 input::placeholder,
 textarea::placeholder {
   color: var(--text-2);
-  opacity: 0.7;
+  opacity: 0.75;
+}
+
+/* Respect reduced-motion for the scroll-reveal and hover transitions. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

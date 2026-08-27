@@ -44,7 +44,7 @@ export function PlatformOverview() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-4 text-base text-muted leading-relaxed">
+            <p className="mt-4 text-base text-muted-strong leading-relaxed">
               INCP replaces disconnected spreadsheets and legacy ERPs with a unified platform that keeps physical inventory in sync across your entire organization.
             </p>
           </ScrollReveal>
@@ -60,7 +60,7 @@ export function PlatformOverview() {
                   <h3 className="mt-4 text-base font-semibold text-[var(--text)]">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm text-muted leading-relaxed">
+                  <p className="mt-2 text-sm text-muted-strong leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

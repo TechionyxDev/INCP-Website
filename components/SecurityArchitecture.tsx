@@ -55,7 +55,7 @@ export function SecurityArchitecture() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-6 text-sm sm:text-base text-muted leading-relaxed font-sans">
+            <p className="mt-6 text-sm sm:text-base text-muted-strong leading-relaxed font-sans">
               Designed for regulated industries where inventory provenance and chain of custody must
               withstand external compliance audits and zero data tampering.
             </p>
@@ -68,7 +68,7 @@ export function SecurityArchitecture() {
             <ScrollReveal key={item.code} delay={idx * 60}>
               <div className="h-full p-8 border-r border-b border-[var(--border)] bg-[var(--surface-1)] flex flex-col justify-between hover:bg-[var(--surface-2)] transition-colors">
                 <div>
-                  <div className="flex items-center justify-between font-mono text-xs text-muted pb-4 border-b border-[var(--border)]">
+                  <div className="flex items-center justify-between font-mono text-xs text-muted-strong pb-4 border-b border-[var(--border)]">
                     <span className="text-brand-text font-bold font-mono">// {item.code}</span>
                     <span>ENFORCED AT DB LAYER</span>
                   </div>
@@ -77,12 +77,12 @@ export function SecurityArchitecture() {
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-xs sm:text-sm text-muted leading-relaxed font-sans">
+                  <p className="mt-3 text-xs sm:text-sm text-muted-strong leading-relaxed font-sans">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[var(--border)] flex items-center justify-between font-mono text-xs text-muted">
+                <div className="mt-6 pt-4 border-t border-[var(--border)] flex items-center justify-between font-mono text-xs text-muted-strong">
                   <span>Standard: SOC 2 Ready</span>
                   <span className="text-brand-text font-bold">VERIFIED</span>
                 </div>

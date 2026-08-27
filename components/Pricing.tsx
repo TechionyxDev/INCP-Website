@@ -63,7 +63,7 @@ export function Pricing() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-strong font-mono">
               Pricing & Plans
             </span>
           </ScrollReveal>
@@ -76,7 +76,7 @@ export function Pricing() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 text-base sm:text-lg text-muted leading-relaxed">
+            <p className="mt-5 text-base sm:text-lg text-muted-strong leading-relaxed">
               Every plan includes our immutable movement ledger, zero-trust RBAC, and responsive mobile scanner.
             </p>
           </ScrollReveal>
@@ -103,13 +103,13 @@ export function Pricing() {
                 )}
 
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-muted">
+                  <div className="text-xs font-mono uppercase tracking-wider text-muted-strong">
                     {tier.badge}
                   </div>
                   <h3 className="mt-2 text-2xl font-bold text-[var(--text)] tracking-tight">
                     {tier.name}
                   </h3>
-                  <p className="mt-2.5 text-xs text-muted leading-relaxed">
+                  <p className="mt-2.5 text-xs text-muted-strong leading-relaxed">
                     {tier.desc}
                   </p>
 
@@ -117,7 +117,7 @@ export function Pricing() {
                     <span className="text-3xl font-bold text-[var(--text)] tracking-tight">
                       {tier.price}
                     </span>
-                    <span className="text-xs text-muted font-mono">
+                    <span className="text-xs text-muted-strong font-mono">
                       {tier.subprice}
                     </span>
                   </div>

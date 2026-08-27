@@ -55,6 +55,8 @@ export function LiveFeatures() {
     },
   ];
 
+  const active = features[activeTab] ?? features[0];
+
   return (
     <section id="features" className="py-24 sm:py-32 border-t border-[var(--border)] bg-band">
       <div className="mx-auto max-w-6xl px-6">
@@ -72,7 +74,7 @@ export function LiveFeatures() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-4 text-base text-muted leading-relaxed">
+            <p className="mt-4 text-base text-muted-strong leading-relaxed">
               Designed to give leadership complete visibility while keeping daily workflows fast and intuitive for on-site teams.
             </p>
           </ScrollReveal>
@@ -87,7 +89,7 @@ export function LiveFeatures() {
               className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
                 activeTab === idx
                   ? "bg-brand-solid text-brand-foreground"
-                  : "text-muted hover:text-[var(--text)] hover:bg-[var(--surface-1)]"
+                  : "text-muted-strong hover:text-[var(--text)] hover:bg-[var(--surface-1)]"
               }`}
             >
               {item.label}
@@ -100,14 +102,14 @@ export function LiveFeatures() {
           {/* Left: Copy & Bullets */}
           <div className="lg:col-span-5 space-y-6">
             <h3 className="text-2xl font-bold text-[var(--text)] tracking-tight">
-              {features[activeTab].title}
+              {active?.title}
             </h3>
-            <p className="text-sm text-muted leading-relaxed">
-              {features[activeTab].desc}
+            <p className="text-sm text-muted-strong leading-relaxed">
+              {active?.desc}
             </p>
 
             <ul className="space-y-3 pt-2">
-              {features[activeTab].bullets.map((b) => (
+              {(active?.bullets ?? []).map((b) => (
                 <li key={b} className="flex items-start gap-2.5 text-sm text-[var(--text)]">
                   <Check className="h-4 w-4 text-brand-text shrink-0 mt-0.5" />
                   <span>{b}</span>
@@ -121,8 +123,8 @@ export function LiveFeatures() {
             <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-2 shadow-sm">
               <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-surface-2">
                 <Image
-                  src={features[activeTab].image}
-                  alt={features[activeTab].title}
+                  src={active?.image ?? ""}
+                  alt={active?.title ?? ""}
                   fill
                   className="object-cover object-top"
                 />

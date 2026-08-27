@@ -35,7 +35,7 @@ export function Button({
     outline:
       "bg-transparent text-foreground border border-border hover:border-brand-solid hover:text-brand-text active:scale-[0.98]",
     ghost:
-      "bg-transparent text-muted hover:bg-surface-2 hover:text-foreground active:scale-[0.98]",
+      "bg-transparent text-muted-strong hover:bg-surface-2 hover:text-foreground active:scale-[0.98]",
     destructive:
       "bg-destructive hover:bg-destructive/90 text-brand-foreground active:scale-[0.98]",
   }[variant];

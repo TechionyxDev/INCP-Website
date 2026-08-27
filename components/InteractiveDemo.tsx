@@ -124,7 +124,7 @@ export function InteractiveDemo() {
             </ScrollReveal>
 
             <ScrollReveal delay={150}>
-              <p className="mt-4 text-sm text-muted leading-relaxed max-w-2xl">
+              <p className="mt-4 text-sm text-muted-strong leading-relaxed max-w-2xl">
                 Five production modules rebuilt with sample data. Click through the sidebar, filter tables,
                 expand records, switch the app theme — every control below responds exactly as it does in the
                 deployed platform.
@@ -161,7 +161,7 @@ export function InteractiveDemo() {
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <m.icon className={`h-5 w-5 ${on ? "text-brand-text" : "text-muted"}`} />
+                    <m.icon className={`h-5 w-5 ${on ? "text-brand-text" : "text-muted-strong"}`} />
                     <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-brand-muted/20 text-brand-text font-bold whitespace-nowrap">
                       {m.badge}
                     </span>
@@ -186,11 +186,11 @@ export function InteractiveDemo() {
                 {active.badge}
               </div>
               <h3 className="mt-2 text-xl font-bold text-[var(--text)] tracking-tight">{active.title}</h3>
-              <p className="mt-3 text-sm text-muted leading-relaxed">{active.desc}</p>
+              <p className="mt-3 text-sm text-muted-strong leading-relaxed">{active.desc}</p>
             </div>
 
             <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-6">
-              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted font-bold">
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-strong font-bold">
                 What it does
               </div>
               <ul className="mt-3 space-y-3">
@@ -209,7 +209,7 @@ export function InteractiveDemo() {
                 Try it in the panel above
               </div>
               <p className="mt-3 text-sm text-[var(--text)] leading-relaxed">{active.try}</p>
-              <p className="mt-4 text-[11px] font-mono text-muted leading-relaxed">
+              <p className="mt-4 text-[11px] font-mono text-muted-strong leading-relaxed">
                 Sample data shown. Production instances run against your own tenant with role-scoped
                 access and full audit logging.
               </p>

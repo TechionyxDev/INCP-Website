@@ -42,7 +42,7 @@ export function Problem() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-strong font-mono">
               The Operations Tax
             </span>
           </ScrollReveal>
@@ -50,14 +50,14 @@ export function Problem() {
           <ScrollReveal delay={100}>
             <h2 className="mt-5 text-3xl sm:text-5xl font-bold tracking-tight text-[var(--text)] leading-[1.1]">
               Inventory operations is everywhere. <br />
-              <span className="text-muted">
+              <span className="text-muted-strong">
                 Inventory intelligence is nowhere.
               </span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted leading-relaxed">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted-strong leading-relaxed">
               Multi-site enterprises run on dozens of disjointed systems that don't synchronize.
               The result is a quiet operational tax on every shift, transfer, and procurement decision.
             </p>
@@ -75,7 +75,7 @@ export function Problem() {
                 <h3 className="mt-5 text-lg font-semibold text-[var(--text)] tracking-tight">
                   {item.title}
                 </h3>
-                <p className="mt-2.5 text-sm text-muted leading-relaxed">
+                <p className="mt-2.5 text-sm text-muted-strong leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -92,7 +92,7 @@ export function Problem() {
                 <h3 className="mt-3 text-lg font-semibold text-foreground tracking-tight">
                   Unified Inventory State Engine
                 </h3>
-                <p className="mt-2.5 text-sm text-muted leading-relaxed">
+                <p className="mt-2.5 text-sm text-muted-strong leading-relaxed">
                   Treat multi-tier logistics as a single immutable ledger. Every reserve, transfer,
                   shift log, and maintenance cycle syncs atomically.
                 </p>

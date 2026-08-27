@@ -42,7 +42,7 @@ export function FinalCTA() {
                 <span className="text-brand-text">into inventory intelligence.</span>
               </h2>
 
-              <p className="mt-6 max-w-xl text-base sm:text-lg text-muted leading-relaxed">
+              <p className="mt-6 max-w-xl text-base sm:text-lg text-muted-strong leading-relaxed">
                 Schedule a personalized walkthrough of INCP with our logistics engineering team.
                 See how your locations model in real-time.
               </p>
@@ -65,7 +65,7 @@ export function FinalCTA() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="you@company.com"
-                      className="w-full h-12 rounded-full bg-surface-2 border border-[var(--border)] px-5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
+                      className="w-full h-12 rounded-full bg-surface-2 border border-[var(--border)] px-5 text-sm text-foreground placeholder:text-muted-strong focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
                     />
                   </label>
 
@@ -79,7 +79,7 @@ export function FinalCTA() {
                 </form>
               )}
 
-              <p className="mt-4 text-xs text-muted font-mono">
+              <p className="mt-4 text-xs text-muted-strong font-mono">
                 Typical response &lt; 1 business day · Enterprise NDA available upon request
               </p>
             </div>
