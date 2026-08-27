@@ -16,7 +16,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium tracking-tight transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50";
+    "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium tracking-tight transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50";
 
   const sizeClasses = {
     sm: "h-8 px-3 text-xs",
@@ -24,13 +24,16 @@ export function Button({
     lg: "h-12 px-7 text-base font-semibold",
   }[size];
 
+  /* `brand-solid` rather than `brand`: on the dark canvas the raw brand
+     (#483C50) is 1.84:1 against the background, so a filled button would
+     have no visible silhouette. */
   const variantClasses = {
     primary:
-      "bg-brand hover:bg-brand-hover text-brand-foreground shadow-brand active:scale-[0.98]",
+      "bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground shadow-brand active:scale-[0.98]",
     secondary:
       "bg-surface-1 text-foreground border border-border hover:bg-surface-2 hover:border-border-hover active:scale-[0.98]",
     outline:
-      "bg-transparent text-foreground border border-border hover:border-brand hover:text-brand-text active:scale-[0.98]",
+      "bg-transparent text-foreground border border-border hover:border-brand-solid hover:text-brand-text active:scale-[0.98]",
     ghost:
       "bg-transparent text-muted hover:bg-surface-2 hover:text-foreground active:scale-[0.98]",
     destructive:

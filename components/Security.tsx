@@ -83,7 +83,7 @@ export function Security() {
 
             {/* Shield Visual */}
             <ScrollReveal delay={300} className="mt-8">
-              <div className="relative aspect-square max-w-xs rounded-3xl overflow-hidden border border-[var(--border)] bg-surface-2 shadow-2xl p-4 hover:border-brand/40 transition-colors">
+              <div className="relative aspect-square max-w-xs rounded-3xl overflow-hidden border border-[var(--border)] bg-surface-2 shadow-2xl p-4 hover:border-brand-solid/40 transition-colors">
                 <Image
                   src="/images/security-shield.png"
                   alt="Enterprise Security Shield"
@@ -98,8 +98,8 @@ export function Security() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {securityFeatures.map((feat, idx) => (
               <ScrollReveal key={feat.title} delay={idx * 60}>
-                <div className="h-full rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-6 hover:border-brand hover:-translate-y-0.5 transition-all">
-                  <div className="h-10 w-10 rounded-xl bg-brand/10 text-brand-text flex items-center justify-center border border-brand/20">
+                <div className="h-full rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-6 hover:border-brand-solid hover:-translate-y-0.5 transition-all">
+                  <div className="h-10 w-10 rounded-xl bg-brand-solid/10 text-brand-text flex items-center justify-center border border-brand-solid/20">
                     <feat.icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 text-base font-semibold text-[var(--text)] tracking-tight">

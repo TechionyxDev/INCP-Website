@@ -110,7 +110,7 @@ export function InteractiveDemo() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-3xl">
             <ScrollReveal delay={0}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <MousePointerClick className="h-3.5 w-3.5" />
                 Interactive product tour
               </span>
@@ -137,7 +137,7 @@ export function InteractiveDemo() {
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-brand bg-brand/10 hover:bg-brand hover:text-brand-foreground px-5 py-2.5 text-xs font-mono font-bold text-brand-text transition-all shadow-md whitespace-nowrap"
+              className="inline-flex items-center gap-2 rounded-full border border-brand-solid bg-brand-solid/10 hover:bg-brand-solid hover:text-brand-foreground px-5 py-2.5 text-xs font-mono font-bold text-brand-text transition-all shadow-md whitespace-nowrap"
             >
               <span>OPEN THE LIVE APP</span>
               <ExternalLink className="h-3.5 w-3.5" />
@@ -156,8 +156,8 @@ export function InteractiveDemo() {
                   onClick={() => setScreen(m.id)}
                   className={`p-4 rounded-2xl border text-left transition-all ${
                     on
-                      ? "border-brand bg-[var(--surface-1)] shadow-xl shadow-brand/10 -translate-y-1"
-                      : "border-[var(--border)] bg-[var(--surface-1)] hover:border-brand/40"
+                      ? "border-brand-solid bg-[var(--surface-1)] shadow-xl shadow-brand -translate-y-1"
+                      : "border-[var(--border)] bg-[var(--surface-1)] hover:border-brand-solid/40"
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2">
@@ -196,14 +196,14 @@ export function InteractiveDemo() {
               <ul className="mt-3 space-y-3">
                 {active.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-sm text-[var(--text)]">
-                    <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-brand shrink-0" />
+                    <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-brand-solid shrink-0" />
                     <span className="leading-snug">{b}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-brand/30 bg-brand/5 p-6">
+            <div className="rounded-2xl border border-brand-solid/30 bg-brand-solid/5 p-6">
               <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.18em] text-brand-text font-bold">
                 <MousePointerClick className="h-3.5 w-3.5" />
                 Try it in the panel above

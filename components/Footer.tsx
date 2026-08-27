@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
           {/* Brand */}
           <div className="flex items-center gap-2.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-brand" />
+            <span className="h-2.5 w-2.5 rounded-full bg-brand-solid" />
             <span className="font-bold text-sm text-[var(--text)]">INCP</span>
             <span className="text-muted">· Inventory Network Coordination Platform</span>
           </div>

@@ -86,7 +86,7 @@ export function LiveFeatures() {
               onClick={() => setActiveTab(idx)}
               className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
                 activeTab === idx
-                  ? "bg-brand text-brand-foreground"
+                  ? "bg-brand-solid text-brand-foreground"
                   : "text-muted hover:text-[var(--text)] hover:bg-[var(--surface-1)]"
               }`}
             >

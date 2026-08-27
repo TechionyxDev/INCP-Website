@@ -41,9 +41,9 @@ export function Features() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Bento Item 1: Inventory Table (Wide 2-col on lg) */}
           <ScrollReveal delay={0} className="lg:col-span-2">
-            <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-6 sm:p-8 flex flex-col justify-between overflow-hidden group hover:border-brand transition-all">
+            <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-6 sm:p-8 flex flex-col justify-between overflow-hidden group hover:border-brand-solid transition-all">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-xl bg-brand/10 text-brand-text p-2.5 border border-brand/20">
+                <div className="inline-flex items-center gap-2 rounded-xl bg-brand-solid/10 text-brand-text p-2.5 border border-brand-solid/20">
                   <Layers className="h-5 w-5" />
                 </div>
                 <h3 className="mt-4 text-xl font-bold text-[var(--text)] tracking-tight">
@@ -68,9 +68,9 @@ export function Features() {
 
           {/* Bento Item 2: Transfer Lifecycle */}
           <ScrollReveal delay={100} className="lg:col-span-1">
-            <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-6 sm:p-8 flex flex-col justify-between overflow-hidden group hover:border-brand transition-all">
+            <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-6 sm:p-8 flex flex-col justify-between overflow-hidden group hover:border-brand-solid transition-all">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-xl bg-brand-muted/20 text-brand-text p-2.5 border border-brand-hover/30">
+                <div className="inline-flex items-center gap-2 rounded-xl bg-brand-muted/20 text-brand-text p-2.5 border border-brand-solid/30">
                   <ArrowLeftRight className="h-5 w-5" />
                 </div>
                 <h3 className="mt-4 text-xl font-bold text-[var(--text)] tracking-tight">
@@ -94,9 +94,9 @@ export function Features() {
 
           {/* Bento Item 3: Analytics & Exporting */}
           <ScrollReveal delay={200} className="lg:col-span-1">
-            <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-6 sm:p-8 flex flex-col justify-between overflow-hidden group hover:border-brand transition-all">
+            <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-6 sm:p-8 flex flex-col justify-between overflow-hidden group hover:border-brand-solid transition-all">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-xl bg-brand/10 text-brand-text p-2.5 border border-brand/20">
+                <div className="inline-flex items-center gap-2 rounded-xl bg-brand-solid/10 text-brand-text p-2.5 border border-brand-solid/20">
                   <BarChart3 className="h-5 w-5" />
                 </div>
                 <h3 className="mt-4 text-xl font-bold text-[var(--text)] tracking-tight">
@@ -120,9 +120,9 @@ export function Features() {
 
           {/* Bento Item 4: Shift Logs & Discrepancies (Wide 2-col on lg) */}
           <ScrollReveal delay={300} className="lg:col-span-2">
-            <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-6 sm:p-8 flex flex-col justify-between overflow-hidden group hover:border-brand transition-all">
+            <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-6 sm:p-8 flex flex-col justify-between overflow-hidden group hover:border-brand-solid transition-all">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-xl bg-brand-muted/20 text-brand-text p-2.5 border border-brand-hover/30">
+                <div className="inline-flex items-center gap-2 rounded-xl bg-brand-muted/20 text-brand-text p-2.5 border border-brand-solid/30">
                   <FileCheck2 className="h-5 w-5" />
                 </div>
                 <h3 className="mt-4 text-xl font-bold text-[var(--text)] tracking-tight">
@@ -148,25 +148,25 @@ export function Features() {
 
         {/* Feature Pill Highlights */}
         <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand transition-colors">
+          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand-solid transition-colors">
             <Lock className="h-5 w-5 text-brand-text mx-auto" />
             <div className="mt-2 text-sm font-semibold text-[var(--text)]">6-Tier RBAC</div>
             <div className="text-xs text-muted mt-1">Super Admin to Site Official</div>
           </div>
 
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand transition-colors">
+          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand-solid transition-colors">
             <UploadCloud className="h-5 w-5 text-brand-text mx-auto" />
             <div className="mt-2 text-sm font-semibold text-[var(--text)]">CSV Bulk Import</div>
             <div className="text-xs text-muted mt-1">Items, Locations, Suppliers, Stock</div>
           </div>
 
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand transition-colors">
+          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand-solid transition-colors">
             <FileSpreadsheet className="h-5 w-5 text-brand-text mx-auto" />
             <div className="mt-2 text-sm font-semibold text-[var(--text)]">SLA Breach Jobs</div>
             <div className="text-xs text-muted mt-1">Auto-escalation every 15 min</div>
           </div>
 
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand transition-colors">
+          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-5 text-center hover:border-brand-solid transition-colors">
             <FileText className="h-5 w-5 text-brand-text mx-auto" />
             <div className="mt-2 text-sm font-semibold text-[var(--text)]">PDF & CSV Reports</div>
             <div className="text-xs text-muted mt-1">Styled chromedp & lite exports</div>

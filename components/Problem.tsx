@@ -68,8 +68,8 @@ export function Problem() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {problems.map((item, idx) => (
             <ScrollReveal key={item.title} delay={idx * 80}>
-              <div className="group h-full rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-7 transition-all duration-300 hover:border-brand hover:-translate-y-1 hover:shadow-lg">
-                <div className="h-11 w-11 rounded-xl bg-brand/10 text-brand-text flex items-center justify-center border border-brand/20 group-hover:scale-105 transition-transform">
+              <div className="group h-full rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-7 transition-all duration-300 hover:border-brand-solid hover:-translate-y-1 hover:shadow-lg">
+                <div className="h-11 w-11 rounded-xl bg-brand-solid/10 text-brand-text flex items-center justify-center border border-brand-solid/20 group-hover:scale-105 transition-transform">
                   <item.icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-[var(--text)] tracking-tight">
@@ -84,7 +84,7 @@ export function Problem() {
 
           {/* The Solution Fix Card */}
           <ScrollReveal delay={400} className="md:col-span-2 lg:col-span-1">
-            <div className="h-full rounded-2xl border border-brand-hover/50 bg-surface-1 p-7 flex flex-col justify-between relative overflow-hidden group hover:border-brand transition-colors">
+            <div className="h-full rounded-2xl border border-brand-solid/50 bg-surface-1 p-7 flex flex-col justify-between relative overflow-hidden group hover:border-brand-solid transition-colors">
               <div>
                 <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-brand-text">
                   The INCP Fix
@@ -99,7 +99,7 @@ export function Problem() {
               </div>
 
               {/* Illustration Thumbnail */}
-              <div className="relative mt-6 h-28 w-full rounded-xl overflow-hidden border border-brand-hover/30 bg-surface-1">
+              <div className="relative mt-6 h-28 w-full rounded-xl overflow-hidden border border-brand-solid/30 bg-surface-1">
                 <Image
                   src="/images/problem-fragmented.png"
                   alt="Fragmented operations unified"

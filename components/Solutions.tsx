@@ -63,10 +63,10 @@ export function Solutions() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
           {solutions.map((item, idx) => (
             <ScrollReveal key={item.title} delay={idx * 100}>
-              <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-7 flex flex-col justify-between group hover:border-brand hover:-translate-y-1 transition-all overflow-hidden">
+              <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-7 flex flex-col justify-between group hover:border-brand-solid hover:-translate-y-1 transition-all overflow-hidden">
                 <div>
                   <div className="flex items-center justify-between">
-                    <div className="h-11 w-11 rounded-xl bg-brand/10 text-brand-text flex items-center justify-center border border-brand/20 group-hover:scale-105 transition-transform">
+                    <div className="h-11 w-11 rounded-xl bg-brand-solid/10 text-brand-text flex items-center justify-center border border-brand-solid/20 group-hover:scale-105 transition-transform">
                       <item.icon className="h-5 w-5" />
                     </div>
                   </div>

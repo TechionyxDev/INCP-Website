@@ -23,7 +23,7 @@ export function ArchitectureMatrix() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
               <Cpu className="h-3.5 w-3.5" />
               Core Architecture
             </span>
@@ -51,7 +51,7 @@ export function ArchitectureMatrix() {
               onClick={() => setActiveTab("topology")}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
                 activeTab === "topology"
-                  ? "bg-brand text-brand-foreground shadow-lg shadow-brand/25"
+                  ? "bg-brand-solid text-brand-foreground shadow-lg shadow-brand"
                   : "text-muted hover:text-foreground hover:bg-[var(--surface-2)]"
               }`}
             >
@@ -62,7 +62,7 @@ export function ArchitectureMatrix() {
               onClick={() => setActiveTab("shifts")}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
                 activeTab === "shifts"
-                  ? "bg-brand text-brand-foreground shadow-lg shadow-brand/25"
+                  ? "bg-brand-solid text-brand-foreground shadow-lg shadow-brand"
                   : "text-muted hover:text-foreground hover:bg-[var(--surface-2)]"
               }`}
             >
@@ -73,7 +73,7 @@ export function ArchitectureMatrix() {
               onClick={() => setActiveTab("predictive")}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
                 activeTab === "predictive"
-                  ? "bg-brand text-brand-foreground shadow-lg shadow-brand/25"
+                  ? "bg-brand-solid text-brand-foreground shadow-lg shadow-brand"
                   : "text-muted hover:text-foreground hover:bg-[var(--surface-2)]"
               }`}
             >
@@ -84,7 +84,7 @@ export function ArchitectureMatrix() {
               onClick={() => setActiveTab("rbac")}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
                 activeTab === "rbac"
-                  ? "bg-brand text-brand-foreground shadow-lg shadow-brand/25"
+                  ? "bg-brand-solid text-brand-foreground shadow-lg shadow-brand"
                   : "text-muted hover:text-foreground hover:bg-[var(--surface-2)]"
               }`}
             >
@@ -95,7 +95,7 @@ export function ArchitectureMatrix() {
         </ScrollReveal>
 
         {/* Tab Content Display Area */}
-        <div className="mt-8 rounded-3xl border-2 border-brand-hover/50 bg-surface-1 p-6 sm:p-10 shadow-2xl">
+        <div className="mt-8 rounded-3xl border-2 border-brand-solid/50 bg-surface-1 p-6 sm:p-10 shadow-2xl">
           {activeTab === "topology" && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] flex flex-col justify-between">
@@ -112,7 +112,7 @@ export function ArchitectureMatrix() {
                 </div>
               </div>
 
-              <div className="p-6 rounded-2xl border border-brand/40 bg-brand-muted/15 flex flex-col justify-between">
+              <div className="p-6 rounded-2xl border border-brand-solid/40 bg-brand-muted/15 flex flex-col justify-between">
                 <div>
                   <div className="text-xs font-mono text-brand-text font-bold uppercase">Tier 02 // Level 2</div>
                   <h3 className="mt-2 text-xl font-bold text-foreground font-sans">Regional Consolidation Hubs</h3>
@@ -121,7 +121,7 @@ export function ArchitectureMatrix() {
                     PO shipments, and approve field site requisition orders.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-brand/20 text-[11px] font-mono text-foreground font-semibold">
+                <div className="mt-6 pt-4 border-t border-brand-solid/20 text-[11px] font-mono text-foreground font-semibold">
                   • Inter-Hub Freight Routing & Custody
                 </div>
               </div>
@@ -188,7 +188,7 @@ export function ArchitectureMatrix() {
                     <span>Physical Count:</span>
                     <span className="text-brand-text font-bold">1,265 Units (-15 Discrepancy)</span>
                   </div>
-                  <div className="mt-4 p-2.5 rounded-lg bg-brand-muted/20 border border-brand/40 text-brand-foreground text-[11px]">
+                  <div className="mt-4 p-2.5 rounded-lg bg-brand-muted/20 border border-brand-solid/40 text-brand-foreground text-[11px]">
                     FLAGGED: Anomaly reported to Hub Manager and logged in Immutable Audit Trail.
                   </div>
                 </div>
@@ -235,10 +235,10 @@ export function ArchitectureMatrix() {
                       <span className="text-brand-text font-bold">Stockout in 4.2 Days</span>
                     </div>
                     <div className="h-2 w-full bg-surface-2 rounded-full mt-1.5 overflow-hidden">
-                      <div className="h-full bg-brand rounded-full w-[85%]" />
+                      <div className="h-full bg-brand-solid rounded-full w-[85%]" />
                     </div>
                   </div>
-                  <div className="p-2.5 rounded-lg bg-brand-muted/20 border border-brand/40 text-brand-foreground text-[11px]">
+                  <div className="p-2.5 rounded-lg bg-brand-muted/20 border border-brand-solid/40 text-brand-foreground text-[11px]">
                     ACTION TAKEN: Automated PO #PO-941 drafted for Supplier &quot;Apex Metal Corp&quot; (Avg Lead: 3 days).
                   </div>
                 </div>
@@ -273,7 +273,7 @@ export function ArchitectureMatrix() {
                 <div className="text-foreground font-bold mt-1">Shift Supervisor</div>
                 <div className="text-[10px] text-muted mt-2">Opening snapshots, shift close signoff.</div>
               </div>
-              <div className="p-4 rounded-xl border border-brand/40 bg-brand-muted/20">
+              <div className="p-4 rounded-xl border border-brand-solid/40 bg-brand-muted/20">
                 <div className="text-brand-text font-bold">LEVEL 06</div>
                 <div className="text-foreground font-bold mt-1">Site Official</div>
                 <div className="text-[10px] text-foreground mt-2">Material usage scan, mobile QR issue.</div>

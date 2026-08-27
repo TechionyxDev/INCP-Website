@@ -78,7 +78,7 @@ export function PricingDeploy() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
               <Boxes className="h-3.5 w-3.5" />
               Deployment & Onboarding
             </span>
@@ -105,13 +105,13 @@ export function PricingDeploy() {
               <div
                 className={`relative h-full rounded-3xl p-8 flex flex-col justify-between transition-all ${
                   tier.popular
-                    ? "border-2 border-brand bg-surface-1 shadow-2xl shadow-brand/20 -translate-y-2"
-                    : "border border-[var(--border)] bg-[var(--surface-1)] hover:border-brand"
+                    ? "border-2 border-brand-solid bg-surface-1 shadow-2xl shadow-brand -translate-y-2"
+                    : "border border-[var(--border)] bg-[var(--surface-1)] hover:border-brand-solid"
                 }`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand px-4 py-1 text-xs font-mono font-bold text-brand-foreground uppercase tracking-wider shadow-lg">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-solid/40 bg-brand-solid px-4 py-1 text-xs font-mono font-bold text-brand-foreground uppercase tracking-wider shadow-lg">
                       <Sparkles className="h-3.5 w-3.5" />
                       MOST DEPLOYED
                     </span>
@@ -139,7 +139,7 @@ export function PricingDeploy() {
                   <ul className="mt-6 space-y-3">
                     {tier.features.map((feat) => (
                       <li key={feat} className="flex items-start gap-3 text-xs text-[var(--text)] font-sans">
-                        <span className="h-4 w-4 rounded-full bg-brand/15 text-brand-text border border-brand/30 flex items-center justify-center shrink-0 mt-0.5">
+                        <span className="h-4 w-4 rounded-full bg-brand-solid/15 text-brand-text border border-brand-solid/30 flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="h-2.5 w-2.5" />
                         </span>
                         <span className="leading-snug">{feat}</span>
@@ -153,8 +153,8 @@ export function PricingDeploy() {
                     href="#contact-form"
                     className={`inline-flex items-center justify-center w-full h-12 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
                       tier.popular
-                        ? "bg-brand hover:bg-brand-hover text-brand-foreground shadow-lg shadow-brand/30"
-                        : "border border-[var(--border)] hover:border-brand hover:text-brand-text bg-surface-1 text-foreground"
+                        ? "bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground shadow-lg shadow-brand"
+                        : "border border-[var(--border)] hover:border-brand-solid hover:text-brand-text bg-surface-1 text-foreground"
                     }`}
                   >
                     Request Deployment Spec
@@ -168,7 +168,7 @@ export function PricingDeploy() {
         {/* Integrated Instant Contact / Demo Request Form */}
         <div id="contact-form" className="mt-20">
           <ScrollReveal delay={400}>
-            <div className="relative overflow-hidden rounded-3xl border-2 border-brand-hover/50 bg-surface-1 px-6 sm:px-12 py-14 sm:py-20 shadow-2xl">
+            <div className="relative overflow-hidden rounded-3xl border-2 border-brand-solid/50 bg-surface-1 px-6 sm:px-12 py-14 sm:py-20 shadow-2xl">
             <div className="absolute inset-0 -z-10 opacity-30">
               <Image
                 src="/images/cta-background.png"
@@ -179,7 +179,7 @@ export function PricingDeploy() {
             </div>
 
             <div className="relative max-w-2xl mx-auto text-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <Sparkles className="h-3.5 w-3.5" />
                 Direct Engineering Access
               </span>
@@ -193,7 +193,7 @@ export function PricingDeploy() {
               </p>
 
               {submitted ? (
-                <div className="mt-8 p-6 rounded-2xl bg-brand-muted/30 border border-brand/50 text-brand-foreground font-mono text-sm flex items-center justify-center gap-3 animate-fade-in">
+                <div className="mt-8 p-6 rounded-2xl bg-brand-muted/30 border border-brand-solid/50 text-brand-foreground font-mono text-sm flex items-center justify-center gap-3 animate-fade-in">
                   <CheckCircle2 className="h-6 w-6 text-brand-text shrink-0" />
                   <span>Deployment request received. Our solutions team will contact {email} within 1 business day.</span>
                 </div>
@@ -210,7 +210,7 @@ export function PricingDeploy() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="vp.logistics@enterprise.com"
-                        className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                        className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
                       />
                     </div>
                     <div>
@@ -223,7 +223,7 @@ export function PricingDeploy() {
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
                         placeholder="Apex Logistics Corp"
-                        className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                        className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
                       />
                     </div>
                   </div>
@@ -235,7 +235,7 @@ export function PricingDeploy() {
                     <select
                       value={nodes}
                       onChange={(e) => setNodes(e.target.value)}
-                      className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors font-mono"
+                      className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors font-mono"
                     >
                       <option value="1-5">1 - 5 Locations (Regional Pilot)</option>
                       <option value="5-20">5 - 20 Locations (Multi-Hub Cluster)</option>
@@ -246,7 +246,7 @@ export function PricingDeploy() {
 
                   <button
                     type="submit"
-                    className="w-full h-14 rounded-xl bg-brand hover:bg-brand-hover active:scale-[0.99] font-mono text-xs font-bold text-brand-foreground uppercase tracking-wider transition-all shadow-xl shadow-brand/30 flex items-center justify-center gap-2"
+                    className="w-full h-14 rounded-xl bg-brand-solid hover:bg-brand-solid-hover active:scale-[0.99] font-mono text-xs font-bold text-brand-foreground uppercase tracking-wider transition-all shadow-xl shadow-brand flex items-center justify-center gap-2"
                   >
                     Submit Deployment Request
                     <ArrowRight className="h-4 w-4" />

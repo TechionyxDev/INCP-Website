@@ -98,7 +98,7 @@ export function Platform() {
 
         {/* Real App Screenshot Showcase */}
         <ScrollReveal delay={300} className="mt-14">
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface-2)] p-3 sm:p-4 shadow-2xl overflow-hidden hover:border-brand/40 transition-colors">
+          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface-2)] p-3 sm:p-4 shadow-2xl overflow-hidden hover:border-brand-solid/40 transition-colors">
             <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-surface-2">
               <Image
                 src="/images/screenshot-dashboard.png"
@@ -118,10 +118,10 @@ export function Platform() {
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {pillars.map((item, idx) => (
             <ScrollReveal key={item.title} delay={idx * 60}>
-              <div className="group h-full rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-6 transition-all duration-300 hover:border-brand hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between">
+              <div className="group h-full rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-6 transition-all duration-300 hover:border-brand-solid hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between">
-                    <div className="h-10 w-10 rounded-xl bg-brand/10 text-brand-text flex items-center justify-center border border-brand/20 group-hover:scale-105 transition-transform">
+                    <div className="h-10 w-10 rounded-xl bg-brand-solid/10 text-brand-text flex items-center justify-center border border-brand-solid/20 group-hover:scale-105 transition-transform">
                       <item.icon className="h-5 w-5" />
                     </div>
                     <span className="font-mono text-xs text-muted">

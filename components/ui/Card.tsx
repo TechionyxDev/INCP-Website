@@ -11,7 +11,7 @@ export function Card({ children, className = "", hoverEffect = true }: CardProps
     <div
       className={`rounded-2xl border border-border bg-surface-1 p-6 shadow-sm transition-all duration-300 ${
         hoverEffect
-          ? "hover:border-brand/60 hover:-translate-y-1 hover:shadow-lg"
+          ? "hover:border-border-hover hover:-translate-y-1 hover:shadow-lg"
           : ""
       } ${className}`}
     >

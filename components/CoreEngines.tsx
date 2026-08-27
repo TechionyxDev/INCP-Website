@@ -105,7 +105,7 @@ export function CoreEngines() {
                 <div className="mt-8 pt-6 border-t border-[var(--border)] space-y-1.5 font-mono text-xs text-muted">
                   {eng.specs.map((s) => (
                     <div key={s} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 bg-brand" />
+                      <span className="h-1.5 w-1.5 bg-brand-solid" />
                       <span>{s}</span>
                     </div>
                   ))}

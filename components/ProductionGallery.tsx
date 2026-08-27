@@ -91,7 +91,7 @@ export function ProductionGallery() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-3xl">
             <ScrollReveal delay={0}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <Terminal className="h-3.5 w-3.5" />
                 Live Production Interface
               </span>
@@ -110,7 +110,7 @@ export function ProductionGallery() {
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-brand bg-brand/10 hover:bg-brand hover:text-brand-foreground px-5 py-2.5 text-xs font-mono font-bold text-brand-text transition-all shadow-md"
+              className="inline-flex items-center gap-2 rounded-full border border-brand-solid bg-brand-solid/10 hover:bg-brand-solid hover:text-brand-foreground px-5 py-2.5 text-xs font-mono font-bold text-brand-text transition-all shadow-md"
             >
               <span>ACCESS PRODUCTION APP (iimcp.vercel.app)</span>
               <ExternalLink className="h-3.5 w-3.5" />
@@ -127,8 +127,8 @@ export function ProductionGallery() {
                 onClick={() => setActiveModule(idx)}
                 className={`p-4 rounded-2xl border text-left transition-all ${
                   activeModule === idx
-                    ? "border-brand bg-surface-1 shadow-xl shadow-brand/10 -translate-y-1"
-                    : "border-[var(--border)] bg-[var(--surface-1)] hover:border-brand/40"
+                    ? "border-brand-solid bg-surface-1 shadow-xl shadow-brand -translate-y-1"
+                    : "border-[var(--border)] bg-[var(--surface-1)] hover:border-brand-solid/40"
                 }`}
               >
                 <div className="flex items-center justify-between">
@@ -151,7 +151,7 @@ export function ProductionGallery() {
 
         {/* Active Module Showcase Deck */}
         <ScrollReveal delay={400} className="mt-6">
-          <div className="rounded-3xl border-2 border-brand-hover/50 bg-surface-1 p-4 sm:p-7 shadow-2xl">
+          <div className="rounded-3xl border-2 border-brand-solid/50 bg-surface-1 p-4 sm:p-7 shadow-2xl">
             {/* Top Bar info */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-[var(--border)] gap-2">
               <div>
@@ -163,7 +163,7 @@ export function ProductionGallery() {
                 </p>
               </div>
               <div className="flex items-center gap-2 text-xs font-mono text-muted">
-                <span className="h-2 w-2 rounded-full bg-brand animate-pulse" />
+                <span className="h-2 w-2 rounded-full bg-brand-solid animate-pulse" />
                 <span>INCP Cluster Node Live</span>
               </div>
             </div>

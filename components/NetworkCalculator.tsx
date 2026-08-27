@@ -21,7 +21,7 @@ export function NetworkCalculator() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
               <Calculator className="h-3.5 w-3.5" />
               Network ROI & Loss Prevention
             </span>
@@ -44,7 +44,7 @@ export function NetworkCalculator() {
 
         {/* Interactive Calculator Container */}
         <ScrollReveal delay={300} className="mt-14">
-          <div className="rounded-3xl border-2 border-brand-hover/50 bg-surface-1 p-6 sm:p-10 shadow-2xl">
+          <div className="rounded-3xl border-2 border-brand-solid/50 bg-surface-1 p-6 sm:p-10 shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               {/* Left Column: Sliders (6 cols) */}
               <div className="lg:col-span-6 space-y-8">
@@ -107,7 +107,7 @@ export function NetworkCalculator() {
               {/* Right Column: Calculated Impact Dashboard (6 cols) */}
               <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Metric 1: Capital Saved */}
-                <div className="sm:col-span-2 p-6 rounded-2xl border border-brand/40 bg-brand-muted/20">
+                <div className="sm:col-span-2 p-6 rounded-2xl border border-brand-solid/40 bg-brand-muted/20">
                   <div className="flex items-center gap-2 text-xs font-mono text-brand-text uppercase tracking-wider font-bold">
                     <DollarSign className="h-4 w-4" />
                     Estimated Capital Loss Prevented / Year

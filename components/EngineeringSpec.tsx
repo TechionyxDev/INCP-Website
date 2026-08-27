@@ -71,7 +71,7 @@ export function EngineeringSpec() {
                 <th className="py-4 px-6 font-bold uppercase w-3/8 text-muted">
                   Conventional ERP / Siloed Spreadsheets
                 </th>
-                <th className="py-4 px-6 font-bold uppercase w-3/8 text-brand-text bg-brand/5">
+                <th className="py-4 px-6 font-bold uppercase w-3/8 text-brand-text bg-brand-solid/5">
                   INCP Coordination Platform
                 </th>
               </tr>
@@ -88,7 +88,7 @@ export function EngineeringSpec() {
                       <span>{row.traditional}</span>
                     </div>
                   </td>
-                  <td className="py-5 px-6 text-[var(--text)] font-sans text-xs leading-relaxed bg-brand/5 font-medium">
+                  <td className="py-5 px-6 text-[var(--text)] font-sans text-xs leading-relaxed bg-brand-solid/5 font-medium">
                     <div className="flex items-start gap-2.5">
                       <Check className="h-4 w-4 text-brand-text shrink-0 mt-0.5" />
                       <span>{row.incp}</span>

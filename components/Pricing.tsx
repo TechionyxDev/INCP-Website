@@ -89,13 +89,13 @@ export function Pricing() {
               <div
                 className={`relative h-full rounded-3xl p-8 flex flex-col justify-between transition-all ${
                   tier.highlight
-                    ? "border-2 border-brand bg-brand-muted/10 shadow-2xl shadow-brand/10 -translate-y-2"
-                    : "border border-[var(--border)] bg-[var(--surface-1)] hover:border-brand"
+                    ? "border-2 border-brand-solid bg-brand-muted/10 shadow-2xl shadow-brand -translate-y-2"
+                    : "border border-[var(--border)] bg-[var(--surface-1)] hover:border-brand-solid"
                 }`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand px-3.5 py-1 text-xs font-semibold text-brand-foreground uppercase tracking-wider shadow-md">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-solid/40 bg-brand-solid px-3.5 py-1 text-xs font-semibold text-brand-foreground uppercase tracking-wider shadow-md">
                       <Sparkles className="h-3.5 w-3.5" />
                       {tier.popular}
                     </span>
@@ -125,7 +125,7 @@ export function Pricing() {
                   <ul className="mt-6 space-y-3">
                     {tier.features.map((feat) => (
                       <li key={feat} className="flex items-start gap-3 text-xs text-[var(--text)]">
-                        <span className="h-4 w-4 rounded-full bg-brand/15 text-brand-text border border-brand/30 flex items-center justify-center shrink-0 mt-0.5">
+                        <span className="h-4 w-4 rounded-full bg-brand-solid/15 text-brand-text border border-brand-solid/30 flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="h-2.5 w-2.5" />
                         </span>
                         <span className="leading-snug">{feat}</span>
@@ -139,8 +139,8 @@ export function Pricing() {
                     href="#contact"
                     className={`inline-flex items-center justify-center w-full h-11 rounded-full text-sm font-semibold tracking-tight transition-all ${
                       tier.highlight
-                        ? "bg-brand hover:bg-brand-hover text-brand-foreground shadow-lg shadow-brand/25"
-                        : "border border-[var(--border)] hover:border-brand hover:text-brand-text bg-[var(--surface-1)] text-[var(--text)]"
+                        ? "bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground shadow-lg shadow-brand"
+                        : "border border-[var(--border)] hover:border-brand-solid hover:text-brand-text bg-[var(--surface-1)] text-[var(--text)]"
                     }`}
                   >
                     Contact Sales

@@ -61,7 +61,7 @@ export function SecurityMatrix() {
           {/* Left Column: Heading & Visual (5 cols) */}
           <div className="lg:col-span-5">
             <ScrollReveal delay={0}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <ShieldAlert className="h-3.5 w-3.5" />
                 Zero-Trust Defense Architecture
               </span>
@@ -82,7 +82,7 @@ export function SecurityMatrix() {
             </ScrollReveal>
 
             <ScrollReveal delay={300} className="mt-8">
-              <div className="relative aspect-square max-w-sm rounded-3xl overflow-hidden border-2 border-brand-hover/50 bg-surface-2 p-4 shadow-2xl">
+              <div className="relative aspect-square max-w-sm rounded-3xl overflow-hidden border-2 border-brand-solid/50 bg-surface-2 p-4 shadow-2xl">
                 <Image
                   src="/images/security-shield.png"
                   alt="Enterprise Defense Shield"
@@ -97,10 +97,10 @@ export function SecurityMatrix() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {securitySpecs.map((item, idx) => (
               <ScrollReveal key={item.title} delay={idx * 60}>
-                <div className="h-full rounded-2xl border border-[var(--border)] bg-surface-1 p-6 hover:border-brand transition-all flex flex-col justify-between">
+                <div className="h-full rounded-2xl border border-[var(--border)] bg-surface-1 p-6 hover:border-brand-solid transition-all flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="h-10 w-10 rounded-xl bg-brand/10 text-brand-text flex items-center justify-center border border-brand/20">
+                      <div className="h-10 w-10 rounded-xl bg-brand-solid/10 text-brand-text flex items-center justify-center border border-brand-solid/20">
                         <item.icon className="h-5 w-5" />
                       </div>
                       <span className="font-mono text-[10px] text-muted uppercase font-bold px-2 py-0.5 rounded bg-[var(--surface-2)] border border-[var(--border)]">

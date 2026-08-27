@@ -15,52 +15,61 @@ const config: Config = {
       colors: {
         /* ── Surfaces & text (theme-aware) ───────────────────────── */
         background: rgb("bg"),
+        band: rgb("band"),
         surface: {
           DEFAULT: rgb("surface-1"),
           1: rgb("surface-1"),
           2: rgb("surface-2"),
         },
         foreground: rgb("text"),
-        band: rgb("band"),
         muted: {
           DEFAULT: rgb("text-2"),
           foreground: rgb("text-2"),
+          /* Contrast-safe muted for small text in both themes. */
+          text: rgb("muted-text"),
         },
         border: {
           DEFAULT: rgb("border"),
           hover: rgb("border-hover"),
         },
+        ring: rgb("ring"),
+        "on-brand": rgb("on-brand"),
+        "hero-edge": rgb("hero-edge"),
 
         /* ── Brand ───────────────────────────────────────────────── */
         brand: {
           DEFAULT: rgb("brand"),
           hover: rgb("brand-hover"),
+          accent: rgb("brand-accent"),
           muted: rgb("brand-muted"),
           foreground: rgb("on-brand"),
+          /* Use `solid` for filled buttons and `text` for brand-coloured
+             type; both stay legible in dark theme where the raw brand
+             is only 1.84:1 against the background. */
+          solid: rgb("brand-solid"),
+          "solid-hover": rgb("brand-solid-hover"),
           text: rgb("brand-text"),
         },
-        accent: {
-          DEFAULT: rgb("accent"),
-          dark: rgb("brand-hover"),
-        },
 
-        /* ── Semantic ────────────────────────────────────────────── */
+        /* ── Semantic (DEFAULT = fill, .text = legible as type) ──── */
         success: { DEFAULT: rgb("success"), text: rgb("success-text") },
         warning: { DEFAULT: rgb("warning"), text: rgb("warning-text") },
         info: { DEFAULT: rgb("info"), text: rgb("info-text") },
         destructive: { DEFAULT: rgb("danger"), text: rgb("danger-text") },
 
-        /* ── Legacy aliases (kept so existing markup keeps working) ─ */
-        scarlet: rgb("brand"),
-        crimson: rgb("brand-hover"),
+        /* ── Legacy aliases (older markup keeps resolving) ───────── */
+        scarlet: rgb("brand-solid"),
+        crimson: rgb("brand-solid-hover"),
         silver: rgb("text-2"),
+        accent: {
+          DEFAULT: rgb("brand-accent"),
+          dark: rgb("brand-hover"),
+        },
         "bg-soft": rgb("surface-2"),
         "bg-card": rgb("surface-1"),
         "muted-text": rgb("text-2"),
         "muted-strong": rgb("text"),
         "border-hover": rgb("border-hover"),
-        ink: rgb("bg"),
-        canvas: rgb("bg"),
       },
       boxShadow: {
         sm: "var(--shadow-sm)",
@@ -68,10 +77,10 @@ const config: Config = {
         lg: "var(--shadow-lg)",
         xl: "var(--shadow-lg)",
         "2xl": "var(--shadow-lg)",
-        brand: "0 12px 32px -12px rgb(var(--brand-rgb) / 0.55)",
+        brand: "var(--shadow-brand)",
       },
       ringColor: {
-        DEFAULT: "rgb(var(--accent-rgb) / 0.6)",
+        DEFAULT: "rgb(var(--ring-rgb) / 0.7)",
       },
       fontFamily: {
         sans: ["var(--font-space-grotesk)", "sans-serif"],

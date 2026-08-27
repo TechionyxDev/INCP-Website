@@ -89,7 +89,7 @@ export function PricingSection() {
               <div
                 className={`h-full rounded-2xl p-8 flex flex-col justify-between transition-all ${
                   plan.highlight
-                    ? "bg-[var(--surface-1)] border-2 border-brand shadow-md"
+                    ? "bg-[var(--surface-1)] border-2 border-brand-solid shadow-md"
                     : "bg-[var(--surface-1)] border border-[var(--border)]"
                 }`}
               >
@@ -121,8 +121,8 @@ export function PricingSection() {
                     href="#contact"
                     className={`block w-full text-center py-3 rounded-full text-sm font-semibold transition-all ${
                       plan.highlight
-                        ? "bg-brand hover:bg-brand-hover text-brand-foreground shadow-sm"
-                        : "border border-[var(--border)] hover:border-brand hover:text-brand-text text-[var(--text)]"
+                        ? "bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground shadow-sm"
+                        : "border border-[var(--border)] hover:border-brand-solid hover:text-brand-text text-[var(--text)]"
                     }`}
                   >
                     Contact Sales
@@ -144,7 +144,7 @@ export function PricingSection() {
             </p>
 
             {submitted ? (
-              <div className="mt-8 p-4 rounded-xl bg-brand/10 border border-brand text-[var(--text)] text-sm flex items-center justify-center gap-2.5 animate-fade-in">
+              <div className="mt-8 p-4 rounded-xl bg-brand-solid/10 border border-brand-solid text-[var(--text)] text-sm flex items-center justify-center gap-2.5 animate-fade-in">
                 <CheckCircle2 className="h-5 w-5 text-brand-text shrink-0" />
                 <span>Thank you. Our team will contact {email} within one business day.</span>
               </div>
@@ -156,11 +156,11 @@ export function PricingSection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your work email"
-                  className="flex-1 h-12 rounded-full bg-[var(--surface-2)] border border-[var(--border)] px-5 text-sm text-[var(--text)] placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                  className="flex-1 h-12 rounded-full bg-[var(--surface-2)] border border-[var(--border)] px-5 text-sm text-[var(--text)] placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
                 />
                 <button
                   type="submit"
-                  className="h-12 px-7 rounded-full bg-brand hover:bg-brand-hover text-brand-foreground text-sm font-semibold transition-all shrink-0 inline-flex items-center justify-center gap-2"
+                  className="h-12 px-7 rounded-full bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground text-sm font-semibold transition-all shrink-0 inline-flex items-center justify-center gap-2"
                 >
                   <span>Request Demo</span>
                   <ArrowRight className="h-4 w-4" />

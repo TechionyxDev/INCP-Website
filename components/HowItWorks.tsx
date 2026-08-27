@@ -52,10 +52,10 @@ export function HowItWorks() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
           {steps.map((step, idx) => (
             <ScrollReveal key={step.title} delay={idx * 100}>
-              <div className="relative h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-8 flex flex-col justify-between group hover:border-brand hover:-translate-y-1 transition-all shadow-sm">
+              <div className="relative h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-8 flex flex-col justify-between group hover:border-brand-solid hover:-translate-y-1 transition-all shadow-sm">
                 <div>
                   <div className="flex items-center justify-between">
-                    <div className="h-12 w-12 rounded-2xl bg-brand/10 text-brand-text flex items-center justify-center border border-brand/20 group-hover:scale-110 transition-transform">
+                    <div className="h-12 w-12 rounded-2xl bg-brand-solid/10 text-brand-text flex items-center justify-center border border-brand-solid/20 group-hover:scale-110 transition-transform">
                       <step.icon className="h-6 w-6" />
                     </div>
                     <span className="font-mono text-xl font-bold text-muted">

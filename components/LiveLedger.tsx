@@ -58,7 +58,7 @@ export function LiveLedger() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
               <Database className="h-3.5 w-3.5" />
               The Immutable Truth Layer
             </span>
@@ -84,12 +84,12 @@ export function LiveLedger() {
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Column: Interactive Simulation Console (7 cols) */}
           <ScrollReveal delay={300} className="lg:col-span-7">
-            <div className="h-full rounded-3xl border-2 border-brand-hover/50 bg-surface-1 p-6 flex flex-col justify-between shadow-2xl">
+            <div className="h-full rounded-3xl border-2 border-brand-solid/50 bg-surface-1 p-6 flex flex-col justify-between shadow-2xl">
               <div>
                 {/* Window Bar */}
                 <div className="flex items-center justify-between pb-4 border-b border-[var(--border)] font-mono text-xs text-muted">
                   <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-brand" />
+                    <span className="h-3 w-3 rounded-full bg-brand-solid" />
                     <span className="h-3 w-3 rounded-full bg-brand-muted" />
                     <span className="h-3 w-3 rounded-full bg-silver" />
                     <span className="ml-2 text-foreground font-bold">psql://incp-core-prod:5432/mllc</span>
@@ -102,7 +102,7 @@ export function LiveLedger() {
                   <button
                     onClick={handleTestIllegalMutation}
                     disabled={simulating}
-                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-surface-1 border border-brand/50 hover:bg-brand-hover/20 hover:border-brand py-3 px-4 text-xs font-mono font-bold text-brand-foreground transition-all shadow"
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-surface-1 border border-brand-solid/50 hover:bg-brand-solid-hover/20 hover:border-brand-solid py-3 px-4 text-xs font-mono font-bold text-brand-foreground transition-all shadow"
                   >
                     <ShieldAlert className="h-4 w-4 text-brand-text" />
                     SIMULATE ILLEGAL &quot;UPDATE&quot; QUERY
@@ -111,7 +111,7 @@ export function LiveLedger() {
                   <button
                     onClick={handleTestValidAppend}
                     disabled={simulating}
-                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-brand hover:bg-brand-hover py-3 px-4 text-xs font-mono font-bold text-brand-foreground transition-all shadow-lg shadow-brand/25"
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-solid hover:bg-brand-solid-hover py-3 px-4 text-xs font-mono font-bold text-brand-foreground transition-all shadow-lg shadow-brand"
                   >
                     <ShieldCheck className="h-4 w-4" />
                     SIMULATE APPEND EVENT
@@ -181,8 +181,8 @@ export function LiveLedger() {
                     </div>
                   </div>
 
-                  <div className="p-3.5 rounded-xl border border-brand/30 bg-brand-muted/10 flex items-start gap-3">
-                    <span className="h-6 w-6 rounded-lg bg-brand flex items-center justify-center font-bold text-brand-foreground shrink-0">
+                  <div className="p-3.5 rounded-xl border border-brand-solid/30 bg-brand-muted/10 flex items-start gap-3">
+                    <span className="h-6 w-6 rounded-lg bg-brand-solid flex items-center justify-center font-bold text-brand-foreground shrink-0">
                       02
                     </span>
                     <div>

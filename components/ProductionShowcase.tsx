@@ -75,7 +75,7 @@ export function ProductionShowcase() {
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] bg-[var(--surface-1)] hover:border-brand hover:text-brand-text font-mono text-xs font-bold uppercase tracking-wider transition-colors text-[var(--text)]"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] bg-[var(--surface-1)] hover:border-brand-solid hover:text-brand-text font-mono text-xs font-bold uppercase tracking-wider transition-colors text-[var(--text)]"
             >
               <span>ACCESS LIVE APP (iimcp.vercel.app)</span>
               <ExternalLink className="h-3.5 w-3.5" />
@@ -91,7 +91,7 @@ export function ProductionShowcase() {
               onClick={() => setActiveTab(idx)}
               className={`py-3.5 px-6 font-bold uppercase tracking-wider transition-colors border-b-2 -mb-[1px] ${
                 activeTab === idx
-                  ? "border-brand text-brand-text bg-[var(--surface-1)]"
+                  ? "border-brand-solid text-brand-text bg-[var(--surface-1)]"
                   : "border-transparent text-muted hover:text-[var(--text)]"
               }`}
             >

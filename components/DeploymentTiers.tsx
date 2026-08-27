@@ -94,14 +94,14 @@ export function DeploymentTiers() {
             <ScrollReveal key={plan.name} delay={idx * 80}>
               <div
                 className={`h-full p-8 border-r border-b border-[var(--border)] flex flex-col justify-between ${
-                  plan.highlight ? "bg-brand/5 border-t-2 border-t-brand" : "bg-[var(--surface-1)]"
+                  plan.highlight ? "bg-brand-solid/5 border-t-2 border-t-brand" : "bg-[var(--surface-1)]"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between font-mono text-xs text-muted pb-4 border-b border-[var(--border)]">
                     <span className="text-brand-text font-bold font-mono">{plan.nodes}</span>
                     {plan.highlight && (
-                      <span className="text-[10px] bg-brand text-brand-foreground px-2 py-0.5 font-bold uppercase">
+                      <span className="text-[10px] bg-brand-solid text-brand-foreground px-2 py-0.5 font-bold uppercase">
                         MOST DEPLOYED
                       </span>
                     )}
@@ -133,8 +133,8 @@ export function DeploymentTiers() {
                     href="#contact"
                     className={`block text-center py-3.5 px-6 font-mono text-xs font-bold uppercase tracking-wider transition-colors ${
                       plan.highlight
-                        ? "bg-brand text-brand-foreground hover:bg-brand-hover"
-                        : "border border-[var(--border)] text-[var(--text)] hover:border-brand hover:text-brand-text"
+                        ? "bg-brand-solid text-brand-foreground hover:bg-brand-solid-hover"
+                        : "border border-[var(--border)] text-[var(--text)] hover:border-brand-solid hover:text-brand-text"
                     }`}
                   >
                     Request Deployment Spec
@@ -160,7 +160,7 @@ export function DeploymentTiers() {
             </p>
 
             {submitted ? (
-              <div className="mt-8 p-6 bg-brand/10 border border-brand text-[var(--text)] font-mono text-xs flex items-center justify-center gap-3">
+              <div className="mt-8 p-6 bg-brand-solid/10 border border-brand-solid text-[var(--text)] font-mono text-xs flex items-center justify-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-brand-text shrink-0" />
                 <span>
                   Deployment request received. Our logistics engineering team will contact{" "}
@@ -178,7 +178,7 @@ export function DeploymentTiers() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="logistics.lead@enterprise.com"
-                      className="w-full h-12 bg-[var(--surface-2)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
+                      className="w-full h-12 bg-[var(--surface-2)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover"
                     />
                   </div>
                   <div>
@@ -189,7 +189,7 @@ export function DeploymentTiers() {
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       placeholder="Apex Mining & Logistics Ltd."
-                      className="w-full h-12 bg-[var(--surface-2)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
+                      className="w-full h-12 bg-[var(--surface-2)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover"
                     />
                   </div>
                 </div>
@@ -199,7 +199,7 @@ export function DeploymentTiers() {
                   <select
                     value={nodes}
                     onChange={(e) => setNodes(e.target.value)}
-                    className="w-full h-12 bg-[var(--surface-2)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
+                    className="w-full h-12 bg-[var(--surface-2)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover"
                   >
                     <option value="1-5">1 – 5 Locations (Regional Pilot)</option>
                     <option value="5-20">5 – 20 Locations (Multi-Hub Cluster)</option>
@@ -210,7 +210,7 @@ export function DeploymentTiers() {
 
                 <button
                   type="submit"
-                  className="w-full h-14 bg-brand hover:bg-brand-hover font-mono text-xs font-bold text-brand-foreground uppercase tracking-widest transition-colors flex items-center justify-center gap-2"
+                  className="w-full h-14 bg-brand-solid hover:bg-brand-solid-hover font-mono text-xs font-bold text-brand-foreground uppercase tracking-widest transition-colors flex items-center justify-center gap-2"
                 >
                   <span>SUBMIT DEPLOYMENT REQUEST</span>
                   <ArrowRight className="h-4 w-4" />
