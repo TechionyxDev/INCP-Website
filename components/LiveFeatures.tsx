@@ -56,11 +56,11 @@ export function LiveFeatures() {
   ];
 
   return (
-    <section id="features" className="py-24 sm:py-32 border-t border-[var(--border)] bg-[var(--bg-soft)]">
+    <section id="features" className="py-24 sm:py-32 border-t border-[var(--border)] bg-band">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <ScrollReveal delay={0}>
-            <p className="text-xs font-semibold text-scarlet tracking-wider uppercase">
+            <p className="text-xs font-semibold text-brand-text tracking-wider uppercase">
               Core Capabilities
             </p>
           </ScrollReveal>
@@ -72,7 +72,7 @@ export function LiveFeatures() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-4 text-base text-silver leading-relaxed">
+            <p className="mt-4 text-base text-muted leading-relaxed">
               Designed to give leadership complete visibility while keeping daily workflows fast and intuitive for on-site teams.
             </p>
           </ScrollReveal>
@@ -86,8 +86,8 @@ export function LiveFeatures() {
               onClick={() => setActiveTab(idx)}
               className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
                 activeTab === idx
-                  ? "bg-scarlet text-white"
-                  : "text-silver hover:text-[var(--text)] hover:bg-[var(--card)]"
+                  ? "bg-brand text-brand-foreground"
+                  : "text-muted hover:text-[var(--text)] hover:bg-[var(--surface-1)]"
               }`}
             >
               {item.label}
@@ -102,14 +102,14 @@ export function LiveFeatures() {
             <h3 className="text-2xl font-bold text-[var(--text)] tracking-tight">
               {features[activeTab].title}
             </h3>
-            <p className="text-sm text-silver leading-relaxed">
+            <p className="text-sm text-muted leading-relaxed">
               {features[activeTab].desc}
             </p>
 
             <ul className="space-y-3 pt-2">
               {features[activeTab].bullets.map((b) => (
                 <li key={b} className="flex items-start gap-2.5 text-sm text-[var(--text)]">
-                  <Check className="h-4 w-4 text-scarlet shrink-0 mt-0.5" />
+                  <Check className="h-4 w-4 text-brand-text shrink-0 mt-0.5" />
                   <span>{b}</span>
                 </li>
               ))}
@@ -118,8 +118,8 @@ export function LiveFeatures() {
 
           {/* Right: Clean Screenshot Viewport */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-2 shadow-sm">
-              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-black">
+            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-2 shadow-sm">
+              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-surface-2">
                 <Image
                   src={features[activeTab].image}
                   alt={features[activeTab].title}

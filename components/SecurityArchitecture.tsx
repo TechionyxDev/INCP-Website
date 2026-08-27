@@ -42,7 +42,7 @@ export function SecurityArchitecture() {
       <div className="mx-auto max-w-[1440px] px-4 sm:px-8">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <div className="text-xs font-mono text-scarlet tracking-widest uppercase font-bold">
+            <div className="text-xs font-mono text-brand-text tracking-widest uppercase font-bold">
               [ ENTERPRISE SECURITY // DEFENSE SPECIFICATION ]
             </div>
           </ScrollReveal>
@@ -50,12 +50,12 @@ export function SecurityArchitecture() {
           <ScrollReveal delay={100}>
             <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-[var(--text)] tracking-tight leading-[1.08] font-sans">
               Zero-trust defense. <br />
-              <span className="text-scarlet">Financial-grade immutability.</span>
+              <span className="text-brand-text">Financial-grade immutability.</span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-6 text-sm sm:text-base text-silver leading-relaxed font-sans">
+            <p className="mt-6 text-sm sm:text-base text-muted leading-relaxed font-sans">
               Designed for regulated industries where inventory provenance and chain of custody must
               withstand external compliance audits and zero data tampering.
             </p>
@@ -66,10 +66,10 @@ export function SecurityArchitecture() {
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-[var(--border)]">
           {securitySpecs.map((item, idx) => (
             <ScrollReveal key={item.code} delay={idx * 60}>
-              <div className="h-full p-8 border-r border-b border-[var(--border)] bg-[var(--card)] flex flex-col justify-between hover:bg-[var(--bg-soft)] transition-colors">
+              <div className="h-full p-8 border-r border-b border-[var(--border)] bg-[var(--surface-1)] flex flex-col justify-between hover:bg-[var(--surface-2)] transition-colors">
                 <div>
-                  <div className="flex items-center justify-between font-mono text-xs text-silver pb-4 border-b border-[var(--border)]">
-                    <span className="text-scarlet font-bold font-mono">// {item.code}</span>
+                  <div className="flex items-center justify-between font-mono text-xs text-muted pb-4 border-b border-[var(--border)]">
+                    <span className="text-brand-text font-bold font-mono">// {item.code}</span>
                     <span>ENFORCED AT DB LAYER</span>
                   </div>
 
@@ -77,14 +77,14 @@ export function SecurityArchitecture() {
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-xs sm:text-sm text-silver leading-relaxed font-sans">
+                  <p className="mt-3 text-xs sm:text-sm text-muted leading-relaxed font-sans">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[var(--border)] flex items-center justify-between font-mono text-xs text-silver">
+                <div className="mt-6 pt-4 border-t border-[var(--border)] flex items-center justify-between font-mono text-xs text-muted">
                   <span>Standard: SOC 2 Ready</span>
-                  <span className="text-scarlet font-bold">VERIFIED</span>
+                  <span className="text-brand-text font-bold">VERIFIED</span>
                 </div>
               </div>
             </ScrollReveal>

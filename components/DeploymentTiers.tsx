@@ -65,11 +65,11 @@ export function DeploymentTiers() {
   ];
 
   return (
-    <section id="deployment" className="py-24 sm:py-32 border-b border-[var(--border)] bg-[var(--bg-soft)]">
+    <section id="deployment" className="py-24 sm:py-32 border-b border-[var(--border)] bg-band">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-8">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <div className="text-xs font-mono text-scarlet tracking-widest uppercase font-bold">
+            <div className="text-xs font-mono text-brand-text tracking-widest uppercase font-bold">
               [ DEPLOYMENT SPECIFICATION // TOPOLOGY ROLLOUT ]
             </div>
           </ScrollReveal>
@@ -77,12 +77,12 @@ export function DeploymentTiers() {
           <ScrollReveal delay={100}>
             <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-[var(--text)] tracking-tight leading-[1.08] font-sans">
               Deployment topologies. <br />
-              <span className="text-scarlet">Engineered for your network scale.</span>
+              <span className="text-brand-text">Engineered for your network scale.</span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-6 text-sm sm:text-base text-silver leading-relaxed font-sans">
+            <p className="mt-6 text-sm sm:text-base text-muted leading-relaxed font-sans">
               Every tier includes the core immutable ledger, zero-trust RBAC, and automated CSV migration pipelines.
             </p>
           </ScrollReveal>
@@ -94,14 +94,14 @@ export function DeploymentTiers() {
             <ScrollReveal key={plan.name} delay={idx * 80}>
               <div
                 className={`h-full p-8 border-r border-b border-[var(--border)] flex flex-col justify-between ${
-                  plan.highlight ? "bg-scarlet/5 border-t-2 border-t-scarlet" : "bg-[var(--card)]"
+                  plan.highlight ? "bg-brand/5 border-t-2 border-t-brand" : "bg-[var(--surface-1)]"
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between font-mono text-xs text-silver pb-4 border-b border-[var(--border)]">
-                    <span className="text-scarlet font-bold font-mono">{plan.nodes}</span>
+                  <div className="flex items-center justify-between font-mono text-xs text-muted pb-4 border-b border-[var(--border)]">
+                    <span className="text-brand-text font-bold font-mono">{plan.nodes}</span>
                     {plan.highlight && (
-                      <span className="text-[10px] bg-scarlet text-white px-2 py-0.5 font-bold uppercase">
+                      <span className="text-[10px] bg-brand text-brand-foreground px-2 py-0.5 font-bold uppercase">
                         MOST DEPLOYED
                       </span>
                     )}
@@ -110,7 +110,7 @@ export function DeploymentTiers() {
                   <h3 className="mt-6 text-2xl font-bold text-[var(--text)] tracking-tight font-sans">
                     {plan.name}
                   </h3>
-                  <p className="mt-2 text-xs text-silver font-sans leading-relaxed">
+                  <p className="mt-2 text-xs text-muted font-sans leading-relaxed">
                     {plan.desc}
                   </p>
 
@@ -118,10 +118,10 @@ export function DeploymentTiers() {
                     Custom Deployment
                   </div>
 
-                  <ul className="mt-6 space-y-3 font-mono text-xs text-silver">
+                  <ul className="mt-6 space-y-3 font-mono text-xs text-muted">
                     {plan.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">
-                        <Check className="h-4 w-4 text-scarlet shrink-0 mt-0.5" />
+                        <Check className="h-4 w-4 text-brand-text shrink-0 mt-0.5" />
                         <span className="text-[var(--text)] font-sans">{f}</span>
                       </li>
                     ))}
@@ -133,8 +133,8 @@ export function DeploymentTiers() {
                     href="#contact"
                     className={`block text-center py-3.5 px-6 font-mono text-xs font-bold uppercase tracking-wider transition-colors ${
                       plan.highlight
-                        ? "bg-scarlet text-white hover:bg-crimson"
-                        : "border border-[var(--border)] text-[var(--text)] hover:border-scarlet hover:text-scarlet"
+                        ? "bg-brand text-brand-foreground hover:bg-brand-hover"
+                        : "border border-[var(--border)] text-[var(--text)] hover:border-brand hover:text-brand-text"
                     }`}
                   >
                     Request Deployment Spec
@@ -146,22 +146,22 @@ export function DeploymentTiers() {
         </div>
 
         {/* Access Request Form */}
-        <div id="contact" className="mt-16 border border-[var(--border)] bg-[var(--card)] p-8 sm:p-12">
+        <div id="contact" className="mt-16 border border-[var(--border)] bg-[var(--surface-1)] p-8 sm:p-12">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="text-xs font-mono text-scarlet tracking-widest uppercase font-bold">
+            <div className="text-xs font-mono text-brand-text tracking-widest uppercase font-bold">
               [ DIRECT ENGINEERING ENGAGEMENT ]
             </div>
             <h3 className="mt-3 text-2xl sm:text-3xl font-extrabold text-[var(--text)] font-sans">
               Schedule a technical network walkthrough.
             </h3>
-            <p className="mt-3 text-xs sm:text-sm text-silver font-sans">
+            <p className="mt-3 text-xs sm:text-sm text-muted font-sans">
               Our systems engineers will model your active location topology and demonstrate atomic
               reconciliation on live hardware.
             </p>
 
             {submitted ? (
-              <div className="mt-8 p-6 bg-scarlet/10 border border-scarlet text-[var(--text)] font-mono text-xs flex items-center justify-center gap-3">
-                <CheckCircle2 className="h-5 w-5 text-scarlet shrink-0" />
+              <div className="mt-8 p-6 bg-brand/10 border border-brand text-[var(--text)] font-mono text-xs flex items-center justify-center gap-3">
+                <CheckCircle2 className="h-5 w-5 text-brand-text shrink-0" />
                 <span>
                   Deployment request received. Our logistics engineering team will contact{" "}
                   <strong>{email}</strong> within 1 business day.
@@ -171,35 +171,35 @@ export function DeploymentTiers() {
               <form onSubmit={handleSubmit} className="mt-8 space-y-4 text-left font-mono text-xs">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-silver uppercase mb-1.5 font-bold">Work Email</label>
+                    <label className="block text-muted uppercase mb-1.5 font-bold">Work Email</label>
                     <input
                       type="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="logistics.lead@enterprise.com"
-                      className="w-full h-12 bg-[var(--bg-soft)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:border-scarlet"
+                      className="w-full h-12 bg-[var(--surface-2)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                     />
                   </div>
                   <div>
-                    <label className="block text-silver uppercase mb-1.5 font-bold">Enterprise Organization</label>
+                    <label className="block text-muted uppercase mb-1.5 font-bold">Enterprise Organization</label>
                     <input
                       type="text"
                       required
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       placeholder="Apex Mining & Logistics Ltd."
-                      className="w-full h-12 bg-[var(--bg-soft)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:border-scarlet"
+                      className="w-full h-12 bg-[var(--surface-2)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-silver uppercase mb-1.5 font-bold">Operating Locations Scale</label>
+                  <label className="block text-muted uppercase mb-1.5 font-bold">Operating Locations Scale</label>
                   <select
                     value={nodes}
                     onChange={(e) => setNodes(e.target.value)}
-                    className="w-full h-12 bg-[var(--bg-soft)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:border-scarlet"
+                    className="w-full h-12 bg-[var(--surface-2)] border border-[var(--border)] px-4 text-sm text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                   >
                     <option value="1-5">1 – 5 Locations (Regional Pilot)</option>
                     <option value="5-20">5 – 20 Locations (Multi-Hub Cluster)</option>
@@ -210,7 +210,7 @@ export function DeploymentTiers() {
 
                 <button
                   type="submit"
-                  className="w-full h-14 bg-scarlet hover:bg-crimson font-mono text-xs font-bold text-white uppercase tracking-widest transition-colors flex items-center justify-center gap-2"
+                  className="w-full h-14 bg-brand hover:bg-brand-hover font-mono text-xs font-bold text-brand-foreground uppercase tracking-widest transition-colors flex items-center justify-center gap-2"
                 >
                   <span>SUBMIT DEPLOYMENT REQUEST</span>
                   <ArrowRight className="h-4 w-4" />
@@ -218,7 +218,7 @@ export function DeploymentTiers() {
               </form>
             )}
 
-            <p className="mt-4 text-[11px] font-mono text-silver">
+            <p className="mt-4 text-[11px] font-mono text-muted">
               Mutual NDA provided upon request · ISO 27001 / SOC 2 Ready
             </p>
           </div>

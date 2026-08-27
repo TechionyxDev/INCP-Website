@@ -32,7 +32,7 @@ export function SecuritySection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <ScrollReveal delay={0}>
-            <p className="text-xs font-semibold text-scarlet tracking-wider uppercase">
+            <p className="text-xs font-semibold text-brand-text tracking-wider uppercase">
               Enterprise Security
             </p>
           </ScrollReveal>
@@ -44,7 +44,7 @@ export function SecuritySection() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-4 text-base text-silver leading-relaxed">
+            <p className="mt-4 text-base text-muted leading-relaxed">
               Designed from the database schema up to meet strict data sovereignty and compliance requirements for high-consequence operations.
             </p>
           </ScrollReveal>
@@ -54,11 +54,11 @@ export function SecuritySection() {
           {securityItems.map((item, idx) => (
             <ScrollReveal key={item.title} delay={idx * 80}>
               <div className="pt-6 border-t border-[var(--border)]">
-                <item.icon className="h-5 w-5 text-scarlet" />
+                <item.icon className="h-5 w-5 text-brand-text" />
                 <h3 className="mt-4 text-lg font-semibold text-[var(--text)]">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-silver leading-relaxed">
+                <p className="mt-2 text-sm text-muted leading-relaxed">
                   {item.desc}
                 </p>
               </div>

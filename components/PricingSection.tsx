@@ -60,11 +60,11 @@ export function PricingSection() {
   ];
 
   return (
-    <section id="pricing" className="py-24 sm:py-32 border-t border-[var(--border)] bg-[var(--bg-soft)]">
+    <section id="pricing" className="py-24 sm:py-32 border-t border-[var(--border)] bg-band">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <ScrollReveal delay={0}>
-            <p className="text-xs font-semibold text-scarlet tracking-wider uppercase">
+            <p className="text-xs font-semibold text-brand-text tracking-wider uppercase">
               Deployment Plans
             </p>
           </ScrollReveal>
@@ -76,7 +76,7 @@ export function PricingSection() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-4 text-base text-silver leading-relaxed">
+            <p className="mt-4 text-base text-muted leading-relaxed">
               Every plan includes our immutable movement ledger, zero-trust RBAC, and responsive web interface.
             </p>
           </ScrollReveal>
@@ -89,18 +89,18 @@ export function PricingSection() {
               <div
                 className={`h-full rounded-2xl p-8 flex flex-col justify-between transition-all ${
                   plan.highlight
-                    ? "bg-[var(--card)] border-2 border-scarlet shadow-md"
-                    : "bg-[var(--card)] border border-[var(--border)]"
+                    ? "bg-[var(--surface-1)] border-2 border-brand shadow-md"
+                    : "bg-[var(--surface-1)] border border-[var(--border)]"
                 }`}
               >
                 <div>
-                  <div className="text-xs font-medium text-scarlet uppercase tracking-wider">
+                  <div className="text-xs font-medium text-brand-text uppercase tracking-wider">
                     {plan.badge}
                   </div>
                   <h3 className="mt-3 text-2xl font-bold text-[var(--text)]">
                     {plan.name}
                   </h3>
-                  <p className="mt-2 text-sm text-silver leading-relaxed">
+                  <p className="mt-2 text-sm text-muted leading-relaxed">
                     {plan.desc}
                   </p>
 
@@ -108,7 +108,7 @@ export function PricingSection() {
                     <ul className="space-y-3 text-sm text-[var(--text)]">
                       {plan.features.map((f) => (
                         <li key={f} className="flex items-start gap-2.5">
-                          <Check className="h-4 w-4 text-scarlet shrink-0 mt-0.5" />
+                          <Check className="h-4 w-4 text-brand-text shrink-0 mt-0.5" />
                           <span>{f}</span>
                         </li>
                       ))}
@@ -121,8 +121,8 @@ export function PricingSection() {
                     href="#contact"
                     className={`block w-full text-center py-3 rounded-full text-sm font-semibold transition-all ${
                       plan.highlight
-                        ? "bg-scarlet hover:bg-crimson text-white shadow-sm"
-                        : "border border-[var(--border)] hover:border-scarlet hover:text-scarlet text-[var(--text)]"
+                        ? "bg-brand hover:bg-brand-hover text-brand-foreground shadow-sm"
+                        : "border border-[var(--border)] hover:border-brand hover:text-brand-text text-[var(--text)]"
                     }`}
                   >
                     Contact Sales
@@ -134,18 +134,18 @@ export function PricingSection() {
         </div>
 
         {/* Simple Contact / Demo Request */}
-        <div id="contact" className="mt-20 rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 sm:p-12">
+        <div id="contact" className="mt-20 rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-8 sm:p-12">
           <div className="max-w-xl mx-auto text-center">
             <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text)]">
               Schedule a personalized walkthrough.
             </h3>
-            <p className="mt-3 text-sm text-silver leading-relaxed">
+            <p className="mt-3 text-sm text-muted leading-relaxed">
               See how your locations model in real-time with our logistics engineering team.
             </p>
 
             {submitted ? (
-              <div className="mt-8 p-4 rounded-xl bg-scarlet/10 border border-scarlet text-[var(--text)] text-sm flex items-center justify-center gap-2.5 animate-fade-in">
-                <CheckCircle2 className="h-5 w-5 text-scarlet shrink-0" />
+              <div className="mt-8 p-4 rounded-xl bg-brand/10 border border-brand text-[var(--text)] text-sm flex items-center justify-center gap-2.5 animate-fade-in">
+                <CheckCircle2 className="h-5 w-5 text-brand-text shrink-0" />
                 <span>Thank you. Our team will contact {email} within one business day.</span>
               </div>
             ) : (
@@ -156,11 +156,11 @@ export function PricingSection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your work email"
-                  className="flex-1 h-12 rounded-full bg-[var(--bg-soft)] border border-[var(--border)] px-5 text-sm text-[var(--text)] placeholder:text-silver focus:outline-none focus:border-scarlet transition-colors"
+                  className="flex-1 h-12 rounded-full bg-[var(--surface-2)] border border-[var(--border)] px-5 text-sm text-[var(--text)] placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
                 />
                 <button
                   type="submit"
-                  className="h-12 px-7 rounded-full bg-scarlet hover:bg-crimson text-white text-sm font-semibold transition-all shrink-0 inline-flex items-center justify-center gap-2"
+                  className="h-12 px-7 rounded-full bg-brand hover:bg-brand-hover text-brand-foreground text-sm font-semibold transition-all shrink-0 inline-flex items-center justify-center gap-2"
                 >
                   <span>Request Demo</span>
                   <ArrowRight className="h-4 w-4" />
@@ -168,7 +168,7 @@ export function PricingSection() {
               </form>
             )}
 
-            <p className="mt-4 text-xs text-silver">
+            <p className="mt-4 text-xs text-muted">
               Confidential · Mutual NDA provided upon request
             </p>
           </div>

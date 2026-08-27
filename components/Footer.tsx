@@ -2,14 +2,14 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="py-16 border-t border-[var(--border)] bg-[var(--bg)] text-xs text-silver">
+    <footer className="py-16 border-t border-[var(--border)] bg-[var(--bg)] text-xs text-muted">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
           {/* Brand */}
           <div className="flex items-center gap-2.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-scarlet" />
+            <span className="h-2.5 w-2.5 rounded-full bg-brand" />
             <span className="font-bold text-sm text-[var(--text)]">INCP</span>
-            <span className="text-silver">· Inventory Network Coordination Platform</span>
+            <span className="text-muted">· Inventory Network Coordination Platform</span>
           </div>
 
           {/* Links */}
@@ -30,7 +30,7 @@ export function Footer() {
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-scarlet transition-colors inline-flex items-center gap-1"
+              className="hover:text-brand-text transition-colors inline-flex items-center gap-1"
             >
               <span>Live Console</span>
               <ArrowUpRight className="h-3 w-3" />

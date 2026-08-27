@@ -35,11 +35,11 @@ export function Solutions() {
   ];
 
   return (
-    <section id="solutions" className="relative py-28 sm:py-36 border-t border-[var(--border)] bg-[var(--bg-soft)]">
+    <section id="solutions" className="relative py-28 sm:py-36 border-t border-[var(--border)] bg-band">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-silver font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
               Solutions
             </span>
           </ScrollReveal>
@@ -47,12 +47,12 @@ export function Solutions() {
           <ScrollReveal delay={100}>
             <h2 className="mt-5 text-3xl sm:text-5xl font-bold tracking-tight text-[var(--text)] leading-[1.1]">
               Engineered for high-stakes <br />
-              <span className="text-scarlet">multi-location operations.</span>
+              <span className="text-brand-text">multi-location operations.</span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-silver leading-relaxed">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted leading-relaxed">
               From heavy resource extraction to nationwide distribution networks, INCP provides
               the control and auditability required by modern operational leaders.
             </p>
@@ -63,10 +63,10 @@ export function Solutions() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
           {solutions.map((item, idx) => (
             <ScrollReveal key={item.title} delay={idx * 100}>
-              <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--card)] p-7 flex flex-col justify-between group hover:border-scarlet hover:-translate-y-1 transition-all overflow-hidden">
+              <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-7 flex flex-col justify-between group hover:border-brand hover:-translate-y-1 transition-all overflow-hidden">
                 <div>
                   <div className="flex items-center justify-between">
-                    <div className="h-11 w-11 rounded-xl bg-scarlet/10 text-scarlet flex items-center justify-center border border-scarlet/20 group-hover:scale-105 transition-transform">
+                    <div className="h-11 w-11 rounded-xl bg-brand/10 text-brand-text flex items-center justify-center border border-brand/20 group-hover:scale-105 transition-transform">
                       <item.icon className="h-5 w-5" />
                     </div>
                   </div>
@@ -74,13 +74,13 @@ export function Solutions() {
                   <h3 className="mt-5 text-xl font-bold text-[var(--text)] tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="mt-2.5 text-sm text-silver leading-relaxed">
+                  <p className="mt-2.5 text-sm text-muted leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
 
                 <div className="mt-6">
-                  <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-black shadow-inner">
+                  <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-surface-2 shadow-inner">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -93,7 +93,7 @@ export function Solutions() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-lg border border-[var(--border)] bg-[var(--bg-soft)] px-2.5 py-1 text-[11px] font-mono text-silver"
+                        className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-2.5 py-1 text-[11px] font-mono text-muted"
                       >
                         {tag}
                       </span>

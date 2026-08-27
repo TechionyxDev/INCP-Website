@@ -28,7 +28,7 @@ export function HowItWorks() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-silver font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
               How It Works
             </span>
           </ScrollReveal>
@@ -36,12 +36,12 @@ export function HowItWorks() {
           <ScrollReveal delay={100}>
             <h2 className="mt-5 text-3xl sm:text-5xl font-bold tracking-tight text-[var(--text)] leading-[1.1]">
               From disconnected sites <br />
-              <span className="text-scarlet">to unified control in 3 steps.</span>
+              <span className="text-brand-text">to unified control in 3 steps.</span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-silver leading-relaxed">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted leading-relaxed">
               Deploy INCP in days — not quarters. Connect your physical nodes, seed data cleanly,
               and empower every site official with audited digital workflows.
             </p>
@@ -52,13 +52,13 @@ export function HowItWorks() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
           {steps.map((step, idx) => (
             <ScrollReveal key={step.title} delay={idx * 100}>
-              <div className="relative h-full rounded-3xl border border-[var(--border)] bg-[var(--card)] p-8 flex flex-col justify-between group hover:border-scarlet hover:-translate-y-1 transition-all shadow-sm">
+              <div className="relative h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-8 flex flex-col justify-between group hover:border-brand hover:-translate-y-1 transition-all shadow-sm">
                 <div>
                   <div className="flex items-center justify-between">
-                    <div className="h-12 w-12 rounded-2xl bg-scarlet/10 text-scarlet flex items-center justify-center border border-scarlet/20 group-hover:scale-110 transition-transform">
+                    <div className="h-12 w-12 rounded-2xl bg-brand/10 text-brand-text flex items-center justify-center border border-brand/20 group-hover:scale-110 transition-transform">
                       <step.icon className="h-6 w-6" />
                     </div>
-                    <span className="font-mono text-xl font-bold text-silver">
+                    <span className="font-mono text-xl font-bold text-muted">
                       {step.num}
                     </span>
                   </div>
@@ -66,12 +66,12 @@ export function HowItWorks() {
                   <h3 className="mt-6 text-xl font-bold text-[var(--text)] tracking-tight">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-sm text-silver leading-relaxed">
+                  <p className="mt-3 text-sm text-muted leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-[var(--border)] flex items-center text-xs font-mono text-scarlet">
+                <div className="mt-8 pt-4 border-t border-[var(--border)] flex items-center text-xs font-mono text-brand-text">
                   <span>Step {step.num} Completed</span>
                 </div>
               </div>

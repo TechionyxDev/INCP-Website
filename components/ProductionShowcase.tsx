@@ -52,12 +52,12 @@ export function ProductionShowcase() {
   ];
 
   return (
-    <section id="production" className="py-24 sm:py-32 border-b border-[var(--border)] bg-[var(--bg-soft)]">
+    <section id="production" className="py-24 sm:py-32 border-b border-[var(--border)] bg-band">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-3xl">
             <ScrollReveal delay={0}>
-              <div className="text-xs font-mono text-scarlet tracking-widest uppercase font-bold">
+              <div className="text-xs font-mono text-brand-text tracking-widest uppercase font-bold">
                 [ PRODUCTION VERIFICATION // LIVE INTERFACE EXHIBIT ]
               </div>
             </ScrollReveal>
@@ -65,7 +65,7 @@ export function ProductionShowcase() {
             <ScrollReveal delay={100}>
               <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-[var(--text)] tracking-tight leading-[1.08] font-sans">
                 Production interface. <br />
-                <span className="text-scarlet">Live platform, actual screenshots.</span>
+                <span className="text-brand-text">Live platform, actual screenshots.</span>
               </h2>
             </ScrollReveal>
           </div>
@@ -75,7 +75,7 @@ export function ProductionShowcase() {
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] bg-[var(--card)] hover:border-scarlet hover:text-scarlet font-mono text-xs font-bold uppercase tracking-wider transition-colors text-[var(--text)]"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] bg-[var(--surface-1)] hover:border-brand hover:text-brand-text font-mono text-xs font-bold uppercase tracking-wider transition-colors text-[var(--text)]"
             >
               <span>ACCESS LIVE APP (iimcp.vercel.app)</span>
               <ExternalLink className="h-3.5 w-3.5" />
@@ -91,8 +91,8 @@ export function ProductionShowcase() {
               onClick={() => setActiveTab(idx)}
               className={`py-3.5 px-6 font-bold uppercase tracking-wider transition-colors border-b-2 -mb-[1px] ${
                 activeTab === idx
-                  ? "border-scarlet text-scarlet bg-[var(--card)]"
-                  : "border-transparent text-silver hover:text-[var(--text)]"
+                  ? "border-brand text-brand-text bg-[var(--surface-1)]"
+                  : "border-transparent text-muted hover:text-[var(--text)]"
               }`}
             >
               {`0${idx + 1} // ${item.label}`}
@@ -101,25 +101,25 @@ export function ProductionShowcase() {
         </div>
 
         {/* Active Exhibit Display Container */}
-        <div className="mt-8 border border-[var(--border)] bg-[var(--card)]">
+        <div className="mt-8 border border-[var(--border)] bg-[var(--surface-1)]">
           {/* Top Bar Metadata */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between p-6 border-b border-[var(--border)] gap-4">
             <div>
               <h3 className="text-2xl font-bold text-[var(--text)] font-sans">
                 {screens[activeTab].title}
               </h3>
-              <p className="mt-1 text-xs text-silver font-sans max-w-2xl">
+              <p className="mt-1 text-xs text-muted font-sans max-w-2xl">
                 {screens[activeTab].desc}
               </p>
             </div>
-            <div className="font-mono text-xs text-silver sm:text-right shrink-0">
-              <div className="text-scarlet font-bold">REST ENDPOINT</div>
+            <div className="font-mono text-xs text-muted sm:text-right shrink-0">
+              <div className="text-brand-text font-bold">REST ENDPOINT</div>
               <div className="text-[11px] text-[var(--text)] mt-0.5">{screens[activeTab].endpoint}</div>
             </div>
           </div>
 
           {/* Screenshot Viewport */}
-          <div className="relative aspect-[16/9] w-full bg-black">
+          <div className="relative aspect-[16/9] w-full bg-surface-2">
             <Image
               src={screens[activeTab].image}
               alt={screens[activeTab].title}
@@ -129,10 +129,10 @@ export function ProductionShowcase() {
           </div>
 
           {/* Bottom Capabilities Row */}
-          <div className="p-6 border-t border-[var(--border)] bg-[var(--bg-soft)] grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs text-silver">
+          <div className="p-6 border-t border-[var(--border)] bg-[var(--surface-2)] grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs text-muted">
             {screens[activeTab].features.map((f) => (
               <div key={f} className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-scarlet shrink-0" />
+                <Check className="h-4 w-4 text-brand-text shrink-0" />
                 <span className="text-[var(--text)] font-sans">{f}</span>
               </div>
             ))}

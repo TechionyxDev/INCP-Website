@@ -35,7 +35,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Minimal Wordmark */}
           <a href="#" className="flex items-center gap-2 group">
-            <span className="h-3 w-3 rounded-full bg-scarlet" />
+            <span className="h-3 w-3 rounded-full bg-brand" />
             <span className="font-bold text-lg tracking-tight text-[var(--text)]">
               INCP
             </span>
@@ -47,7 +47,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-silver hover:text-[var(--text)] transition-colors"
+                className="text-muted hover:text-[var(--text)] transition-colors"
               >
                 {link.label}
               </a>
@@ -62,7 +62,7 @@ export function Header() {
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1 text-silver hover:text-scarlet transition-colors"
+              className="hidden sm:inline-flex items-center gap-1 text-muted hover:text-brand-text transition-colors"
             >
               <span>Live App</span>
               <ArrowUpRight className="h-3.5 w-3.5" />
@@ -70,7 +70,7 @@ export function Header() {
 
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full bg-scarlet hover:bg-crimson text-white px-5 py-2 text-xs font-semibold tracking-wide transition-all"
+              className="inline-flex items-center justify-center rounded-full bg-brand hover:bg-brand-hover text-brand-foreground px-5 py-2 text-xs font-semibold tracking-wide transition-all"
             >
               Get Started
             </a>
@@ -94,7 +94,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="py-1 text-silver hover:text-[var(--text)]"
+                className="py-1 text-muted hover:text-[var(--text)]"
               >
                 {link.label}
               </a>
@@ -103,7 +103,7 @@ export function Header() {
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="py-1 text-scarlet font-semibold flex items-center justify-between"
+              className="py-1 text-brand-text font-semibold flex items-center justify-between"
             >
               <span>Open Live App</span>
               <ArrowUpRight className="h-4 w-4" />

@@ -2,8 +2,8 @@
 
 import type { ReactNode } from "react";
 
-/** Severity in the site palette reads as depth of scarlet, not as new hues:
- *  danger (deep scarlet) → warning (light scarlet) → slate → faint, with
+/** Severity in the site palette reads as depth of brand, not as new hues:
+ *  danger (deep brand) → warning (light brand) → slate → faint, with
  *  success reserved for the calm neutral of a settled record. */
 type Tone = "accent" | "success" | "warning" | "danger" | "slate" | "faint";
 
@@ -25,7 +25,7 @@ export function Badge({
   tone?: Tone;
   dot?: boolean;
   /** Filled treatment — reserved for terminal states (e.g. cancelled), which
-   *  need to separate from in-flight states sharing the same scarlet. */
+   *  need to separate from in-flight states sharing the same brand. */
   solid?: boolean;
   children: ReactNode;
 }) {

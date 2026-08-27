@@ -103,14 +103,14 @@ export function InteractiveDemo() {
   return (
     <section
       id="features"
-      className="py-24 sm:py-32 border-t border-[var(--border)] bg-[var(--bg-soft)]"
+      className="py-24 sm:py-32 border-t border-[var(--border)] bg-band"
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-3xl">
             <ScrollReveal delay={0}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-scarlet/40 bg-scarlet/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-scarlet font-mono">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <MousePointerClick className="h-3.5 w-3.5" />
                 Interactive product tour
               </span>
@@ -119,12 +119,12 @@ export function InteractiveDemo() {
             <ScrollReveal delay={100}>
               <h2 className="mt-5 text-3xl sm:text-5xl font-extrabold tracking-tight text-[var(--text)] leading-[1.1]">
                 Not screenshots. <br />
-                <span className="text-scarlet">The actual interface, running here.</span>
+                <span className="text-brand-text">The actual interface, running here.</span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={150}>
-              <p className="mt-4 text-sm text-silver leading-relaxed max-w-2xl">
+              <p className="mt-4 text-sm text-muted leading-relaxed max-w-2xl">
                 Five production modules rebuilt with sample data. Click through the sidebar, filter tables,
                 expand records, switch the app theme — every control below responds exactly as it does in the
                 deployed platform.
@@ -137,7 +137,7 @@ export function InteractiveDemo() {
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-scarlet bg-scarlet/10 hover:bg-scarlet hover:text-white px-5 py-2.5 text-xs font-mono font-bold text-scarlet transition-all shadow-md whitespace-nowrap"
+              className="inline-flex items-center gap-2 rounded-full border border-brand bg-brand/10 hover:bg-brand hover:text-brand-foreground px-5 py-2.5 text-xs font-mono font-bold text-brand-text transition-all shadow-md whitespace-nowrap"
             >
               <span>OPEN THE LIVE APP</span>
               <ExternalLink className="h-3.5 w-3.5" />
@@ -156,13 +156,13 @@ export function InteractiveDemo() {
                   onClick={() => setScreen(m.id)}
                   className={`p-4 rounded-2xl border text-left transition-all ${
                     on
-                      ? "border-scarlet bg-[var(--card)] shadow-xl shadow-scarlet/10 -translate-y-1"
-                      : "border-[var(--border)] bg-[var(--card)] hover:border-scarlet/40"
+                      ? "border-brand bg-[var(--surface-1)] shadow-xl shadow-brand/10 -translate-y-1"
+                      : "border-[var(--border)] bg-[var(--surface-1)] hover:border-brand/40"
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <m.icon className={`h-5 w-5 ${on ? "text-scarlet" : "text-silver"}`} />
-                    <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-crimson/20 text-scarlet font-bold whitespace-nowrap">
+                    <m.icon className={`h-5 w-5 ${on ? "text-brand-text" : "text-muted"}`} />
+                    <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-brand-muted/20 text-brand-text font-bold whitespace-nowrap">
                       {m.badge}
                     </span>
                   </div>
@@ -181,35 +181,35 @@ export function InteractiveDemo() {
         {/* Module context strip */}
         <ScrollReveal delay={100} className="mt-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6">
-              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-scarlet font-bold">
+            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-6">
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-brand-text font-bold">
                 {active.badge}
               </div>
               <h3 className="mt-2 text-xl font-bold text-[var(--text)] tracking-tight">{active.title}</h3>
-              <p className="mt-3 text-sm text-silver leading-relaxed">{active.desc}</p>
+              <p className="mt-3 text-sm text-muted leading-relaxed">{active.desc}</p>
             </div>
 
-            <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6">
-              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-silver font-bold">
+            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-6">
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted font-bold">
                 What it does
               </div>
               <ul className="mt-3 space-y-3">
                 {active.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-sm text-[var(--text)]">
-                    <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-scarlet shrink-0" />
+                    <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-brand shrink-0" />
                     <span className="leading-snug">{b}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-scarlet/30 bg-scarlet/5 p-6">
-              <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.18em] text-scarlet font-bold">
+            <div className="rounded-2xl border border-brand/30 bg-brand/5 p-6">
+              <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.18em] text-brand-text font-bold">
                 <MousePointerClick className="h-3.5 w-3.5" />
                 Try it in the panel above
               </div>
               <p className="mt-3 text-sm text-[var(--text)] leading-relaxed">{active.try}</p>
-              <p className="mt-4 text-[11px] font-mono text-silver leading-relaxed">
+              <p className="mt-4 text-[11px] font-mono text-muted leading-relaxed">
                 Sample data shown. Production instances run against your own tenant with role-scoped
                 access and full audit logging.
               </p>

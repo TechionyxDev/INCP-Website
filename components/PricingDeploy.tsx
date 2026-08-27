@@ -78,7 +78,7 @@ export function PricingDeploy() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-scarlet/40 bg-scarlet/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-scarlet font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
               <Boxes className="h-3.5 w-3.5" />
               Deployment & Onboarding
             </span>
@@ -87,12 +87,12 @@ export function PricingDeploy() {
           <ScrollReveal delay={100}>
             <h2 className="mt-5 text-3xl sm:text-5xl font-extrabold tracking-tight text-[var(--text)] leading-[1.1] font-sans">
               Tailored deployment topologies <br />
-              <span className="text-scarlet">built for your operational scale.</span>
+              <span className="text-brand-text">built for your operational scale.</span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 text-base sm:text-lg text-silver leading-relaxed font-sans">
+            <p className="mt-5 text-base sm:text-lg text-muted leading-relaxed font-sans">
               Every plan includes the core immutable ledger, zero-trust RBAC, and automated CSV migration pipelines.
             </p>
           </ScrollReveal>
@@ -105,13 +105,13 @@ export function PricingDeploy() {
               <div
                 className={`relative h-full rounded-3xl p-8 flex flex-col justify-between transition-all ${
                   tier.popular
-                    ? "border-2 border-scarlet bg-black shadow-2xl shadow-scarlet/20 -translate-y-2"
-                    : "border border-[var(--border)] bg-[var(--card)] hover:border-scarlet"
+                    ? "border-2 border-brand bg-surface-1 shadow-2xl shadow-brand/20 -translate-y-2"
+                    : "border border-[var(--border)] bg-[var(--surface-1)] hover:border-brand"
                 }`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-scarlet/40 bg-scarlet px-4 py-1 text-xs font-mono font-bold text-white uppercase tracking-wider shadow-lg">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand px-4 py-1 text-xs font-mono font-bold text-brand-foreground uppercase tracking-wider shadow-lg">
                       <Sparkles className="h-3.5 w-3.5" />
                       MOST DEPLOYED
                     </span>
@@ -119,13 +119,13 @@ export function PricingDeploy() {
                 )}
 
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-scarlet font-bold">
+                  <div className="text-xs font-mono uppercase tracking-wider text-brand-text font-bold">
                     {tier.badge}
                   </div>
                   <h3 className="mt-2 text-2xl font-bold text-[var(--text)] tracking-tight font-sans">
                     {tier.name}
                   </h3>
-                  <p className="mt-2.5 text-xs text-silver leading-relaxed font-sans">
+                  <p className="mt-2.5 text-xs text-muted leading-relaxed font-sans">
                     {tier.desc}
                   </p>
 
@@ -133,13 +133,13 @@ export function PricingDeploy() {
                     <span className="text-3xl font-extrabold text-[var(--text)] tracking-tight">
                       {tier.price}
                     </span>
-                    <span className="text-xs text-silver">{tier.subprice}</span>
+                    <span className="text-xs text-muted">{tier.subprice}</span>
                   </div>
 
                   <ul className="mt-6 space-y-3">
                     {tier.features.map((feat) => (
                       <li key={feat} className="flex items-start gap-3 text-xs text-[var(--text)] font-sans">
-                        <span className="h-4 w-4 rounded-full bg-scarlet/15 text-scarlet border border-scarlet/30 flex items-center justify-center shrink-0 mt-0.5">
+                        <span className="h-4 w-4 rounded-full bg-brand/15 text-brand-text border border-brand/30 flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="h-2.5 w-2.5" />
                         </span>
                         <span className="leading-snug">{feat}</span>
@@ -153,8 +153,8 @@ export function PricingDeploy() {
                     href="#contact-form"
                     className={`inline-flex items-center justify-center w-full h-12 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
                       tier.popular
-                        ? "bg-scarlet hover:bg-crimson text-white shadow-lg shadow-scarlet/30"
-                        : "border border-[var(--border)] hover:border-scarlet hover:text-scarlet bg-black text-white"
+                        ? "bg-brand hover:bg-brand-hover text-brand-foreground shadow-lg shadow-brand/30"
+                        : "border border-[var(--border)] hover:border-brand hover:text-brand-text bg-surface-1 text-foreground"
                     }`}
                   >
                     Request Deployment Spec
@@ -168,7 +168,7 @@ export function PricingDeploy() {
         {/* Integrated Instant Contact / Demo Request Form */}
         <div id="contact-form" className="mt-20">
           <ScrollReveal delay={400}>
-            <div className="relative overflow-hidden rounded-3xl border-2 border-crimson/50 bg-black px-6 sm:px-12 py-14 sm:py-20 shadow-2xl">
+            <div className="relative overflow-hidden rounded-3xl border-2 border-brand-hover/50 bg-surface-1 px-6 sm:px-12 py-14 sm:py-20 shadow-2xl">
             <div className="absolute inset-0 -z-10 opacity-30">
               <Image
                 src="/images/cta-background.png"
@@ -179,29 +179,29 @@ export function PricingDeploy() {
             </div>
 
             <div className="relative max-w-2xl mx-auto text-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-scarlet/40 bg-scarlet/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-scarlet font-mono">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <Sparkles className="h-3.5 w-3.5" />
                 Direct Engineering Access
               </span>
 
-              <h3 className="mt-6 text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-sans">
+              <h3 className="mt-6 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight font-sans">
                 Schedule a live multi-node walkthrough.
               </h3>
-              <p className="mt-4 text-sm text-silver font-sans">
+              <p className="mt-4 text-sm text-muted font-sans">
                 Our logistics systems engineers will model your active facility topology and
                 demonstrate atomic PostgreSQL reconciliation in real-time.
               </p>
 
               {submitted ? (
-                <div className="mt-8 p-6 rounded-2xl bg-crimson/30 border border-scarlet/50 text-white font-mono text-sm flex items-center justify-center gap-3 animate-fade-in">
-                  <CheckCircle2 className="h-6 w-6 text-scarlet shrink-0" />
+                <div className="mt-8 p-6 rounded-2xl bg-brand-muted/30 border border-brand/50 text-brand-foreground font-mono text-sm flex items-center justify-center gap-3 animate-fade-in">
+                  <CheckCircle2 className="h-6 w-6 text-brand-text shrink-0" />
                   <span>Deployment request received. Our solutions team will contact {email} within 1 business day.</span>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="mt-8 space-y-4 text-left">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-silver mb-1.5 uppercase">
+                      <label className="block text-xs font-mono text-muted mb-1.5 uppercase">
                         Work Email
                       </label>
                       <input
@@ -210,11 +210,11 @@ export function PricingDeploy() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="vp.logistics@enterprise.com"
-                        className="w-full h-12 rounded-xl bg-black border border-[var(--border)] px-4 text-sm text-white placeholder:text-silver/50 focus:outline-none focus:border-scarlet transition-colors"
+                        className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-mono text-silver mb-1.5 uppercase">
+                      <label className="block text-xs font-mono text-muted mb-1.5 uppercase">
                         Enterprise Name
                       </label>
                       <input
@@ -223,19 +223,19 @@ export function PricingDeploy() {
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
                         placeholder="Apex Logistics Corp"
-                        className="w-full h-12 rounded-xl bg-black border border-[var(--border)] px-4 text-sm text-white placeholder:text-silver/50 focus:outline-none focus:border-scarlet transition-colors"
+                        className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-silver mb-1.5 uppercase">
+                    <label className="block text-xs font-mono text-muted mb-1.5 uppercase">
                       Estimated Operating Nodes
                     </label>
                     <select
                       value={nodes}
                       onChange={(e) => setNodes(e.target.value)}
-                      className="w-full h-12 rounded-xl bg-black border border-[var(--border)] px-4 text-sm text-white focus:outline-none focus:border-scarlet transition-colors font-mono"
+                      className="w-full h-12 rounded-xl bg-surface-2 border border-[var(--border)] px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors font-mono"
                     >
                       <option value="1-5">1 - 5 Locations (Regional Pilot)</option>
                       <option value="5-20">5 - 20 Locations (Multi-Hub Cluster)</option>
@@ -246,7 +246,7 @@ export function PricingDeploy() {
 
                   <button
                     type="submit"
-                    className="w-full h-14 rounded-xl bg-scarlet hover:bg-crimson active:scale-[0.99] font-mono text-xs font-bold text-white uppercase tracking-wider transition-all shadow-xl shadow-scarlet/30 flex items-center justify-center gap-2"
+                    className="w-full h-14 rounded-xl bg-brand hover:bg-brand-hover active:scale-[0.99] font-mono text-xs font-bold text-brand-foreground uppercase tracking-wider transition-all shadow-xl shadow-brand/30 flex items-center justify-center gap-2"
                   >
                     Submit Deployment Request
                     <ArrowRight className="h-4 w-4" />
@@ -254,7 +254,7 @@ export function PricingDeploy() {
                 </form>
               )}
 
-              <p className="mt-4 text-[11px] font-mono text-silver">
+              <p className="mt-4 text-[11px] font-mono text-muted">
                 Mutual NDA provided upon request · ISO 27001 / SOC 2 Ready
               </p>
             </div>

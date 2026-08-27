@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 
+/** Build a Tailwind colour that supports opacity modifiers from a `--x-rgb` var. */
+const rgb = (v: string) => `rgb(var(--${v}-rgb) / <alpha-value>)`;
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,24 +13,65 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--bg)",
-        "bg-soft": "var(--bg-soft)",
-        "bg-card": "var(--card)",
-        foreground: "var(--text)",
-        "muted-text": "var(--text-muted)",
-        "muted-strong": "var(--text-muted-strong)",
-        border: "var(--border)",
-        "border-hover": "var(--border-hover)",
-        // Restricted 5-color palette (Updated to deep red #8A0000):
-        scarlet: "#8A0000",
-        crimson: "#600000",
-        silver: "#C0C0C0",
-        white: "#FFFFFF",
-        black: "#050505",
-        accent: {
-          DEFAULT: "var(--accent)",
-          dark: "var(--accent-dark)",
+        /* ── Surfaces & text (theme-aware) ───────────────────────── */
+        background: rgb("bg"),
+        surface: {
+          DEFAULT: rgb("surface-1"),
+          1: rgb("surface-1"),
+          2: rgb("surface-2"),
         },
+        foreground: rgb("text"),
+        band: rgb("band"),
+        muted: {
+          DEFAULT: rgb("text-2"),
+          foreground: rgb("text-2"),
+        },
+        border: {
+          DEFAULT: rgb("border"),
+          hover: rgb("border-hover"),
+        },
+
+        /* ── Brand ───────────────────────────────────────────────── */
+        brand: {
+          DEFAULT: rgb("brand"),
+          hover: rgb("brand-hover"),
+          muted: rgb("brand-muted"),
+          foreground: rgb("on-brand"),
+          text: rgb("brand-text"),
+        },
+        accent: {
+          DEFAULT: rgb("accent"),
+          dark: rgb("brand-hover"),
+        },
+
+        /* ── Semantic ────────────────────────────────────────────── */
+        success: { DEFAULT: rgb("success"), text: rgb("success-text") },
+        warning: { DEFAULT: rgb("warning"), text: rgb("warning-text") },
+        info: { DEFAULT: rgb("info"), text: rgb("info-text") },
+        destructive: { DEFAULT: rgb("danger"), text: rgb("danger-text") },
+
+        /* ── Legacy aliases (kept so existing markup keeps working) ─ */
+        scarlet: rgb("brand"),
+        crimson: rgb("brand-hover"),
+        silver: rgb("text-2"),
+        "bg-soft": rgb("surface-2"),
+        "bg-card": rgb("surface-1"),
+        "muted-text": rgb("text-2"),
+        "muted-strong": rgb("text"),
+        "border-hover": rgb("border-hover"),
+        ink: rgb("bg"),
+        canvas: rgb("bg"),
+      },
+      boxShadow: {
+        sm: "var(--shadow-sm)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)",
+        xl: "var(--shadow-lg)",
+        "2xl": "var(--shadow-lg)",
+        brand: "0 12px 32px -12px rgb(var(--brand-rgb) / 0.55)",
+      },
+      ringColor: {
+        DEFAULT: "rgb(var(--accent-rgb) / 0.6)",
       },
       fontFamily: {
         sans: ["var(--font-space-grotesk)", "sans-serif"],

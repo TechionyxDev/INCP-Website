@@ -76,7 +76,7 @@ export function Platform() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-silver font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
               The Platform
             </span>
           </ScrollReveal>
@@ -84,12 +84,12 @@ export function Platform() {
           <ScrollReveal delay={100}>
             <h2 className="mt-5 text-3xl sm:text-5xl font-bold tracking-tight text-[var(--text)] leading-[1.1]">
               One operating system <br />
-              <span className="text-scarlet">for every location.</span>
+              <span className="text-brand-text">for every location.</span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 max-w-2xl text-base sm:text-lg text-silver leading-relaxed">
+            <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted leading-relaxed">
               INCP combines eight modular engines into a cohesive control center — giving operations
               leaders immediate visibility across HQ, regional hubs, and field sites.
             </p>
@@ -98,8 +98,8 @@ export function Platform() {
 
         {/* Real App Screenshot Showcase */}
         <ScrollReveal delay={300} className="mt-14">
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--bg-soft)] p-3 sm:p-4 shadow-2xl overflow-hidden hover:border-scarlet/40 transition-colors">
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-black">
+          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface-2)] p-3 sm:p-4 shadow-2xl overflow-hidden hover:border-brand/40 transition-colors">
+            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-surface-2">
               <Image
                 src="/images/screenshot-dashboard.png"
                 alt="INCP Dashboard Master View"
@@ -107,7 +107,7 @@ export function Platform() {
                 className="object-cover object-top hover:scale-[1.01] transition-transform duration-500"
               />
             </div>
-            <div className="mt-3 px-2 flex flex-wrap items-center justify-between text-xs text-silver font-mono gap-2">
+            <div className="mt-3 px-2 flex flex-wrap items-center justify-between text-xs text-muted font-mono gap-2">
               <span>Actual Production Screenshot · Live Dashboard Overview</span>
               <span>17 Modules · 90+ REST Endpoints</span>
             </div>
@@ -118,13 +118,13 @@ export function Platform() {
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {pillars.map((item, idx) => (
             <ScrollReveal key={item.title} delay={idx * 60}>
-              <div className="group h-full rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 transition-all duration-300 hover:border-scarlet hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between">
+              <div className="group h-full rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-6 transition-all duration-300 hover:border-brand hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between">
-                    <div className="h-10 w-10 rounded-xl bg-scarlet/10 text-scarlet flex items-center justify-center border border-scarlet/20 group-hover:scale-105 transition-transform">
+                    <div className="h-10 w-10 rounded-xl bg-brand/10 text-brand-text flex items-center justify-center border border-brand/20 group-hover:scale-105 transition-transform">
                       <item.icon className="h-5 w-5" />
                     </div>
-                    <span className="font-mono text-xs text-silver">
+                    <span className="font-mono text-xs text-muted">
                       {item.num}
                     </span>
                   </div>
@@ -132,7 +132,7 @@ export function Platform() {
                   <h3 className="mt-4 text-base font-semibold text-[var(--text)] tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-xs text-silver leading-relaxed">
+                  <p className="mt-2 text-xs text-muted leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -141,7 +141,7 @@ export function Platform() {
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-md border border-[var(--border)] bg-[var(--bg-soft)] px-2 py-0.5 text-[10px] font-mono text-silver"
+                      className="rounded-md border border-[var(--border)] bg-[var(--surface-2)] px-2 py-0.5 text-[10px] font-mono text-muted"
                     >
                       {tag}
                     </span>

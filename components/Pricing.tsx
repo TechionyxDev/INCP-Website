@@ -59,11 +59,11 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="relative py-28 sm:py-36 border-t border-[var(--border)] bg-[var(--bg-soft)]">
+    <section id="pricing" className="relative py-28 sm:py-36 border-t border-[var(--border)] bg-band">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-silver font-mono">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
               Pricing & Plans
             </span>
           </ScrollReveal>
@@ -71,12 +71,12 @@ export function Pricing() {
           <ScrollReveal delay={100}>
             <h2 className="mt-5 text-3xl sm:text-5xl font-bold tracking-tight text-[var(--text)] leading-[1.1]">
               Flexible tiers for networks <br />
-              <span className="text-scarlet">of any scale.</span>
+              <span className="text-brand-text">of any scale.</span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-5 text-base sm:text-lg text-silver leading-relaxed">
+            <p className="mt-5 text-base sm:text-lg text-muted leading-relaxed">
               Every plan includes our immutable movement ledger, zero-trust RBAC, and responsive mobile scanner.
             </p>
           </ScrollReveal>
@@ -89,13 +89,13 @@ export function Pricing() {
               <div
                 className={`relative h-full rounded-3xl p-8 flex flex-col justify-between transition-all ${
                   tier.highlight
-                    ? "border-2 border-scarlet bg-crimson/10 shadow-2xl shadow-scarlet/10 -translate-y-2"
-                    : "border border-[var(--border)] bg-[var(--card)] hover:border-scarlet"
+                    ? "border-2 border-brand bg-brand-muted/10 shadow-2xl shadow-brand/10 -translate-y-2"
+                    : "border border-[var(--border)] bg-[var(--surface-1)] hover:border-brand"
                 }`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-scarlet/40 bg-scarlet px-3.5 py-1 text-xs font-semibold text-white uppercase tracking-wider shadow-md">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand px-3.5 py-1 text-xs font-semibold text-brand-foreground uppercase tracking-wider shadow-md">
                       <Sparkles className="h-3.5 w-3.5" />
                       {tier.popular}
                     </span>
@@ -103,13 +103,13 @@ export function Pricing() {
                 )}
 
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-silver">
+                  <div className="text-xs font-mono uppercase tracking-wider text-muted">
                     {tier.badge}
                   </div>
                   <h3 className="mt-2 text-2xl font-bold text-[var(--text)] tracking-tight">
                     {tier.name}
                   </h3>
-                  <p className="mt-2.5 text-xs text-silver leading-relaxed">
+                  <p className="mt-2.5 text-xs text-muted leading-relaxed">
                     {tier.desc}
                   </p>
 
@@ -117,7 +117,7 @@ export function Pricing() {
                     <span className="text-3xl font-bold text-[var(--text)] tracking-tight">
                       {tier.price}
                     </span>
-                    <span className="text-xs text-silver font-mono">
+                    <span className="text-xs text-muted font-mono">
                       {tier.subprice}
                     </span>
                   </div>
@@ -125,7 +125,7 @@ export function Pricing() {
                   <ul className="mt-6 space-y-3">
                     {tier.features.map((feat) => (
                       <li key={feat} className="flex items-start gap-3 text-xs text-[var(--text)]">
-                        <span className="h-4 w-4 rounded-full bg-scarlet/15 text-scarlet border border-scarlet/30 flex items-center justify-center shrink-0 mt-0.5">
+                        <span className="h-4 w-4 rounded-full bg-brand/15 text-brand-text border border-brand/30 flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="h-2.5 w-2.5" />
                         </span>
                         <span className="leading-snug">{feat}</span>
@@ -139,8 +139,8 @@ export function Pricing() {
                     href="#contact"
                     className={`inline-flex items-center justify-center w-full h-11 rounded-full text-sm font-semibold tracking-tight transition-all ${
                       tier.highlight
-                        ? "bg-scarlet hover:bg-crimson text-white shadow-lg shadow-scarlet/25"
-                        : "border border-[var(--border)] hover:border-scarlet hover:text-scarlet bg-[var(--card)] text-[var(--text)]"
+                        ? "bg-brand hover:bg-brand-hover text-brand-foreground shadow-lg shadow-brand/25"
+                        : "border border-[var(--border)] hover:border-brand hover:text-brand-text bg-[var(--surface-1)] text-[var(--text)]"
                     }`}
                   >
                     Contact Sales

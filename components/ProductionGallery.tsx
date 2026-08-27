@@ -91,7 +91,7 @@ export function ProductionGallery() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-3xl">
             <ScrollReveal delay={0}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-scarlet/40 bg-scarlet/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-scarlet font-mono">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <Terminal className="h-3.5 w-3.5" />
                 Live Production Interface
               </span>
@@ -100,7 +100,7 @@ export function ProductionGallery() {
             <ScrollReveal delay={100}>
               <h2 className="mt-5 text-3xl sm:text-5xl font-extrabold tracking-tight text-[var(--text)] leading-[1.1] font-sans">
                 Real software in production. <br />
-                <span className="text-scarlet">No mockups. Zero vaporware.</span>
+                <span className="text-brand-text">No mockups. Zero vaporware.</span>
               </h2>
             </ScrollReveal>
           </div>
@@ -110,7 +110,7 @@ export function ProductionGallery() {
               href="https://iimcp.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-scarlet bg-scarlet/10 hover:bg-scarlet hover:text-white px-5 py-2.5 text-xs font-mono font-bold text-scarlet transition-all shadow-md"
+              className="inline-flex items-center gap-2 rounded-full border border-brand bg-brand/10 hover:bg-brand hover:text-brand-foreground px-5 py-2.5 text-xs font-mono font-bold text-brand-text transition-all shadow-md"
             >
               <span>ACCESS PRODUCTION APP (iimcp.vercel.app)</span>
               <ExternalLink className="h-3.5 w-3.5" />
@@ -127,17 +127,17 @@ export function ProductionGallery() {
                 onClick={() => setActiveModule(idx)}
                 className={`p-4 rounded-2xl border text-left transition-all ${
                   activeModule === idx
-                    ? "border-scarlet bg-black shadow-xl shadow-scarlet/10 -translate-y-1"
-                    : "border-[var(--border)] bg-[var(--card)] hover:border-scarlet/40"
+                    ? "border-brand bg-surface-1 shadow-xl shadow-brand/10 -translate-y-1"
+                    : "border-[var(--border)] bg-[var(--surface-1)] hover:border-brand/40"
                 }`}
               >
                 <div className="flex items-center justify-between">
                   <mod.icon
                     className={`h-5 w-5 ${
-                      activeModule === idx ? "text-scarlet" : "text-silver"
+                      activeModule === idx ? "text-brand-text" : "text-muted"
                     }`}
                   />
-                  <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-crimson/20 text-scarlet font-bold">
+                  <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-brand-muted/20 text-brand-text font-bold">
                     {mod.badge}
                   </span>
                 </div>
@@ -151,25 +151,25 @@ export function ProductionGallery() {
 
         {/* Active Module Showcase Deck */}
         <ScrollReveal delay={400} className="mt-6">
-          <div className="rounded-3xl border-2 border-crimson/50 bg-black p-4 sm:p-7 shadow-2xl">
+          <div className="rounded-3xl border-2 border-brand-hover/50 bg-surface-1 p-4 sm:p-7 shadow-2xl">
             {/* Top Bar info */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-[var(--border)] gap-2">
               <div>
-                <h3 className="text-xl font-bold text-white font-sans">
+                <h3 className="text-xl font-bold text-foreground font-sans">
                   {modules[activeModule].title}
                 </h3>
-                <p className="text-xs text-silver mt-0.5 font-mono">
+                <p className="text-xs text-muted mt-0.5 font-mono">
                   {modules[activeModule].subtitle}
                 </p>
               </div>
-              <div className="flex items-center gap-2 text-xs font-mono text-silver">
-                <span className="h-2 w-2 rounded-full bg-scarlet animate-pulse" />
+              <div className="flex items-center gap-2 text-xs font-mono text-muted">
+                <span className="h-2 w-2 rounded-full bg-brand animate-pulse" />
                 <span>INCP Cluster Node Live</span>
               </div>
             </div>
 
             {/* High-Resolution Screenshot Viewer */}
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-black shadow-inner">
+            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-surface-2 shadow-inner">
               <Image
                 src={modules[activeModule].image}
                 alt={modules[activeModule].title}
@@ -179,13 +179,13 @@ export function ProductionGallery() {
             </div>
 
             {/* Module Technical Capability Specs */}
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs text-silver">
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs text-muted">
               {modules[activeModule].specs.map((spec, i) => (
                 <div
                   key={i}
-                  className="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--bg-soft)] flex items-start gap-2.5"
+                  className="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--surface-2)] flex items-start gap-2.5"
                 >
-                  <ShieldCheck className="h-4 w-4 text-scarlet shrink-0 mt-0.5" />
+                  <ShieldCheck className="h-4 w-4 text-brand-text shrink-0 mt-0.5" />
                   <span className="text-[11px] leading-snug">{spec}</span>
                 </div>
               ))}

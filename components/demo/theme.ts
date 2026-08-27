@@ -1,6 +1,6 @@
 /**
  * Chart series for the embedded demo. Values resolve from the site theme
- * tokens declared in app/globals.css (--a-c1…--a-c8): a scarlet-to-silver
+ * tokens declared in app/globals.css (--a-c1…--a-c8): a brand-to-silver
  * ramp so charts stay inside the site's restricted palette.
  */
 export const CHART_VARS = [

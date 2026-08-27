@@ -62,7 +62,7 @@ export function Security() {
           {/* Left Column: Heading & Visual */}
           <div className="lg:col-span-5">
             <ScrollReveal delay={0}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-silver font-mono">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted font-mono">
                 Enterprise Security
               </span>
             </ScrollReveal>
@@ -70,12 +70,12 @@ export function Security() {
             <ScrollReveal delay={100}>
               <h2 className="mt-5 text-3xl sm:text-5xl font-bold tracking-tight text-[var(--text)] leading-[1.1]">
                 Security designed <br />
-                <span className="text-scarlet">for regulated industries.</span>
+                <span className="text-brand-text">for regulated industries.</span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <p className="mt-5 text-base text-silver leading-relaxed">
+              <p className="mt-5 text-base text-muted leading-relaxed">
                 INCP treats every physical item movement and data transaction with financial-grade
                 immutability. Every API request is rate-limited, authenticated, and audited.
               </p>
@@ -83,7 +83,7 @@ export function Security() {
 
             {/* Shield Visual */}
             <ScrollReveal delay={300} className="mt-8">
-              <div className="relative aspect-square max-w-xs rounded-3xl overflow-hidden border border-[var(--border)] bg-black shadow-2xl p-4 hover:border-scarlet/40 transition-colors">
+              <div className="relative aspect-square max-w-xs rounded-3xl overflow-hidden border border-[var(--border)] bg-surface-2 shadow-2xl p-4 hover:border-brand/40 transition-colors">
                 <Image
                   src="/images/security-shield.png"
                   alt="Enterprise Security Shield"
@@ -98,14 +98,14 @@ export function Security() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {securityFeatures.map((feat, idx) => (
               <ScrollReveal key={feat.title} delay={idx * 60}>
-                <div className="h-full rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 hover:border-scarlet hover:-translate-y-0.5 transition-all">
-                  <div className="h-10 w-10 rounded-xl bg-scarlet/10 text-scarlet flex items-center justify-center border border-scarlet/20">
+                <div className="h-full rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-6 hover:border-brand hover:-translate-y-0.5 transition-all">
+                  <div className="h-10 w-10 rounded-xl bg-brand/10 text-brand-text flex items-center justify-center border border-brand/20">
                     <feat.icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 text-base font-semibold text-[var(--text)] tracking-tight">
                     {feat.title}
                   </h3>
-                  <p className="mt-2 text-xs text-silver leading-relaxed">
+                  <p className="mt-2 text-xs text-muted leading-relaxed">
                     {feat.desc}
                   </p>
                 </div>

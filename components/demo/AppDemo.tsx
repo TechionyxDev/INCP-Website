@@ -159,7 +159,7 @@ export function AppDemo({
           <div className="flex items-center gap-2.5 px-3 py-3.5">
             <span
               className="grid h-8 w-8 place-items-center rounded-lg text-[13px] font-bold shrink-0"
-              style={{ background: "var(--a-accent)", color: "#fff" }}
+              style={{ background: "var(--a-accent)", color: "var(--a-on-accent)" }}
             >
               M
             </span>
@@ -256,7 +256,7 @@ export function AppDemo({
             >
               <span
                 className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-[11px] font-bold"
-                style={{ background: "var(--a-accent)", color: "#fff" }}
+                style={{ background: "var(--a-accent)", color: "var(--a-on-accent)" }}
               >
                 D
               </span>
