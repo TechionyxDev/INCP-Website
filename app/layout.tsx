@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Space_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+/* Geist is the Techionyx type voice: a neutral grotesque that carries
+   hierarchy through weight and tracking rather than through colour. */
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-geist",
   display: "swap",
 });
 
-const spaceMono = Space_Mono({
-  weight: ["400", "700"],
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-space-mono",
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -40,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark" className={`${spaceGrotesk.variable} ${spaceMono.variable}`}>
+    <html lang="en" data-theme="dark" className={`${geist.variable} ${geistMono.variable}`}>
       <body className="antialiased selection:bg-brand-solid selection:text-brand-foreground">
         {children}
       </body>

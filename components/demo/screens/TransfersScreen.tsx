@@ -45,7 +45,7 @@ export function TransfersScreen({ query }: { query: string }) {
           >
             {t}
             <span
-              className="rounded-full px-1.5 py-[1px] text-[9px] tabular-nums"
+              className="rounded px-1.5 py-[1px] text-[9px] tabular-nums"
               style={{ background: "var(--a-slate-soft)", color: "var(--a-muted)" }}
             >
               {count(t)}

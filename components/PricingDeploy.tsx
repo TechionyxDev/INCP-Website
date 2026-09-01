@@ -78,7 +78,7 @@ export function PricingDeploy() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+            <span className="inline-flex items-center gap-2 rounded border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
               <Boxes className="h-3.5 w-3.5" />
               Deployment & Onboarding
             </span>
@@ -111,7 +111,7 @@ export function PricingDeploy() {
               >
                 {tier.popular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-solid/40 bg-brand-solid px-4 py-1 text-xs font-mono font-bold text-brand-foreground uppercase tracking-wider shadow-lg">
+                    <span className="inline-flex items-center gap-1.5 rounded border border-brand-solid/40 bg-brand-solid px-4 py-1 text-xs font-mono font-bold text-brand-foreground uppercase tracking-wider shadow-lg">
                       <Sparkles className="h-3.5 w-3.5" />
                       MOST DEPLOYED
                     </span>
@@ -122,7 +122,7 @@ export function PricingDeploy() {
                   <div className="text-xs font-mono uppercase tracking-wider text-brand-text font-bold">
                     {tier.badge}
                   </div>
-                  <h3 className="mt-2 text-2xl font-bold text-[var(--text)] tracking-tight font-sans">
+                  <h3 className="mt-2 text-2xl font-medium text-[var(--text)] tracking-tight font-sans">
                     {tier.name}
                   </h3>
                   <p className="mt-2.5 text-xs text-muted-strong leading-relaxed font-sans">
@@ -151,7 +151,7 @@ export function PricingDeploy() {
                 <div className="mt-8 pt-6 border-t border-[var(--border)]">
                   <a
                     href="#contact-form"
-                    className={`inline-flex items-center justify-center w-full h-12 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                    className={`inline-flex items-center justify-center w-full h-12 rounded text-xs font-mono font-bold uppercase tracking-wider transition-all ${
                       tier.popular
                         ? "bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground shadow-lg shadow-brand"
                         : "border border-[var(--border)] hover:border-brand-solid hover:text-brand-text bg-surface-1 text-foreground"
@@ -179,7 +179,7 @@ export function PricingDeploy() {
             </div>
 
             <div className="relative max-w-2xl mx-auto text-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+              <span className="inline-flex items-center gap-2 rounded border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <Sparkles className="h-3.5 w-3.5" />
                 Direct Engineering Access
               </span>

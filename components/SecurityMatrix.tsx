@@ -61,7 +61,7 @@ export function SecurityMatrix() {
           {/* Left Column: Heading & Visual (5 cols) */}
           <div className="lg:col-span-5">
             <ScrollReveal delay={0}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+              <span className="inline-flex items-center gap-2 rounded border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <ShieldAlert className="h-3.5 w-3.5" />
                 Zero-Trust Defense Architecture
               </span>
@@ -108,7 +108,7 @@ export function SecurityMatrix() {
                       </span>
                     </div>
 
-                    <h3 className="mt-4 text-base font-bold text-foreground tracking-tight font-sans">
+                    <h3 className="mt-4 text-base font-medium text-foreground tracking-tight font-sans">
                       {item.title}
                     </h3>
                     <p className="mt-2 text-xs text-muted-strong leading-relaxed font-sans">

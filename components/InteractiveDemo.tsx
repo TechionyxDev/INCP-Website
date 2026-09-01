@@ -110,7 +110,7 @@ export function InteractiveDemo() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-3xl">
             <ScrollReveal delay={0}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+              <span className="inline-flex items-center gap-2 rounded border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <MousePointerClick className="h-3.5 w-3.5" />
                 Interactive product tour
               </span>
@@ -140,7 +140,7 @@ export function InteractiveDemo() {
               href="https://iimcp.vercel.app/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-brand-solid bg-brand-solid/10 hover:bg-brand-solid hover:text-brand-foreground px-5 py-2.5 text-xs font-mono font-bold text-brand-text transition-all shadow-md whitespace-nowrap"
+              className="inline-flex items-center gap-2 rounded border border-brand-solid bg-brand-solid/10 hover:bg-brand-solid hover:text-brand-foreground px-5 py-2.5 text-xs font-mono font-bold text-brand-text transition-all shadow-md whitespace-nowrap"
             >
               <span>OPEN THE LIVE APP</span>
               <ExternalLink className="h-3.5 w-3.5" />
@@ -192,7 +192,7 @@ export function InteractiveDemo() {
               <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-brand-text font-bold">
                 {active.badge}
               </div>
-              <h3 className="mt-2 text-xl font-bold text-[var(--text)] tracking-tight">
+              <h3 className="mt-2 text-xl font-medium text-[var(--text)] tracking-tight">
                 {active.title}
               </h3>
               <p className="mt-3 text-sm text-muted-strong leading-relaxed">

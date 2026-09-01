@@ -107,7 +107,7 @@ export function ProductionShowcase() {
           {/* Top Bar Metadata */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between p-6 border-b border-[var(--border)] gap-4">
             <div>
-              <h3 className="text-2xl font-bold text-[var(--text)] font-sans">
+              <h3 className="text-2xl font-medium text-[var(--text)] font-sans">
                 {activeScreen?.title}
               </h3>
               <p className="mt-1 text-xs text-muted-strong font-sans max-w-2xl">

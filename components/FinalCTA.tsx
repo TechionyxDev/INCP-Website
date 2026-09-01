@@ -32,12 +32,12 @@ export function FinalCTA() {
             </div>
 
             <div className="relative flex flex-col items-center text-center max-w-3xl mx-auto">
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/30 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+              <span className="inline-flex items-center gap-2 rounded border border-brand-solid/30 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
                 <Sparkles className="h-3.5 w-3.5" />
                 Get Started
               </span>
 
-              <h2 className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.08]">
+              <h2 className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-foreground leading-[1.08]">
                 Turn inventory operations <br />
                 <span className="text-brand-text">into inventory intelligence.</span>
               </h2>
@@ -48,7 +48,7 @@ export function FinalCTA() {
               </p>
 
               {submitted ? (
-                <div className="mt-9 flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-muted/30 px-6 py-3 text-brand-foreground font-medium text-sm animate-fade-in">
+                <div className="mt-9 flex items-center gap-2 rounded border border-brand-solid/40 bg-brand-muted/30 px-6 py-3 text-brand-foreground font-medium text-sm animate-fade-in">
                   <CheckCircle2 className="h-5 w-5 text-brand-text" />
                   Thank you! Our enterprise logistics team will contact you within 1 business day.
                 </div>
@@ -65,13 +65,13 @@ export function FinalCTA() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="you@company.com"
-                      className="w-full h-12 rounded-full bg-surface-2 border border-[var(--border)] px-5 text-sm text-foreground placeholder:text-muted-strong focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
+                      className="w-full h-12 rounded bg-surface-2 border border-[var(--border)] px-5 text-sm text-foreground placeholder:text-muted-strong focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
                     />
                   </label>
 
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-semibold text-brand-foreground bg-brand-solid hover:bg-brand-solid-hover active:scale-[0.98] transition-all h-12 px-7 text-sm shadow-lg shadow-brand shrink-0"
+                    className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded font-semibold text-brand-foreground bg-brand-solid hover:bg-brand-solid-hover active:scale-[0.98] transition-all h-12 px-7 text-sm shadow-lg shadow-brand shrink-0"
                   >
                     Request Demo
                     <ArrowRight className="h-4 w-4" />

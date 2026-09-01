@@ -23,7 +23,7 @@ export function ArchitectureMatrix() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+            <span className="inline-flex items-center gap-2 rounded border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
               <Cpu className="h-3.5 w-3.5" />
               Core Architecture
             </span>
@@ -101,7 +101,7 @@ export function ArchitectureMatrix() {
               <div className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] flex flex-col justify-between">
                 <div>
                   <div className="text-xs font-mono text-brand-text font-bold uppercase">Tier 01 // Level 1</div>
-                  <h3 className="mt-2 text-xl font-bold text-foreground font-sans">HQ Global Command</h3>
+                  <h3 className="mt-2 text-xl font-medium text-foreground font-sans">HQ Global Command</h3>
                   <p className="mt-3 text-xs text-muted-strong leading-relaxed font-sans">
                     Master catalogue governance, global supplier contracts, multi-tenant billing, and
                     cross-hub rebalancing policy definitions.
@@ -115,7 +115,7 @@ export function ArchitectureMatrix() {
               <div className="p-6 rounded-2xl border border-brand-solid/40 bg-brand-muted/15 flex flex-col justify-between">
                 <div>
                   <div className="text-xs font-mono text-brand-text font-bold uppercase">Tier 02 // Level 2</div>
-                  <h3 className="mt-2 text-xl font-bold text-foreground font-sans">Regional Consolidation Hubs</h3>
+                  <h3 className="mt-2 text-xl font-medium text-foreground font-sans">Regional Consolidation Hubs</h3>
                   <p className="mt-3 text-xs text-muted-strong leading-relaxed font-sans">
                     High-volume cross-dock facilities that buffer stock for remote clusters, receive bulk
                     PO shipments, and approve field site requisition orders.
@@ -129,7 +129,7 @@ export function ArchitectureMatrix() {
               <div className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] flex flex-col justify-between">
                 <div>
                   <div className="text-xs font-mono text-brand-text font-bold uppercase">Tier 03 // Level 3</div>
-                  <h3 className="mt-2 text-xl font-bold text-foreground font-sans">Operational Field Sites & Mines</h3>
+                  <h3 className="mt-2 text-xl font-medium text-foreground font-sans">Operational Field Sites & Mines</h3>
                   <p className="mt-3 text-xs text-muted-strong leading-relaxed font-sans">
                     Direct consumption points: extraction quarries, construction yards, and production
                     lines with mobile QR checkout and shift logs.
@@ -148,7 +148,7 @@ export function ArchitectureMatrix() {
                 <div className="text-xs font-mono text-brand-text font-bold uppercase">
                   Shift Chain of Custody
                 </div>
-                <h3 className="mt-2 text-2xl font-bold text-foreground font-sans">
+                <h3 className="mt-2 text-2xl font-medium text-foreground font-sans">
                   The Zero-Drift Shift Reconciliation Engine
                 </h3>
                 <p className="mt-4 text-sm text-muted-strong leading-relaxed font-sans">
@@ -202,7 +202,7 @@ export function ArchitectureMatrix() {
                 <div className="text-xs font-mono text-brand-text font-bold uppercase">
                   Predictive Maintenance & Stockout Advisory
                 </div>
-                <h3 className="mt-2 text-2xl font-bold text-foreground font-sans">
+                <h3 className="mt-2 text-2xl font-medium text-foreground font-sans">
                   Rolling Consumption Forecasting
                 </h3>
                 <p className="mt-4 text-sm text-muted-strong leading-relaxed font-sans">

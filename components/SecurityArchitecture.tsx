@@ -73,7 +73,7 @@ export function SecurityArchitecture() {
                     <span>ENFORCED AT DB LAYER</span>
                   </div>
 
-                  <h3 className="mt-6 text-lg font-bold text-[var(--text)] tracking-tight font-sans">
+                  <h3 className="mt-6 text-lg font-medium text-[var(--text)] tracking-tight font-sans">
                     {item.title}
                   </h3>
 

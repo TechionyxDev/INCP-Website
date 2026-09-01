@@ -3,88 +3,108 @@
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════════════════
-   INCP DESIGN SYSTEM — neutral chrome with a two-accent hierarchy.
+   INCP DESIGN SYSTEM — aligned with the Techionyx monochromatic system.
 
-   Hierarchy the palette encodes:
-     • near-black / near-white  → structure (page, type, primary action)
-     • greys                    → the UI system (surfaces, borders)
-     • blue  #9CB4F7            → primary product accent
-     • purple #DAACF2           → secondary / AI / premium accent
+   Every colour on the marketing surface is HSL hue 0, saturation 0%.
+   The only variable is lightness. No tints, no accent hue, no coloured
+   gradients. Contrast and weight carry all hierarchy.
 
-   Every token ships twice:
+   The token *names* are unchanged, so every existing component keeps
+   resolving; only what they point at moved onto the achromatic ramp.
+
+   Two deliberate exceptions: semantic status colours and the demo
+   chart ramp. A status badge has to be readable as *state*, and chart
+   series have to be told apart, so those keep a narrow, heavily
+   desaturated hue set that reads as tinted grey beside the chrome.
+
+   Each token ships twice:
      --token       → ready-to-use CSS colour
      --token-rgb   → space-separated channels, so Tailwind opacity
                      modifiers (bg-brand-solid/10) resolve correctly.
-
-   ── Why derived variants exist ─────────────────────────────────────
-   The supplied accents are tuned for DARK surfaces. On light surfaces
-   they are decorative only:
-
-     • #9CB4F7 is 1.72:1 on white — unusable as text or as a filled
-       control. Light theme uses --brand-text #3550B8 (7.02:1 on white,
-       6.22:1 on the secondary surface); the literal #9CB4F7 stays for
-       soft fills, and #EDF1FE is its soft companion.
-     • #DAACF2 is 1.62:1 on white. Light theme uses #7A44B8 (6.28:1)
-       for purple type, #F4E8FA for the soft fill.
-     • The primary action is deliberately achromatic (#171719 light,
-       #F5F5F6 dark) so the accents never compete with the CTA.
    ═══════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ── Primary action: achromatic, so accents never fight the CTA ── */
-  --brand: #171719;          --brand-rgb: 23 23 25;
-  --brand-hover: #26262A;    --brand-hover-rgb: 38 38 42;
-  --brand-accent: #9CB4F7;   --brand-accent-rgb: 156 180 247;
-  --brand-muted: #CCCCD1;    --brand-muted-rgb: 204 204 209;
-  --on-brand: #F7F7F8;       --on-brand-rgb: 247 247 248;
+  /* ── Achromatic ramp: the single source of truth ──────────────── */
+  --g-0: #FFFFFF;    --g-0-rgb: 255 255 255;
+  --g-50: #F7F7F7;   --g-50-rgb: 247 247 247;
+  --g-100: #F0F0F0;  --g-100-rgb: 240 240 240;
+  --g-200: #E0E0E0;  --g-200-rgb: 224 224 224;
+  --g-300: #C7C7C7;  --g-300-rgb: 199 199 199;
+  --g-400: #A3A3A3;  --g-400-rgb: 163 163 163;
+  --g-500: #808080;  --g-500-rgb: 128 128 128;
+  --g-600: #616161;  --g-600-rgb: 97 97 97;
+  --g-700: #454545;  --g-700-rgb: 69 69 69;
+  --g-800: #2B2B2B;  --g-800-rgb: 43 43 43;
+  --g-900: #1A1A1A;  --g-900-rgb: 26 26 26;
+  --g-950: #0F0F0F;  --g-950-rgb: 15 15 15;
+  --g-1000: #080808; --g-1000-rgb: 8 8 8;
 
-  --brand-solid: #171719;       --brand-solid-rgb: 23 23 25;
-  --brand-solid-hover: #26262A; --brand-solid-hover-rgb: 38 38 42;
-  /* Brand-coloured type = the blue product accent, darkened for light. */
-  --brand-text: #3550B8;        --brand-text-rgb: 53 80 184;
+  /* ── Primary action: solid inverse of the surface ─────────────── */
+  --brand: var(--g-900);          --brand-rgb: var(--g-900-rgb);
+  --brand-hover: var(--g-700);    --brand-hover-rgb: var(--g-700-rgb);
+  --brand-accent: var(--g-600);   --brand-accent-rgb: var(--g-600-rgb);
+  --brand-muted: var(--g-300);    --brand-muted-rgb: var(--g-300-rgb);
+  --on-brand: var(--g-50);        --on-brand-rgb: var(--g-50-rgb);
 
-  /* ── Accents ──────────────────────────────────────────────────── */
-  --accent-blue: #9CB4F7;         --accent-blue-rgb: 156 180 247;
-  --accent-blue-soft: #EDF1FE;    --accent-blue-soft-rgb: 237 241 254;
-  --accent-blue-text: #3550B8;    --accent-blue-text-rgb: 53 80 184;
-  --accent-purple: #DAACF2;       --accent-purple-rgb: 218 172 242;
-  --accent-purple-soft: #F4E8FA;  --accent-purple-soft-rgb: 244 232 250;
-  --accent-purple-text: #7A44B8;  --accent-purple-text-rgb: 122 68 184;
+  --brand-solid: var(--g-900);          --brand-solid-rgb: var(--g-900-rgb);
+  --brand-solid-hover: var(--g-700);    --brand-solid-hover-rgb: var(--g-700-rgb);
+  --brand-text: var(--g-900);           --brand-text-rgb: var(--g-900-rgb);
 
-  /* ── Semantic fills (spec values) ─────────────────────────────── */
-  --success: #059669;        --success-rgb: 5 150 105;
-  --warning: #D97706;        --warning-rgb: 217 119 6;
-  --info: #2563EB;           --info-rgb: 37 99 235;
-  --danger: #DC2626;         --danger-rgb: 220 38 38;
+  /* ── Accents: retained as tokens, resolved onto the ramp ──────── */
+  --accent-blue: var(--g-600);         --accent-blue-rgb: var(--g-600-rgb);
+  --accent-blue-soft: var(--g-100);    --accent-blue-soft-rgb: var(--g-100-rgb);
+  --accent-blue-text: var(--g-800);    --accent-blue-text-rgb: var(--g-800-rgb);
+  --accent-purple: var(--g-500);       --accent-purple-rgb: var(--g-500-rgb);
+  --accent-purple-soft: var(--g-100);  --accent-purple-soft-rgb: var(--g-100-rgb);
+  --accent-purple-text: var(--g-700);  --accent-purple-text-rgb: var(--g-700-rgb);
 
-  /* Semantic text: darkened so small type clears 4.5:1 on white. */
-  --success-text: #047857;   --success-text-rgb: 4 120 87;
-  --warning-text: #B45309;   --warning-text-rgb: 180 83 9;
-  --info-text: #2563EB;      --info-text-rgb: 37 99 235;
-  --danger-text: #D01F1F;    --danger-text-rgb: 208 31 31;
+  /* ── Semantic status ──────────────────────────────────────────
+     The one place hue survives. A status badge has to be readable as
+     *state* at a glance ("Exception" must not look like "Reconciled"),
+     and pure lightness cannot carry that on a dense table row. These
+     are heavily desaturated so they read as tinted greys next to the
+     achromatic chrome rather than as a second palette. All clear
+     4.5:1 as small text on the light surfaces. */
+  --success: #3F6152;   --success-rgb: 63 97 82;
+  --warning: #6B5A36;   --warning-rgb: 107 90 54;
+  --info: #465369;      --info-rgb: 70 83 105;
+  --danger: #6E4141;    --danger-rgb: 110 65 65;
+
+  --success-text: #3F6152;  --success-text-rgb: 63 97 82;
+  --warning-text: #6B5A36;  --warning-text-rgb: 107 90 54;
+  --info-text: #465369;     --info-text-rgb: 70 83 105;
+  --danger-text: #6E4141;   --danger-text-rgb: 110 65 65;
 
   /* ── Light theme surfaces ─────────────────────────────────────── */
-  --bg: #F7F7F8;             --bg-rgb: 247 247 248;
-  --surface-1: #FFFFFF;      --surface-1-rgb: 255 255 255;
-  --surface-2: #F1F1F3;      --surface-2-rgb: 241 241 243;
-  --surface-raised: #FFFFFF; --surface-raised-rgb: 255 255 255;
-  --text: #0B0B0C;           --text-rgb: 11 11 12;
-  --text-2: #77777E;         --text-2-rgb: 119 119 126;
-  /* #77777E is 4.45:1 on the page background; body copy uses this. */
-  --text-2-strong: #525257;  --text-2-strong-rgb: 82 82 87;
-  --border: #E2E2E5;         --border-rgb: 226 226 229;
-  --border-hover: #CCCCD1;   --border-hover-rgb: 204 204 209;
-  --border-subtle: #ECECEF;  --border-subtle-rgb: 236 236 239;
+  --bg: var(--g-0);             --bg-rgb: var(--g-0-rgb);
+  --surface-1: var(--g-0);      --surface-1-rgb: var(--g-0-rgb);
+  --surface-2: var(--g-50);     --surface-2-rgb: var(--g-50-rgb);
+  --surface-raised: var(--g-0); --surface-raised-rgb: var(--g-0-rgb);
+  --text: var(--g-900);         --text-rgb: var(--g-900-rgb);
+  /* On a near-white surface g-500 only reaches 3.9:1, so secondary text
+     sits two steps darker and clears AA against every light surface. */
+  --text-2: var(--g-600);        --text-2-rgb: var(--g-600-rgb);
+  --text-2-strong: var(--g-700); --text-2-strong-rgb: var(--g-700-rgb);
+  --border: var(--g-200);        --border-rgb: var(--g-200-rgb);
+  --border-hover: var(--g-300);  --border-hover-rgb: var(--g-300-rgb);
+  --border-subtle: var(--g-100); --border-subtle-rgb: var(--g-100-rgb);
 
-  --band: #F1F1F3;           --band-rgb: 241 241 243;
+  --band: var(--g-100);          --band-rgb: var(--g-100-rgb);
 
-  /* Focus ring: the blue product accent, darkened to stay visible. */
-  --ring: #3550B8;           --ring-rgb: 53 80 184;
+  --ring: var(--g-600);          --ring-rgb: var(--g-600-rgb);
 
-  --shadow-sm: 0 1px 2px rgb(11 11 12 / 0.06);
-  --shadow-md: 0 4px 14px -2px rgb(11 11 12 / 0.09);
-  --shadow-lg: 0 18px 40px -12px rgb(11 11 12 / 0.14);
-  --shadow-brand: 0 12px 28px -12px rgb(11 11 12 / 0.32);
+  /* Flat panels defined by hairlines, not elevation. */
+  --shadow-sm: 0 1px 2px rgb(8 8 8 / 0.05);
+  --shadow-md: 0 4px 14px -4px rgb(8 8 8 / 0.08);
+  --shadow-lg: 0 18px 40px -16px rgb(8 8 8 / 0.12);
+  --shadow-brand: 0 12px 28px -14px rgb(8 8 8 / 0.24);
+
+  /* Geometry: sharp-edge shape lock. Nothing is rounder than 4px. */
+  --radius: 2px;
+  --nav-h: 68px;
+
+  /* Grayscale image treatment. */
+  --media-filter: grayscale(1) contrast(1.02);
 
   /* ── Embedded product demo (app UI) ───────────────────────────── */
   --a-bg: var(--bg);
@@ -93,95 +113,109 @@
   --a-border: var(--border);
   --a-border-strong: var(--border-hover);
   --a-text: var(--text);
-  --a-text-2: var(--text-2-strong);
-  --a-muted: #525257;
-  --a-faint: #77777E;
-  --a-accent: var(--accent-blue-text);
-  --a-on-accent: #FFFFFF;
-  --a-accent-soft: rgb(var(--accent-blue-rgb) / 0.22);
+  --a-text-2: var(--g-700);
+  --a-muted: var(--g-600);
+  --a-faint: var(--g-500);
+  --a-accent: var(--g-900);
+  --a-on-accent: var(--g-0);
+  --a-accent-soft: rgb(var(--g-900-rgb) / 0.10);
+  --a-slate-soft: rgb(var(--g-900-rgb) / 0.05);
+  /* The demo reuses the same desaturated status set as the badges. */
   --a-success: var(--success-text);
-  --a-success-soft: rgb(var(--success-rgb) / 0.13);
+  --a-success-soft: rgb(var(--success-rgb) / 0.12);
   --a-warning: var(--warning-text);
-  --a-warning-soft: rgb(var(--warning-rgb) / 0.15);
+  --a-warning-soft: rgb(var(--warning-rgb) / 0.14);
   --a-info: var(--info-text);
   --a-info-soft: rgb(var(--info-rgb) / 0.12);
   --a-danger: var(--danger-text);
-  --a-danger-soft: rgb(var(--danger-rgb) / 0.11);
-  --a-slate-soft: rgb(var(--text-rgb) / 0.05);
-  /* Chart ramp: blue lead, purple second, then neutrals and semantics. */
-  --a-c1: #3550B8;
-  --a-c2: #7A44B8;
-  --a-c3: #047857;
-  --a-c4: #B45309;
-  --a-c5: #D01F1F;
-  --a-c6: #525257;
-  --a-c7: #77777E;
-  --a-c8: #CCCCD1;
+  --a-danger-soft: rgb(var(--danger-rgb) / 0.12);
+  /* Chart ramp: lightness-stepped so series separate without hue. */
+  --a-c1: var(--g-900);
+  --a-c2: var(--g-600);
+  --a-c3: var(--g-400);
+  --a-c4: var(--g-700);
+  --a-c5: var(--g-500);
+  --a-c6: var(--g-800);
+  --a-c7: var(--g-300);
+  --a-c8: var(--g-200);
 }
 
 [data-theme="dark"] {
-  /* ── Dark theme surfaces ──────────────────────────────────────── */
-  --bg: #0B0B0C;             --bg-rgb: 11 11 12;
-  --surface-1: #151517;      --surface-1-rgb: 21 21 23;
-  --surface-2: #1D1D20;      --surface-2-rgb: 29 29 32;
-  --surface-raised: #242427; --surface-raised-rgb: 36 36 39;
-  --text: #F7F7F8;           --text-rgb: 247 247 248;
-  --text-2: #85858D;         --text-2-rgb: 133 133 141;
-  /* #85858D is 4.98:1 on the card; body copy uses the lifted tone. */
-  --text-2-strong: #BEBEC4;  --text-2-strong-rgb: 190 190 196;
-  --border: #29292D;         --border-rgb: 41 41 45;
-  --border-hover: #3A3A40;   --border-hover-rgb: 58 58 64;
-  --border-subtle: #232327;  --border-subtle-rgb: 35 35 39;
+  /* ── Dark theme surfaces (the default for this site) ──────────── */
+  --bg: var(--g-1000);           --bg-rgb: var(--g-1000-rgb);
+  --surface-1: var(--g-950);     --surface-1-rgb: var(--g-950-rgb);
+  --surface-2: var(--g-900);     --surface-2-rgb: var(--g-900-rgb);
+  --surface-raised: var(--g-800);--surface-raised-rgb: var(--g-800-rgb);
+  --text: var(--g-50);           --text-rgb: var(--g-50-rgb);
+  --text-2: var(--g-400);        --text-2-rgb: var(--g-400-rgb);
+  --text-2-strong: var(--g-300); --text-2-strong-rgb: var(--g-300-rgb);
+  --border: var(--g-800);        --border-rgb: var(--g-800-rgb);
+  --border-hover: var(--g-700);  --border-hover-rgb: var(--g-700-rgb);
+  --border-subtle: var(--g-900); --border-subtle-rgb: var(--g-900-rgb);
 
-  --band: #151517;           --band-rgb: 21 21 23;
+  --band: var(--g-950);          --band-rgb: var(--g-950-rgb);
 
-  /* Primary action inverts to near-white on near-black type. */
-  --brand: #F5F5F6;             --brand-rgb: 245 245 246;
-  --brand-hover: #FFFFFF;       --brand-hover-rgb: 255 255 255;
-  --brand-accent: #A9BEF9;      --brand-accent-rgb: 169 190 249;
-  --brand-muted: #3A3A40;       --brand-muted-rgb: 58 58 64;
-  --on-brand: #111113;          --on-brand-rgb: 17 17 19;
-  --brand-solid: #F5F5F6;       --brand-solid-rgb: 245 245 246;
-  --brand-solid-hover: #FFFFFF; --brand-solid-hover-rgb: 255 255 255;
-  --brand-text: #A9BEF9;        --brand-text-rgb: 169 190 249;
+  /* Primary action inverts: near-white fill, near-black type. */
+  --brand: var(--g-50);                --brand-rgb: var(--g-50-rgb);
+  --brand-hover: var(--g-300);         --brand-hover-rgb: var(--g-300-rgb);
+  --brand-accent: var(--g-400);        --brand-accent-rgb: var(--g-400-rgb);
+  --brand-muted: var(--g-700);         --brand-muted-rgb: var(--g-700-rgb);
+  --on-brand: var(--g-1000);           --on-brand-rgb: var(--g-1000-rgb);
+  --brand-solid: var(--g-50);          --brand-solid-rgb: var(--g-50-rgb);
+  --brand-solid-hover: var(--g-300);   --brand-solid-hover-rgb: var(--g-300-rgb);
+  --brand-text: var(--g-50);           --brand-text-rgb: var(--g-50-rgb);
 
-  --accent-blue: #A9BEF9;         --accent-blue-rgb: 169 190 249;
-  --accent-blue-soft: #222A41;    --accent-blue-soft-rgb: 34 42 65;
-  --accent-blue-text: #A9BEF9;    --accent-blue-text-rgb: 169 190 249;
-  --accent-purple: #DAACF2;       --accent-purple-rgb: 218 172 242;
-  --accent-purple-soft: #33263A;  --accent-purple-soft-rgb: 51 38 58;
-  --accent-purple-text: #DAACF2;  --accent-purple-text-rgb: 218 172 242;
+  --accent-blue: var(--g-400);         --accent-blue-rgb: var(--g-400-rgb);
+  --accent-blue-soft: var(--g-800);    --accent-blue-soft-rgb: var(--g-800-rgb);
+  --accent-blue-text: var(--g-300);    --accent-blue-text-rgb: var(--g-300-rgb);
+  --accent-purple: var(--g-500);       --accent-purple-rgb: var(--g-500-rgb);
+  --accent-purple-soft: var(--g-800);  --accent-purple-soft-rgb: var(--g-800-rgb);
+  --accent-purple-text: var(--g-400);  --accent-purple-text-rgb: var(--g-400-rgb);
 
-  /* Semantic text lifted to clear 4.5:1 on the #151517 card. */
-  --success-text: #6EE7B7;   --success-text-rgb: 110 231 183;
-  --warning-text: #FBBF24;   --warning-text-rgb: 251 191 36;
-  --info-text: #93C5FD;      --info-text-rgb: 147 197 253;
-  --danger-text: #FEB2B2;    --danger-text-rgb: 254 178 178;
+  /* Status lifts to desaturated pastels: distinguishable as state on a
+     near-black row, and all above 4.5:1 on the #0F0F0F card. */
+  --success: #A8C8B7;   --success-rgb: 168 200 183;
+  --warning: #D2BE8E;   --warning-rgb: 210 190 142;
+  --info: #B4C0D4;      --info-rgb: 180 192 212;
+  --danger: #D8ADAD;    --danger-rgb: 216 173 173;
 
-  --ring: #A9BEF9;           --ring-rgb: 169 190 249;
+  --success-text: #A8C8B7;  --success-text-rgb: 168 200 183;
+  --warning-text: #D2BE8E;  --warning-text-rgb: 210 190 142;
+  --info-text: #B4C0D4;     --info-text-rgb: 180 192 212;
+  --danger-text: #D8ADAD;   --danger-text-rgb: 216 173 173;
+
+  --ring: var(--g-300);      --ring-rgb: var(--g-300-rgb);
 
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.5);
-  --shadow-md: 0 4px 16px -2px rgb(0 0 0 / 0.6);
-  --shadow-lg: 0 20px 48px -12px rgb(0 0 0 / 0.7);
-  --shadow-brand: 0 14px 32px -14px rgb(0 0 0 / 0.8);
+  --shadow-md: 0 4px 16px -4px rgb(0 0 0 / 0.6);
+  --shadow-lg: 0 20px 48px -16px rgb(0 0 0 / 0.7);
+  --shadow-brand: 0 14px 32px -16px rgb(0 0 0 / 0.8);
+
+  --media-filter: grayscale(1) contrast(1.05) brightness(0.82);
 
   /* ── Embedded product demo (app UI) ───────────────────────────── */
   --a-raised: var(--surface-raised);
-  --a-text-2: #BEBEC4;
-  --a-muted: #BEBEC4;
-  --a-faint: #85858D;
-  --a-accent: #A9BEF9;
-  --a-on-accent: #111113;
-  --a-accent-soft: rgb(var(--accent-blue-rgb) / 0.18);
+  --a-text-2: var(--g-300);
+  --a-muted: var(--g-300);
+  --a-faint: var(--g-500);
+  --a-accent: var(--g-50);
+  --a-on-accent: var(--g-1000);
+  --a-accent-soft: rgb(255 255 255 / 0.12);
   --a-slate-soft: rgb(255 255 255 / 0.06);
-  --a-c1: #A9BEF9;
-  --a-c2: #DAACF2;
-  --a-c3: #6EE7B7;
-  --a-c4: #FBBF24;
-  --a-c5: #FEB2B2;
-  --a-c6: #BEBEC4;
-  --a-c7: #85858D;
-  --a-c8: #3A3A40;
+  /* Status inherits the dark tokens above via the `--a-*` aliases in
+     `:root`; only the alpha of the soft fills is lifted for dark. */
+  --a-success-soft: rgb(var(--success-rgb) / 0.14);
+  --a-warning-soft: rgb(var(--warning-rgb) / 0.14);
+  --a-info-soft: rgb(var(--info-rgb) / 0.14);
+  --a-danger-soft: rgb(var(--danger-rgb) / 0.14);
+  --a-c1: var(--g-50);
+  --a-c2: var(--g-400);
+  --a-c3: var(--g-600);
+  --a-c4: var(--g-300);
+  --a-c5: var(--g-500);
+  --a-c6: var(--g-200);
+  --a-c7: var(--g-700);
+  --a-c8: var(--g-800);
 }
 
 * {
@@ -190,10 +224,12 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-geist), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
   color-scheme: light;
 }
 
@@ -205,8 +241,21 @@ body {
   overflow-x: hidden;
   background-color: var(--bg);
   color: var(--text);
+  font-synthesis-weight: none;
+  min-width: 320px;
   margin: 0;
   padding: 0;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Display type: tighter tracking, medium weight, never bolder-by-default. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-geist), system-ui, sans-serif;
+  letter-spacing: -0.022em;
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--nav-h) + 8px);
 }
 
 ::selection {
@@ -216,23 +265,24 @@ body {
 
 :focus-visible {
   outline: 2px solid var(--ring);
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-hover);
-  border-radius: 3px;
+  background: var(--g-700);
+  border: 2px solid var(--bg);
+  border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-solid);
+  background: var(--g-500);
 }
 
 input,
@@ -244,6 +294,26 @@ input::placeholder,
 textarea::placeholder {
   color: var(--text-2);
   opacity: 0.75;
+}
+
+@layer utilities {
+  /* Monospace is the label voice, matching the Techionyx section labels. */
+  .font-mono-tx {
+    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  /* Media is achromatic by force, not by hope. */
+  .media-mono {
+    filter: var(--media-filter);
+  }
+
+  /* Precise hairline grid, used structurally to organise real content. */
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgb(var(--border-rgb)) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--border-rgb)) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
 }
 
 /* Respect reduced-motion for the scroll-reveal and hover transitions. */

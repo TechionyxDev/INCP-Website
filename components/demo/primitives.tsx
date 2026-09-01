@@ -32,7 +32,7 @@ export function Badge({
   const t = TONE[tone];
   return (
     <span
-      className="inline-flex items-center gap-1.5 rounded-full px-2 py-[3px] text-[10px] font-bold leading-none whitespace-nowrap"
+      className="inline-flex items-center gap-1.5 rounded px-2 py-[3px] text-[10px] font-bold leading-none whitespace-nowrap"
       style={{
         color: solid ? "var(--a-card)" : t.fg,
         background: solid ? t.fg : t.bg,

@@ -107,7 +107,7 @@ export function DeploymentTiers() {
                     )}
                   </div>
 
-                  <h3 className="mt-6 text-2xl font-bold text-[var(--text)] tracking-tight font-sans">
+                  <h3 className="mt-6 text-2xl font-medium text-[var(--text)] tracking-tight font-sans">
                     {plan.name}
                   </h3>
                   <p className="mt-2 text-xs text-muted-strong font-sans leading-relaxed">

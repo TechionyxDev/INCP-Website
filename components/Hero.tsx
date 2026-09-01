@@ -21,14 +21,14 @@ export function Hero(): React.JSX.Element {
 
       <div className="relative mx-auto max-w-5xl px-6 text-center">
         <ScrollReveal delay={0}>
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface-1 px-3.5 py-1 text-xs text-muted-strong mb-8 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded border border-border bg-surface-1 px-3.5 py-1 text-xs text-muted-strong mb-8 shadow-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-solid" />
             <span>Inventory Network Coordination Platform</span>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={100}>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.08] max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight text-foreground leading-[1.08] max-w-4xl mx-auto">
             Coordination for complex <br className="hidden sm:inline" />
             <span className="text-brand-text">physical inventory.</span>
           </h1>
@@ -44,7 +44,7 @@ export function Hero(): React.JSX.Element {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/dashboard"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground px-7 py-3.5 text-sm font-semibold tracking-wide transition-all shadow-brand"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground px-7 py-3.5 text-sm font-semibold tracking-wide transition-all shadow-brand"
             >
               <span>View the Dashboard</span>
               <ArrowRight className="h-4 w-4" />
@@ -52,7 +52,7 @@ export function Hero(): React.JSX.Element {
 
             <a
               href="#platform"
-              className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-border bg-surface-1 text-foreground hover:border-border-hover hover:bg-surface-2 px-7 py-3.5 text-sm font-semibold transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded border border-border bg-surface-1 text-foreground hover:border-border-hover hover:bg-surface-2 px-7 py-3.5 text-sm font-semibold transition-all"
             >
               Explore Platform
             </a>

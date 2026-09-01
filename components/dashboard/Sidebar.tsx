@@ -92,7 +92,7 @@ export function Sidebar({
 
                         {item.badge !== undefined && (
                           <span
-                            className={`ml-auto rounded-full px-1.5 py-0.5 text-[0.6875rem] font-semibold tabular-nums ${
+                            className={`ml-auto rounded px-1.5 py-0.5 text-[0.6875rem] font-semibold tabular-nums ${
                               isActive
                                 ? "bg-on-brand/20 text-brand-foreground"
                                 : "bg-surface-2 text-muted-strong"

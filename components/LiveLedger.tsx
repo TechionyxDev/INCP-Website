@@ -58,7 +58,7 @@ export function LiveLedger() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+            <span className="inline-flex items-center gap-2 rounded border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
               <Database className="h-3.5 w-3.5" />
               The Immutable Truth Layer
             </span>
@@ -161,7 +161,7 @@ export function LiveLedger() {
           <ScrollReveal delay={400} className="lg:col-span-5">
             <div className="h-full rounded-3xl border border-[var(--border)] bg-[var(--surface-1)] p-6 sm:p-7 flex flex-col justify-between">
               <div>
-                <h3 className="text-lg font-bold text-[var(--text)] tracking-tight font-sans">
+                <h3 className="text-lg font-medium text-[var(--text)] tracking-tight font-sans">
                   Atomic State Transition Lifecycle
                 </h3>
                 <p className="mt-1.5 text-xs text-muted-strong">

@@ -33,7 +33,7 @@ const VARIANTS: Record<BadgeVariant, string> = {
 export function Badge({ children, variant = "default", className = "" }: BadgeProps) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium tracking-wide ${VARIANTS[variant]} ${className}`}
+      className={`inline-flex items-center gap-1.5 rounded border px-3 py-1 text-xs font-medium tracking-wide ${VARIANTS[variant]} ${className}`}
     >
       {children}
     </span>

@@ -213,7 +213,7 @@ export function AppDemo({
                       )}
                       {showLabels && item.badge && (
                         <span
-                          className="rounded-full px-1.5 py-[1px] text-[9px] font-bold"
+                          className="rounded px-1.5 py-[1px] text-[9px] font-bold"
                           style={{ background: "var(--a-danger-soft)", color: "var(--a-danger)" }}
                         >
                           {item.badge}
@@ -297,7 +297,7 @@ export function AppDemo({
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search inventory, resources, tickets…"
-                className="w-full rounded-full pl-9 pr-12 py-2 text-[11px] outline-none"
+                className="w-full rounded pl-9 pr-12 py-2 text-[11px] outline-none"
                 style={{ background: "var(--a-raised)", color: "var(--a-text)" }}
               />
               <span

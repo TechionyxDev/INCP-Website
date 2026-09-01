@@ -63,7 +63,7 @@ export function MetricCard({ metric }: MetricCardProps): React.JSX.Element {
 
       <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1">
         <span
-          className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold tabular-nums ${TREND_CLASS[tone]}`}
+          className={`inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs font-semibold tabular-nums ${TREND_CLASS[tone]}`}
         >
           <TrendIcon className="h-3.5 w-3.5" aria-hidden />
           {signedChange}

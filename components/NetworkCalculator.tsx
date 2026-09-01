@@ -21,7 +21,7 @@ export function NetworkCalculator() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
+            <span className="inline-flex items-center gap-2 rounded border border-brand-solid/40 bg-brand-solid/10 px-3.5 py-1 text-xs uppercase tracking-[0.18em] text-brand-text font-mono">
               <Calculator className="h-3.5 w-3.5" />
               Network ROI & Loss Prevention
             </span>

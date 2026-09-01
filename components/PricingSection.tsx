@@ -71,7 +71,7 @@ export function PricingSection() {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text)]">
+            <h2 className="mt-3 text-3xl sm:text-4xl font-medium tracking-tight text-[var(--text)]">
               Predictable deployments for any network scale.
             </h2>
           </ScrollReveal>
@@ -104,7 +104,7 @@ export function PricingSection() {
                   >
                     {plan.badge}
                   </div>
-                  <h3 className="mt-3 text-2xl font-bold text-[var(--text)]">
+                  <h3 className="mt-3 text-2xl font-medium text-[var(--text)]">
                     {plan.name}
                   </h3>
                   <p className="mt-2 text-sm text-muted-strong leading-relaxed">
@@ -130,7 +130,7 @@ export function PricingSection() {
                 <div className="mt-8 pt-6 border-t border-[var(--border)]">
                   <a
                     href="#contact"
-                    className={`block w-full text-center py-3 rounded-full text-sm font-semibold transition-all ${
+                    className={`block w-full text-center py-3 rounded text-sm font-semibold transition-all ${
                       plan.highlight
                         ? "bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground shadow-sm"
                         : "border border-[var(--border)] hover:border-brand-solid hover:text-brand-text text-[var(--text)]"
@@ -147,7 +147,7 @@ export function PricingSection() {
         {/* Simple Contact / Demo Request */}
         <div id="contact" className="mt-20 rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-8 sm:p-12">
           <div className="max-w-xl mx-auto text-center">
-            <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text)]">
+            <h3 className="text-2xl sm:text-3xl font-medium text-[var(--text)]">
               Schedule a personalized walkthrough.
             </h3>
             <p className="mt-3 text-sm text-muted-strong leading-relaxed">
@@ -167,11 +167,11 @@ export function PricingSection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your work email"
-                  className="flex-1 h-12 rounded-full bg-[var(--surface-2)] border border-[var(--border)] px-5 text-sm text-[var(--text)] placeholder:text-muted-strong focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
+                  className="flex-1 h-12 rounded bg-[var(--surface-2)] border border-[var(--border)] px-5 text-sm text-[var(--text)] placeholder:text-muted-strong focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
                 />
                 <button
                   type="submit"
-                  className="h-12 px-7 rounded-full bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground text-sm font-semibold transition-all shrink-0 inline-flex items-center justify-center gap-2"
+                  className="h-12 px-7 rounded bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground text-sm font-semibold transition-all shrink-0 inline-flex items-center justify-center gap-2"
                 >
                   <span>Request Demo</span>
                   <ArrowRight className="h-4 w-4" />

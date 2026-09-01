@@ -38,7 +38,7 @@ export function SecuritySection() {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text)]">
+            <h2 className="mt-3 text-3xl sm:text-4xl font-medium tracking-tight text-[var(--text)]">
               Security built into every layer.
             </h2>
           </ScrollReveal>

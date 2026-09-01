@@ -190,7 +190,7 @@ export function TransfersTable({ rows, columns }: TransfersTableProps): React.JS
                   </td>
                   <td className="whitespace-nowrap px-4 py-3">
                     <span
-                      className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${TONE_CLASS[status.tone]}`}
+                      className={`inline-flex items-center rounded px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${TONE_CLASS[status.tone]}`}
                     >
                       {status.label}
                     </span>

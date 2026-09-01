@@ -92,7 +92,7 @@ export function CoreEngines() {
                     <span>ACTIVE</span>
                   </div>
 
-                  <h3 className="mt-6 text-xl font-bold text-[var(--text)] tracking-tight font-sans">
+                  <h3 className="mt-6 text-xl font-medium text-[var(--text)] tracking-tight font-sans">
                     {eng.title}
                   </h3>
                   <div className="mt-1 text-xs font-mono text-muted-strong">{eng.subtitle}</div>

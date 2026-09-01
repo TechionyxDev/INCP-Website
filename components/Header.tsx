@@ -73,7 +73,7 @@ export function Header(): React.JSX.Element {
 
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground px-5 py-2 text-xs font-semibold tracking-wide transition-all"
+              className="inline-flex items-center justify-center rounded bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground px-5 py-2 text-xs font-semibold tracking-wide transition-all"
             >
               Get Started
             </a>

@@ -38,7 +38,7 @@ export function PlatformOverview() {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text)]">
+            <h2 className="mt-3 text-3xl sm:text-4xl font-medium tracking-tight text-[var(--text)]">
               An operating system for every facility.
             </h2>
           </ScrollReveal>

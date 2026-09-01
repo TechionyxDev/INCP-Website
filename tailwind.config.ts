@@ -73,6 +73,23 @@ const config: Config = {
         info: { DEFAULT: rgb("info"), text: rgb("info-text") },
         destructive: { DEFAULT: rgb("danger"), text: rgb("danger-text") },
 
+        /* ── Achromatic ramp — hue 0, saturation 0%. The only palette. ─ */
+        gray: {
+          0: rgb("g-0"),
+          50: rgb("g-50"),
+          100: rgb("g-100"),
+          200: rgb("g-200"),
+          300: rgb("g-300"),
+          400: rgb("g-400"),
+          500: rgb("g-500"),
+          600: rgb("g-600"),
+          700: rgb("g-700"),
+          800: rgb("g-800"),
+          900: rgb("g-900"),
+          950: rgb("g-950"),
+          1000: rgb("g-1000"),
+        },
+
         /* ── Legacy aliases (older markup keeps resolving) ───────── */
         scarlet: rgb("brand-solid"),
         crimson: rgb("brand-solid-hover"),
@@ -99,8 +116,24 @@ const config: Config = {
         DEFAULT: "rgb(var(--ring-rgb) / 0.7)",
       },
       fontFamily: {
-        sans: ["var(--font-space-grotesk)", "sans-serif"],
-        mono: ["var(--font-space-mono)", "monospace"],
+        sans: ["var(--font-geist)", "system-ui", "sans-serif"],
+        display: ["var(--font-geist)", "system-ui", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+      },
+      /* Sharp-edge shape lock, ported from Techionyx: nothing on the site
+         is rounder than 4px. `full` is kept for pills, dots, and avatars,
+         which read as shapes rather than as panels. */
+      borderRadius: {
+        none: "0",
+        xs: "1px",
+        sm: "2px",
+        DEFAULT: "2px",
+        md: "2px",
+        lg: "3px",
+        xl: "4px",
+        "2xl": "4px",
+        "3xl": "4px",
+        full: "999px",
       },
       animation: {
         "pulse-dot": "pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",

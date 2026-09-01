@@ -39,13 +39,13 @@ export function Solutions() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <ScrollReveal delay={0}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-strong font-mono">
+            <span className="inline-flex items-center gap-2 rounded border border-[var(--border)] bg-[var(--surface-1)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-strong font-mono">
               Solutions
             </span>
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <h2 className="mt-5 text-3xl sm:text-5xl font-bold tracking-tight text-[var(--text)] leading-[1.1]">
+            <h2 className="mt-5 text-3xl sm:text-5xl font-medium tracking-tight text-[var(--text)] leading-[1.1]">
               Engineered for high-stakes <br />
               <span className="text-brand-text">multi-location operations.</span>
             </h2>
@@ -71,7 +71,7 @@ export function Solutions() {
                     </div>
                   </div>
 
-                  <h3 className="mt-5 text-xl font-bold text-[var(--text)] tracking-tight">
+                  <h3 className="mt-5 text-xl font-medium text-[var(--text)] tracking-tight">
                     {item.title}
                   </h3>
                   <p className="mt-2.5 text-sm text-muted-strong leading-relaxed">
