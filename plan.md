@@ -18,15 +18,15 @@ Header → Hero → Problem → Platform → Features → HowItWorks → Solutio
 
 ## Tech Stack
 
-| Layer | Choice |
-|-------|--------|
-| Framework | **Next.js 15** (App Router, same as EWIP) |
-| Styling | **TailwindCSS v3** (same as EWIP — utility-first, fast iteration) |
-| Fonts | **Space Grotesk** (headings) + **Space Mono** (monospace accents) via `next/font` |
-| Icons | **Lucide React** |
-| Animations | **CSS transitions + Intersection Observer** (scroll reveals) |
-| Theme | **Dark + Light** via CSS variables + `data-theme` attribute toggle |
-| Deploy | Static export → Vercel |
+| Layer      | Choice                                                                            |
+| ---------- | --------------------------------------------------------------------------------- |
+| Framework  | **Next.js 15** (App Router, same as EWIP)                                         |
+| Styling    | **TailwindCSS v3** (same as EWIP — utility-first, fast iteration)                 |
+| Fonts      | **Space Grotesk** (headings) + **Space Mono** (monospace accents) via `next/font` |
+| Icons      | **Lucide React**                                                                  |
+| Animations | **CSS transitions + Intersection Observer** (scroll reveals)                      |
+| Theme      | **Dark + Light** via CSS variables + `data-theme` attribute toggle                |
+| Deploy     | Static export → Vercel                                                            |
 
 ---
 
@@ -35,33 +35,35 @@ Header → Hero → Problem → Platform → Features → HowItWorks → Solutio
 Toggle in the navbar. Default = dark. Persisted in `localStorage`.
 
 ### Dark Theme (default)
+
 ```css
---bg: #07070B;
---bg-soft: #0E0F1A;
---text: #FAFAFA;
---text-muted: #71717A;
---text-muted-strong: #A1A1AA;
---border: rgba(255,255,255,0.07);
---border-hover: rgba(255,255,255,0.16);
---card: rgba(255,255,255,0.015);
---accent: #6366F1;
---accent-violet: #8B5CF6;
---accent-cyan: #22D3EE;
+--bg: #07070b;
+--bg-soft: #0e0f1a;
+--text: #fafafa;
+--text-muted: #71717a;
+--text-muted-strong: #a1a1aa;
+--border: rgba(255, 255, 255, 0.07);
+--border-hover: rgba(255, 255, 255, 0.16);
+--card: rgba(255, 255, 255, 0.015);
+--accent: #6366f1;
+--accent-violet: #8b5cf6;
+--accent-cyan: #22d3ee;
 ```
 
 ### Light Theme
+
 ```css
---bg: #FFFFFF;
---bg-soft: #F8F9FA;
---text: #09090B;
---text-muted: #6B7280;
---text-muted-strong: #4B5563;
---border: rgba(0,0,0,0.08);
---border-hover: rgba(0,0,0,0.16);
---card: rgba(0,0,0,0.02);
---accent: #6366F1;
---accent-violet: #8B5CF6;
---accent-cyan: #0EA5E9;
+--bg: #ffffff;
+--bg-soft: #f8f9fa;
+--text: #09090b;
+--text-muted: #6b7280;
+--text-muted-strong: #4b5563;
+--border: rgba(0, 0, 0, 0.08);
+--border-hover: rgba(0, 0, 0, 0.16);
+--card: rgba(0, 0, 0, 0.02);
+--accent: #6366f1;
+--accent-violet: #8b5cf6;
+--accent-cyan: #0ea5e9;
 ```
 
 ---
@@ -69,12 +71,14 @@ Toggle in the navbar. Default = dark. Persisted in `localStorage`.
 ## Sections (matching EWIP's pattern, adapted for MLLC)
 
 ### 1. Header (sticky navbar)
+
 - Logo: MLLC + "Enterprise" badge
 - Nav links: Platform, Features, Solutions, Security, Pricing, Contact — all `#hash` links
 - Right side: **Theme toggle** (sun/moon icon) + "Sign In" (→ MLLC app) + "Request Demo" (CTA button)
 - Sticky with blur on scroll
 
 ### 2. Hero
+
 - Eyebrow pill: "✦ Introducing MLLC — Inventory Network Operating System"
 - Large headline: **"Inventory Network Intelligence, Connected."**
 - Subtitle: "MLLC coordinates inventory, logistics, procurement, maintenance, and operations across your entire multi-location network — from HQ down to every site."
@@ -84,6 +88,7 @@ Toggle in the navbar. Default = dark. Persisted in `localStorage`.
 - Dashboard mockup below (built with HTML/CSS like EWIP — fake UI with stats cards, sidebar, project list)
 
 ### 3. Problem
+
 - Eyebrow: "The operations tax"
 - Headline: "Inventory operations is everywhere. Inventory intelligence is nowhere."
 - 6 pain-point cards in a grid:
@@ -96,6 +101,7 @@ Toggle in the navbar. Default = dark. Persisted in `localStorage`.
 - **🖼 IMAGE: Problem illustration** — small visual of fragmented/disconnected operations (see Prompt #2)
 
 ### 4. Platform (8 building blocks)
+
 - Eyebrow: "The platform"
 - Headline: "One operating system for every location."
 - 8 cards (4×2 grid), each with icon, title, description, tags:
@@ -110,6 +116,7 @@ Toggle in the navbar. Default = dark. Persisted in `localStorage`.
 - **🖼 IMAGE: Platform screenshot** — real MLLC Dashboard screenshot beside the headline (see screenshot-dashboard.png)
 
 ### 5. Features (detailed feature bento grid)
+
 - Eyebrow: "Features"
 - Headline: "Every module, deeply connected."
 - Bento grid layout showing:
@@ -123,11 +130,13 @@ Toggle in the navbar. Default = dark. Persisted in `localStorage`.
 - **🖼 IMAGES: Feature screenshots** — 3–4 real app screenshots inside bento grid cells (see `screenshot-inventory.png`, `screenshot-transfers.png`, `screenshot-analytics.png`, `screenshot-shifts.png`)
 
 ### 6. How It Works (3 steps)
+
 - Step 1: Connect Your Locations — 3-tier hierarchy setup
 - Step 2: Import Your Data — CSV bulk import
 - Step 3: Operate in Real-Time — transfers, tickets, shifts, alerts
 
 ### 7. Solutions (industry use cases)
+
 - Eyebrow: "Solutions"
 - 3–4 solution cards:
   - Mining & Resource Operations
@@ -137,6 +146,7 @@ Toggle in the navbar. Default = dark. Persisted in `localStorage`.
 - **🖼 IMAGES: Solution illustrations** — one per card (see Prompts #3, #4, #5)
 
 ### 8. Security
+
 - Eyebrow: "Enterprise security"
 - Headline: "Security designed for regulated industries."
 - Feature grid:
@@ -151,18 +161,21 @@ Toggle in the navbar. Default = dark. Persisted in `localStorage`.
 - **🖼 IMAGE: Security visual** — abstract shield/encryption illustration (see Prompt #6)
 
 ### 9. Pricing (3 tiers)
+
 - Team / Business / Enterprise
 - All "Contact sales" (no self-serve pricing for now)
 - Feature comparison checklist per tier
 - "Most chosen" badge on Business
 
 ### 10. Final CTA
+
 - Headline: "Turn inventory operations into inventory intelligence."
 - Email input + "Request Demo" button
 - Subtext: "Typical response < 1 business day"
 - **🖼 IMAGE: CTA background** — subtle wide abstract visual behind the section (see Prompt #7)
 
 ### 11. Footer
+
 - 5-column grid: Logo+description, Product, Company, Resources, Legal
 - Bottom bar: "© 2026 Techionyx. All rights reserved." + status indicator
 
@@ -219,6 +232,7 @@ MLLC-Home/
 ## Build Checklist
 
 ### Phase 1: Setup + Foundation
+
 - [x] Init Next.js 15 project with TypeScript
 - [x] Configure Tailwind + CSS variables (dark/light theme tokens)
 - [x] Set up fonts (Space Grotesk + Space Mono)
@@ -227,6 +241,7 @@ MLLC-Home/
 - [x] Build reusable UI (Button, Badge, Card)
 
 ### Phase 2: Build All Sections (top to bottom)
+
 - [x] Header (sticky, blur, theme toggle, mobile hamburger)
 - [x] Hero (headline, CTAs, trust badges, dashboard mockup)
 - [x] Problem (6 pain-point cards)
@@ -240,6 +255,7 @@ MLLC-Home/
 - [x] Footer (5-column)
 
 ### Phase 3: Polish
+
 - [x] Responsive design (mobile / tablet / desktop)
 - [x] SEO meta tags
 - [x] Scroll animations tuning
@@ -250,15 +266,15 @@ MLLC-Home/
 
 ## Key Differences from EWIP
 
-| EWIP | MLLC Home |
-|------|-----------|
-| Dark only | **Dark + Light** theme toggle |
-| Work Intelligence Platform | Inventory Network Operating System |
+| EWIP                                                 | MLLC Home                                                |
+| ---------------------------------------------------- | -------------------------------------------------------- |
+| Dark only                                            | **Dark + Light** theme toggle                            |
+| Work Intelligence Platform                           | Inventory Network Operating System                       |
 | 8 platform pillars (projects, tasks, meetings, etc.) | 8 platform pillars (inventory, transfers, tickets, etc.) |
-| AI Copilot section | Predictive Alerts / Analytics section |
-| No images | **Mix: generated visuals + real app screenshots** |
-| Next.js + Tailwind | Same stack |
-| Space Grotesk + Space Mono | Same fonts |
+| AI Copilot section                                   | Predictive Alerts / Analytics section                    |
+| No images                                            | **Mix: generated visuals + real app screenshots**        |
+| Next.js + Tailwind                                   | Same stack                                               |
+| Space Grotesk + Space Mono                           | Same fonts                                               |
 
 ---
 
@@ -279,6 +295,7 @@ MLLC-Home/
 > All images should be clean, minimal, and premium — not busy or cartoonish.
 
 ### Prompt #1 — Hero Network Visual
+
 **File:** `hero-network.png` | **Aspect:** 16:9 | **Used in:** Hero section
 
 ```
@@ -286,6 +303,7 @@ Minimalist abstract visualization of an interconnected logistics network on a pu
 ```
 
 ### Prompt #2 — Problem: Fragmented Operations
+
 **File:** `problem-fragmented.png` | **Aspect:** 16:9 | **Used in:** Problem section
 
 ```
@@ -293,6 +311,7 @@ Abstract minimal illustration representing fragmented and disconnected business 
 ```
 
 ### Prompt #3 — Solution: Mining & Resources
+
 **File:** `solution-mining.png` | **Aspect:** 3:4 | **Used in:** Solutions card
 
 ```
@@ -300,6 +319,7 @@ Minimal isometric illustration of a mining operation viewed from a slight top-do
 ```
 
 ### Prompt #4 — Solution: Multi-Site Warehouse
+
 **File:** `solution-warehouse.png` | **Aspect:** 3:4 | **Used in:** Solutions card
 
 ```
@@ -307,6 +327,7 @@ Minimal isometric illustration of three interconnected warehouse buildings at di
 ```
 
 ### Prompt #5 — Solution: Supply Chain
+
 **File:** `solution-supply.png` | **Aspect:** 3:4 | **Used in:** Solutions card
 
 ```
@@ -314,6 +335,7 @@ Minimal isometric illustration of a supply chain flow. Show a linear sequence: s
 ```
 
 ### Prompt #6 — Security Shield
+
 **File:** `security-shield.png` | **Aspect:** 1:1 | **Used in:** Security section
 
 ```
@@ -321,6 +343,7 @@ Abstract geometric security shield icon centered on a dark background (#07070B).
 ```
 
 ### Prompt #7 — CTA Background
+
 **File:** `cta-background.png` | **Aspect:** 16:9 | **Used in:** Final CTA section (background, low opacity)
 
 ```
@@ -333,15 +356,16 @@ Wide abstract background texture for a call-to-action section. Subtle network to
 
 These are real screenshots from the MLLC app. Run the app locally and capture:
 
-| File | Page | What to capture |
-|------|------|-----------------|
-| `screenshot-dashboard.png` | DashboardPage | Full dashboard with stat cards, sidebar, charts |
-| `screenshot-inventory.png` | InventoryPage | Stock table showing available/reserved/in-transit columns |
+| File                       | Page          | What to capture                                                 |
+| -------------------------- | ------------- | --------------------------------------------------------------- |
+| `screenshot-dashboard.png` | DashboardPage | Full dashboard with stat cards, sidebar, charts                 |
+| `screenshot-inventory.png` | InventoryPage | Stock table showing available/reserved/in-transit columns       |
 | `screenshot-transfers.png` | TransfersPage | Transfer list with status badges (pending, approved, delivered) |
-| `screenshot-analytics.png` | AnalyticsPage | Charts section with export buttons visible |
-| `screenshot-shifts.png` | ShiftLogsPage | Shift reconciliation with discrepancy indicators |
+| `screenshot-analytics.png` | AnalyticsPage | Charts section with export buttons visible                      |
+| `screenshot-shifts.png`    | ShiftLogsPage | Shift reconciliation with discrepancy indicators                |
 
 **Tips for screenshots:**
+
 - Use the app's dark theme if available
 - Populate with demo data (use the seeder)
 - Crop to just the content area (no browser chrome)
