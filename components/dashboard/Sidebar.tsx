@@ -17,9 +17,8 @@ interface SidebarProps {
  * Persistent left navigation.
  *
  * Fixed on `lg` and up, a focus-trapped-adjacent slide-over below that.
- * The active item is filled with `brand-solid`, which resolves to the
- * spec brand (#4E3C52) in light theme and to the accent (#7C6579) in
- * dark, where the raw brand is only 1.62:1 against the background.
+ * The active item is filled with `brand-solid`, the achromatic primary
+ * action: near-black on light, near-white on dark.
  */
 export function Sidebar({
   sections,

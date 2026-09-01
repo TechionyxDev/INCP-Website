@@ -28,8 +28,7 @@ const TREND_ICON: Record<Metric["trend"]["direction"], LucideIcon> = {
 };
 
 /* Tone → class map. Text uses the `-text` variants, which are lifted in
-   dark theme because all four spec semantics fall to 1.6–2.6:1 against
-   the #3F4F62 card surface. */
+   dark theme because the spec semantics are tuned for light surfaces. */
 const TREND_CLASS: Record<Tone, string> = {
   neutral: "bg-surface-2 text-muted-strong",
   success: "bg-success/12 text-success-text",

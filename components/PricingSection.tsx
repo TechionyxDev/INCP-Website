@@ -47,6 +47,7 @@ export function PricingSection() {
     {
       name: "Global Sovereign",
       badge: "Unlimited Locations",
+      premium: true,
       desc: "For global enterprises requiring isolated dedicated VPCs, mining yield modules, and custom SLAs.",
       features: [
         "Everything in Regional Cluster",
@@ -89,12 +90,18 @@ export function PricingSection() {
               <div
                 className={`h-full rounded-2xl p-8 flex flex-col justify-between transition-all ${
                   plan.highlight
-                    ? "bg-[var(--surface-1)] border-2 border-brand-solid shadow-md"
-                    : "bg-[var(--surface-1)] border border-[var(--border)]"
+                    ? "bg-[var(--surface-1)] border-2 border-accent-blue-text shadow-md"
+                    : plan.premium
+                      ? "bg-[var(--surface-1)] border border-accent-purple-text/45"
+                      : "bg-[var(--surface-1)] border border-[var(--border)]"
                 }`}
               >
                 <div>
-                  <div className="text-xs font-medium text-brand-text uppercase tracking-wider">
+                  <div
+                    className={`text-xs font-medium uppercase tracking-wider ${
+                      plan.premium ? "text-accent-purple-text" : "text-accent-blue-text"
+                    }`}
+                  >
                     {plan.badge}
                   </div>
                   <h3 className="mt-3 text-2xl font-bold text-[var(--text)]">
@@ -108,7 +115,11 @@ export function PricingSection() {
                     <ul className="space-y-3 text-sm text-[var(--text)]">
                       {plan.features.map((f) => (
                         <li key={f} className="flex items-start gap-2.5">
-                          <Check className="h-4 w-4 text-brand-text shrink-0 mt-0.5" />
+                          <Check
+                            className={`h-4 w-4 shrink-0 mt-0.5 ${
+                              plan.premium ? "text-accent-purple-text" : "text-accent-blue-text"
+                            }`}
+                          />
                           <span>{f}</span>
                         </li>
                       ))}

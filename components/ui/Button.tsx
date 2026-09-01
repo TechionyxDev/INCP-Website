@@ -24,9 +24,9 @@ export function Button({
     lg: "h-12 px-7 text-base font-semibold",
   }[size];
 
-  /* `brand-solid` rather than `brand`: on the dark canvas the raw brand
-     (#483C50) is 1.84:1 against the background, so a filled button would
-     have no visible silhouette. */
+  /* The primary action is achromatic by design (near-black on light,
+     near-white on dark) so the blue and purple accents never compete
+     with the CTA. `brand-solid` carries that inversion per theme. */
   const variantClasses = {
     primary:
       "bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground shadow-brand active:scale-[0.98]",

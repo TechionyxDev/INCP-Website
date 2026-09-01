@@ -20,6 +20,7 @@ const config: Config = {
           DEFAULT: rgb("surface-1"),
           1: rgb("surface-1"),
           2: rgb("surface-2"),
+          raised: rgb("surface-raised"),
         },
         foreground: rgb("text"),
         muted: {
@@ -50,6 +51,20 @@ const config: Config = {
           solid: rgb("brand-solid"),
           "solid-hover": rgb("brand-solid-hover"),
           text: rgb("brand-text"),
+        },
+
+        /* ── Accents: blue is the primary product accent, purple the
+           secondary / AI / premium one. `.text` variants are legible
+           on light surfaces, where the raw accents are decorative. ── */
+        "accent-blue": {
+          DEFAULT: rgb("accent-blue"),
+          soft: rgb("accent-blue-soft"),
+          text: rgb("accent-blue-text"),
+        },
+        "accent-purple": {
+          DEFAULT: rgb("accent-purple"),
+          soft: rgb("accent-purple-soft"),
+          text: rgb("accent-purple-text"),
         },
 
         /* ── Semantic (DEFAULT = fill, .text = legible as type) ──── */
