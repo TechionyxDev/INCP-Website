@@ -329,20 +329,26 @@ html.nav-open body {
   border-radius: 2px;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--g-700);
-  border: 2px solid var(--bg);
-  border-radius: 999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--g-500);
+/* Custom scrollbar only where scrollbars are persistent (mouse/trackpad).
+   On touch WebKit a styled ::-webkit-scrollbar becomes a real 10px gutter,
+   which shrinks the visual viewport and leaves the page scrollable
+   sideways by that amount. */
+@media (hover: hover) and (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--g-700);
+    border: 2px solid var(--bg);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--g-500);
+  }
 }
 
 input,

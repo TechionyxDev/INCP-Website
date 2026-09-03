@@ -49,14 +49,16 @@ const currency = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 0,
 });
 
-const dateTime = new Intl.DateTimeFormat("en-GB", {
-  day: "2-digit",
-  month: "short",
-  hour: "2-digit",
-  minute: "2-digit",
-  hour12: false,
-  timeZone: "UTC",
-});
+/* Hand-assembled rather than a single `Intl.DateTimeFormat` call: the
+   joined date+time string differs between ICU builds ("18 Aug, 09:24" in
+   V8, "18 Aug at 09:24" in WebKit), which made the server HTML and the
+   Safari client disagree and threw a hydration error on every load. */
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] as const;
+const pad2 = (n: number): string => String(n).padStart(2, "0");
+function formatUpdatedAt(iso: string): string {
+  const d = new Date(iso);
+  return `${pad2(d.getUTCDate())} ${MONTHS[d.getUTCMonth()]}, ${pad2(d.getUTCHours())}:${pad2(d.getUTCMinutes())}`;
+}
 
 /** Compare two rows on a column, with numeric columns compared numerically. */
 function compareRows(a: TransferRow, b: TransferRow, column: SortableColumn): number {
@@ -197,7 +199,7 @@ export function TransfersTable({ rows, columns }: TransfersTableProps): React.JS
                   </td>
                   <td className="hidden whitespace-nowrap px-3 py-3 tabular-nums text-muted-strong sm:px-4 lg:table-cell">
                     <time dateTime={row.updatedAt}>
-                      {dateTime.format(new Date(row.updatedAt))}
+                      {formatUpdatedAt(row.updatedAt)}
                     </time>
                   </td>
                   <td className="hidden whitespace-nowrap px-3 py-3 text-muted-strong sm:px-4 lg:table-cell">
