@@ -53,7 +53,7 @@ export function DashboardHeader({
         type="button"
         onClick={onOpenNav}
         aria-label="Open navigation"
-        className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-muted-strong hover:bg-surface-2 hover:text-foreground lg:hidden"
+        className="grid h-10 w-10 shrink-0 place-items-center rounded-lg text-muted-strong hover:bg-surface-2 hover:text-foreground lg:hidden"
       >
         <Menu className="h-5 w-5" />
       </button>
@@ -85,7 +85,7 @@ export function DashboardHeader({
       <div className="ml-auto flex items-center gap-1 sm:gap-1.5 md:ml-0">
         <button
           type="button"
-          className="relative grid h-9 w-9 place-items-center rounded-lg text-muted-strong transition-colors hover:bg-surface-2 hover:text-foreground"
+          className="relative grid h-10 w-10 place-items-center rounded-lg text-muted-strong transition-colors hover:bg-surface-2 hover:text-foreground"
           aria-label={`Notifications, ${notificationCount} unread`}
         >
           <Bell className="h-[1.125rem] w-[1.125rem]" />
