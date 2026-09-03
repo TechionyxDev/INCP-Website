@@ -12,6 +12,10 @@ const config: Config = {
   darkMode: ["class", '[data-theme="dark"]'],
   theme: {
     extend: {
+      screens: {
+        xs: "400px",
+        "3xl": "1800px",
+      },
       colors: {
         /* ── Surfaces & text (theme-aware) ───────────────────────── */
         background: rgb("bg"),

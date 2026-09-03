@@ -55,18 +55,28 @@ export function InventoryScreen({ query }: { query: string }) {
     <div className="flex flex-col gap-5">
       {/* KPI strip */}
       <Card pad={false}>
-        <div className="grid divide-x" style={{ ...cols(w > 640 ? 4 : 2), borderColor: "var(--a-border)" }}>
+        <div className="grid" style={cols(w > 640 ? 4 : 2)}>
           {[
             ["Total SKUs", "132", "Active items"],
             ["Stock Records", "6,600", "Across locations"],
             ["Categories", "8", "Classifications"],
             ["Locations", "50", "Active network"],
-          ].map(([l, v, s]) => (
-            <div key={l} className="px-5 py-4" style={{ borderColor: "var(--a-border)" }}>
+          ].map(([l, v, s], i) => (
+            <div
+              key={l}
+              className="min-w-0 px-4 py-3.5 sm:px-5 sm:py-4"
+              style={{
+                borderStyle: "solid",
+                borderColor: "var(--a-border)",
+                borderWidth: 0,
+                borderLeftWidth: (w > 640 ? i > 0 : i % 2 === 1) ? 1 : 0,
+                borderTopWidth: w > 640 ? 0 : i >= 2 ? 1 : 0,
+              }}
+            >
               <div className="text-[9px] uppercase tracking-[0.14em]" style={{ color: "var(--a-muted)" }}>
                 {l}
               </div>
-              <div className="mt-1 text-[28px] leading-none font-bold tabular-nums" style={{ color: "var(--a-text)" }}>
+              <div className="mt-1 text-[24px] sm:text-[28px] leading-none font-bold tabular-nums truncate" style={{ color: "var(--a-text)" }}>
                 {v}
               </div>
               <div className="mt-1.5 text-[9px] uppercase tracking-[0.12em]" style={{ color: "var(--a-muted)" }}>
@@ -78,7 +88,7 @@ export function InventoryScreen({ query }: { query: string }) {
       </Card>
 
       {/* Actions */}
-      <div className="flex items-center justify-end gap-2.5">
+      <div className="flex flex-wrap items-center justify-end gap-2.5">
         <button
           type="button"
           className="inline-flex items-center gap-2 rounded-lg border px-3.5 py-2 text-[11px] font-bold"
@@ -96,13 +106,13 @@ export function InventoryScreen({ query }: { query: string }) {
       </div>
 
       {/* Tabs */}
-      <div className="flex border-b" style={{ borderColor: "var(--a-border)" }}>
+      <div className="flex overflow-x-auto border-b" style={{ borderColor: "var(--a-border)" }}>
         {(["catalogue", "stock"] as const).map((t) => (
           <button
             key={t}
             type="button"
             onClick={() => setTab(t)}
-            className="px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] border-b-2 -mb-px"
+            className="shrink-0 whitespace-nowrap px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] border-b-2 -mb-px"
             style={{
               borderColor: tab === t ? "var(--a-text)" : "transparent",
               color: tab === t ? "var(--a-text)" : "var(--a-muted)",
@@ -117,7 +127,7 @@ export function InventoryScreen({ query }: { query: string }) {
         <>
           {/* Filter bar */}
           <div className="flex flex-wrap items-center gap-2.5">
-            <div className="relative flex-1 min-w-[180px]">
+            <div className="relative flex-1 min-w-[160px] basis-full sm:basis-auto">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5" style={{ color: "var(--a-muted)" }} />
               <input
                 value={search}
@@ -173,8 +183,8 @@ export function InventoryScreen({ query }: { query: string }) {
                         onMouseEnter={(e) => (e.currentTarget.style.background = "var(--a-raised)")}
                         onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
                       >
-                        <Td className="font-bold">{i.sku}</Td>
-                        <Td>
+                        <Td className="font-bold whitespace-nowrap">{i.sku}</Td>
+                        <Td className="min-w-[180px]">
                           <span className="font-bold" style={{ color: "var(--a-text)" }}>{i.name}</span>
                         </Td>
                         <Td>{i.category}</Td>
@@ -216,13 +226,13 @@ export function InventoryScreen({ query }: { query: string }) {
               </table>
             </div>
             <div
-              className="flex items-center justify-between px-3 py-2.5 border-t text-[10px]"
+              className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-3 py-2.5 border-t text-[10px]"
               style={{ borderColor: "var(--a-border)", color: "var(--a-muted)" }}
             >
               <span>
                 Showing {rows.length} of {ITEMS.length} catalogue rows
               </span>
-              <span>GET /api/v1/inventory/items</span>
+              <span className="truncate">GET /api/v1/inventory/items</span>
             </div>
           </Card>
         </>
@@ -256,8 +266,8 @@ export function InventoryScreen({ query }: { query: string }) {
                         onMouseEnter={(e) => (e.currentTarget.style.background = "var(--a-raised)")}
                         onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
                       >
-                        <Td className="font-bold">{s.sku}</Td>
-                        <Td>
+                        <Td className="font-bold whitespace-nowrap">{s.sku}</Td>
+                        <Td className="min-w-[180px]">
                           <span className="font-bold" style={{ color: "var(--a-text)" }}>{s.name}</span>
                         </Td>
                         <Td>{s.location}</Td>
@@ -298,11 +308,11 @@ export function InventoryScreen({ query }: { query: string }) {
             </table>
           </div>
           <div
-            className="flex items-center justify-between px-3 py-2.5 border-t text-[10px]"
+            className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-3 py-2.5 border-t text-[10px]"
             style={{ borderColor: "var(--a-border)", color: "var(--a-muted)" }}
           >
             <span>Atomic available = on hand − reserved (reserved locks on transfer creation)</span>
-            <span>GET /api/v1/inventory/stock</span>
+            <span className="truncate">GET /api/v1/inventory/stock</span>
           </div>
         </Card>
       )}

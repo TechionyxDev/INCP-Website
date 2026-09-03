@@ -46,7 +46,7 @@ export function DashboardShell(): React.JSX.Element {
           onOpenNav={openNav}
         />
 
-        <main className="flex-1 px-4 py-6 sm:px-6 sm:py-8">
+        <main className="flex-1 px-gutter py-5 sm:py-8 pb-safe">
           <div className="mx-auto w-full max-w-[80rem]">
             <div className="mb-6">
               <h2 className="text-xl font-semibold tracking-tight text-foreground">
@@ -57,7 +57,7 @@ export function DashboardShell(): React.JSX.Element {
               </p>
             </div>
 
-            <section aria-label="Key metrics" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <section aria-label="Key metrics" className="grid gap-3 sm:gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {METRICS.map((metric) => (
                 <MetricCard key={metric.id} metric={metric} />
               ))}

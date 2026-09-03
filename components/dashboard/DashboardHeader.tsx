@@ -48,7 +48,7 @@ export function DashboardHeader({
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 shrink-0 items-center gap-3 border-b border-border bg-surface-1/95 px-4 backdrop-blur-md sm:px-6">
+    <header className="sticky top-0 z-30 flex h-16 shrink-0 items-center gap-2 sm:gap-3 border-b border-border bg-surface-1/95 px-gutter pt-safe backdrop-blur-md">
       <button
         type="button"
         onClick={onOpenNav}
@@ -82,7 +82,7 @@ export function DashboardHeader({
         </div>
       </div>
 
-      <div className="ml-auto flex items-center gap-1.5 md:ml-0">
+      <div className="ml-auto flex items-center gap-1 sm:gap-1.5 md:ml-0">
         <button
           type="button"
           className="relative grid h-9 w-9 place-items-center rounded-lg text-muted-strong transition-colors hover:bg-surface-2 hover:text-foreground"

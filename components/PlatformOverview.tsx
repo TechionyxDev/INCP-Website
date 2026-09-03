@@ -28,8 +28,8 @@ export function PlatformOverview() {
   ];
 
   return (
-    <section id="platform" className="py-24 sm:py-32 border-t border-[var(--border)]">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="platform" className="py-section border-t border-[var(--border)]">
+      <div className="mx-auto max-w-6xl px-gutter">
         <div className="max-w-2xl">
           <ScrollReveal delay={0}>
             <p className="text-xs font-semibold text-brand-text tracking-wider uppercase">
@@ -38,7 +38,7 @@ export function PlatformOverview() {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-medium tracking-tight text-[var(--text)]">
+            <h2 className="mt-3 text-h2 font-medium tracking-tight text-[var(--text)]">
               An operating system for every facility.
             </h2>
           </ScrollReveal>
@@ -50,17 +50,17 @@ export function PlatformOverview() {
           </ScrollReveal>
         </div>
 
-        {/* 4 Clean Pillars */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* 4 Clean Pillars: 1 col on phones, 2 on tablets, 4 from lg */}
+        <div className="mt-section-gap grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 sm:gap-y-10">
           {pillars.map((item, idx) => (
             <ScrollReveal key={item.title} delay={idx * 80}>
-              <div className="flex flex-col justify-between h-full pt-6 border-t border-[var(--border)]">
+              <div className="flex flex-col justify-between h-full pt-5 sm:pt-6 border-t border-[var(--border)]">
                 <div>
                   <item.icon className="h-5 w-5 text-brand-text" />
                   <h3 className="mt-4 text-base font-semibold text-[var(--text)]">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm text-muted-strong leading-relaxed">
+                  <p className="mt-2 text-sm sm:text-[15px] text-muted-strong leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

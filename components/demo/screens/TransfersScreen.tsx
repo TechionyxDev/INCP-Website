@@ -31,13 +31,13 @@ export function TransfersScreen({ query }: { query: string }) {
   return (
     <div className="flex flex-col gap-4">
       {/* Status tabs */}
-      <div className="flex flex-wrap border-b" style={{ borderColor: "var(--a-border)" }}>
+      <div className="flex overflow-x-auto border-b" style={{ borderColor: "var(--a-border)" }}>
         {TABS.map((t) => (
           <button
             key={t}
             type="button"
             onClick={() => setTab(t)}
-            className="px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] border-b-2 -mb-px flex items-center gap-1.5"
+            className="shrink-0 whitespace-nowrap px-3 sm:px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] border-b-2 -mb-px flex items-center gap-1.5"
             style={{
               borderColor: tab === t ? "var(--a-text)" : "transparent",
               color: tab === t ? "var(--a-text)" : "var(--a-muted)",
@@ -56,7 +56,7 @@ export function TransfersScreen({ query }: { query: string }) {
 
       <Card pad={false}>
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[900px]">
+          <table className="w-full min-w-[960px]">
             <thead style={{ background: "var(--a-raised)" }}>
               <tr className="border-b" style={{ borderColor: "var(--a-border)" }}>
                 <Th>Transfer #</Th>
@@ -88,7 +88,7 @@ export function TransfersScreen({ query }: { query: string }) {
                       }
                     >
                       <Td className="font-bold">{t.id}</Td>
-                      <Td>
+                      <Td className="min-w-[170px]">
                         <div className="font-bold" style={{ color: "var(--a-text)" }}>{t.item}</div>
                         <div className="text-[10px]" style={{ color: "var(--a-muted)" }}>{t.sku}</div>
                       </Td>
@@ -221,11 +221,11 @@ export function TransfersScreen({ query }: { query: string }) {
           </table>
         </div>
         <div
-          className="flex items-center justify-between px-3 py-2.5 border-t text-[10px]"
+          className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-3 py-2.5 border-t text-[10px]"
           style={{ borderColor: "var(--a-border)", color: "var(--a-muted)" }}
         >
           <span>Click any row to inspect its custody chain</span>
-          <span>GET /api/v1/transfers</span>
+          <span className="truncate">GET /api/v1/transfers</span>
         </div>
       </Card>
     </div>

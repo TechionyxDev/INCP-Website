@@ -61,8 +61,8 @@ export function PricingSection() {
   ];
 
   return (
-    <section id="pricing" className="py-24 sm:py-32 border-t border-[var(--border)] bg-band">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="pricing" className="py-section border-t border-[var(--border)] bg-band">
+      <div className="mx-auto max-w-6xl px-gutter">
         <div className="max-w-2xl">
           <ScrollReveal delay={0}>
             <p className="text-xs font-semibold text-brand-text tracking-wider uppercase">
@@ -71,7 +71,7 @@ export function PricingSection() {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-medium tracking-tight text-[var(--text)]">
+            <h2 className="mt-3 text-h2 font-medium tracking-tight text-[var(--text)]">
               Predictable deployments for any network scale.
             </h2>
           </ScrollReveal>
@@ -83,12 +83,16 @@ export function PricingSection() {
           </ScrollReveal>
         </div>
 
-        {/* 3 Clean Plan Cards */}
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* 3 Plan Cards: 1 col on phones, 2 on tablets (third spans), 3 from lg */}
+        <div className="mt-section-gap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {plans.map((plan, idx) => (
-            <ScrollReveal key={plan.name} delay={idx * 80}>
+            <ScrollReveal
+              key={plan.name}
+              delay={idx * 80}
+              className={idx === 2 ? "md:col-span-2 lg:col-span-1" : ""}
+            >
               <div
-                className={`h-full rounded-2xl p-8 flex flex-col justify-between transition-all ${
+                className={`h-full rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-colors ${
                   plan.highlight
                     ? "bg-[var(--surface-1)] border-2 border-accent-blue-text shadow-md"
                     : plan.premium
@@ -112,7 +116,11 @@ export function PricingSection() {
                   </p>
 
                   <div className="mt-6 pt-6 border-t border-[var(--border)]">
-                    <ul className="space-y-3 text-sm text-[var(--text)]">
+                    <ul
+                      className={`grid gap-3 text-sm text-[var(--text)] ${
+                        idx === 2 ? "md:grid-cols-2 lg:grid-cols-1" : ""
+                      }`}
+                    >
                       {plan.features.map((f) => (
                         <li key={f} className="flex items-start gap-2.5">
                           <Check
@@ -130,7 +138,7 @@ export function PricingSection() {
                 <div className="mt-8 pt-6 border-t border-[var(--border)]">
                   <a
                     href="#contact"
-                    className={`block w-full text-center py-3 rounded text-sm font-semibold transition-all ${
+                    className={`flex w-full min-h-12 items-center justify-center rounded text-sm font-semibold transition-colors ${
                       plan.highlight
                         ? "bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground shadow-sm"
                         : "border border-[var(--border)] hover:border-brand-solid hover:text-brand-text text-[var(--text)]"
@@ -145,12 +153,15 @@ export function PricingSection() {
         </div>
 
         {/* Simple Contact / Demo Request */}
-        <div id="contact" className="mt-20 rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-8 sm:p-12">
+        <div
+          id="contact"
+          className="mt-section-gap rounded-2xl border border-[var(--border)] bg-[var(--surface-1)] p-6 sm:p-10 lg:p-12"
+        >
           <div className="max-w-xl mx-auto text-center">
-            <h3 className="text-2xl sm:text-3xl font-medium text-[var(--text)]">
+            <h3 className="text-h2 font-medium text-[var(--text)]">
               Schedule a personalized walkthrough.
             </h3>
-            <p className="mt-3 text-sm text-muted-strong leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-muted-strong leading-relaxed">
               See how your locations model in real-time with our logistics engineering team.
             </p>
 
@@ -161,17 +172,23 @@ export function PricingSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="mt-8 flex flex-col sm:flex-row gap-3">
+                <label htmlFor="contact-email" className="sr-only">
+                  Work email
+                </label>
                 <input
+                  id="contact-email"
                   type="email"
                   required
+                  autoComplete="email"
+                  inputMode="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your work email"
-                  className="flex-1 h-12 rounded bg-[var(--surface-2)] border border-[var(--border)] px-5 text-sm text-[var(--text)] placeholder:text-muted-strong focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
+                  className="flex-1 min-w-0 h-12 rounded bg-[var(--surface-2)] border border-[var(--border)] px-4 sm:px-5 text-base sm:text-sm text-[var(--text)] placeholder:text-muted-strong focus:outline-none focus:ring-2 focus:ring-ring focus:border-border-hover transition-colors"
                 />
                 <button
                   type="submit"
-                  className="h-12 px-7 rounded bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground text-sm font-semibold transition-all shrink-0 inline-flex items-center justify-center gap-2"
+                  className="h-12 px-7 rounded bg-brand-solid hover:bg-brand-solid-hover text-brand-foreground text-sm font-semibold transition-colors shrink-0 inline-flex items-center justify-center gap-2"
                 >
                   <span>Request Demo</span>
                   <ArrowRight className="h-4 w-4" />

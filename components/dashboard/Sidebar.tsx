@@ -40,7 +40,7 @@ export function Sidebar({
 
       <aside
         aria-label="Primary"
-        className={`fixed inset-y-0 left-0 z-50 flex w-[17rem] flex-col border-r border-border bg-surface-1 transition-transform duration-200 lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-[min(17rem,85vw)] lg:w-[17rem] flex-col border-r border-border bg-surface-1 pt-safe pb-safe transition-transform duration-200 lg:translate-x-0 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >

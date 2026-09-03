@@ -4,6 +4,7 @@ import { Fragment, useState } from "react";
 import { Clock, Plus, TriangleAlert } from "lucide-react";
 import { SHIFT_LOGS, DISCREPANCY_PATTERNS, type ShiftLog } from "../demoData";
 import { Card, Th, Td, Badge, Dot, GhostBtn, Select } from "../primitives";
+import { useAppWidth } from "../useWidth";
 
 const LOCATIONS = ["All Locations", "Site W-10", "Site W-09", "Site W-08", "Site W-07", "Site W-06", "Site N-01", "Site N-05"];
 
@@ -22,6 +23,7 @@ const ACTIVE: ShiftLog = {
 };
 
 export function ShiftsScreen() {
+  const pw = useAppWidth();
   const [tab, setTab] = useState<"logs" | "patterns">("logs");
   const [location, setLocation] = useState("All Locations");
   const [status, setStatus] = useState("All Statuses");
@@ -40,13 +42,13 @@ export function ShiftsScreen() {
   return (
     <div className="flex flex-col gap-4">
       {/* Tabs */}
-      <div className="flex border-b" style={{ borderColor: "var(--a-border)" }}>
+      <div className="flex overflow-x-auto border-b" style={{ borderColor: "var(--a-border)" }}>
         {(["logs", "patterns"] as const).map((t) => (
           <button
             key={t}
             type="button"
             onClick={() => setTab(t)}
-            className="px-4 py-2.5 text-[12px] font-bold border-b-2 -mb-px"
+            className="shrink-0 whitespace-nowrap px-4 py-2.5 text-[12px] font-bold border-b-2 -mb-px"
             style={{
               borderColor: tab === t ? "var(--a-text)" : "transparent",
               color: tab === t ? "var(--a-text)" : "var(--a-muted)",
@@ -68,8 +70,8 @@ export function ShiftsScreen() {
               background: active ? "var(--a-accent-soft)" : "var(--a-warning-soft)",
             }}
           >
-            <div className="flex items-center gap-2.5 text-[12px]" style={{ color: "var(--a-text)" }}>
-              <Clock className="h-4 w-4" style={{ color: active ? "var(--a-accent)" : "var(--a-warning)" }} />
+            <div className="flex items-center gap-2.5 text-[12px] min-w-0" style={{ color: "var(--a-text)" }}>
+              <Clock className="h-4 w-4 shrink-0" style={{ color: active ? "var(--a-accent)" : "var(--a-warning)" }} />
               {active ? (
                 <span>
                   Active shift · <strong>Site N-05</strong> · day · opened 06:00 AM · opening snapshot frozen
@@ -216,18 +218,18 @@ export function ShiftsScreen() {
               </table>
             </div>
             <div
-              className="flex items-center justify-between px-3 py-2.5 border-t text-[10px]"
+              className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-3 py-2.5 border-t text-[10px]"
               style={{ borderColor: "var(--a-border)", color: "var(--a-muted)" }}
             >
               <span>{rows.length} shift logs · snapshots frozen at open, deltas computed at close</span>
-              <span>GET /api/v1/shifts/logs</span>
+              <span className="truncate">GET /api/v1/shifts/logs</span>
             </div>
           </Card>
         </>
       ) : (
         <Card>
-          <div className="flex items-center justify-between mb-4">
-            <div>
+          <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+            <div className="min-w-0">
               <div className="text-[13px] font-bold" style={{ color: "var(--a-text)" }}>
                 Recurring drift by item
               </div>
@@ -241,7 +243,11 @@ export function ShiftsScreen() {
             {DISCREPANCY_PATTERNS.map((p) => {
               const max = DISCREPANCY_PATTERNS[0]?.occurrences ?? 1;
               return (
-                <div key={p.item} className="grid grid-cols-[1.4fr_2fr_auto] items-center gap-4">
+                <div
+                  key={p.item}
+                  className="grid items-center gap-x-4 gap-y-1"
+                  style={{ gridTemplateColumns: pw > 560 ? "1.4fr 2fr auto" : "1fr auto" }}
+                >
                   <span className="text-[11px] font-bold truncate" style={{ color: "var(--a-text)" }}>
                     {p.item}
                   </span>
@@ -251,7 +257,10 @@ export function ShiftsScreen() {
                       style={{ width: `${(p.occurrences / max) * 100}%`, background: "var(--a-danger)" }}
                     />
                   </div>
-                  <span className="text-[10px] tabular-nums whitespace-nowrap" style={{ color: "var(--a-muted)" }}>
+                  <span
+                    className="text-[10px] tabular-nums whitespace-nowrap"
+                    style={{ color: "var(--a-muted)", gridColumn: pw > 560 ? "auto" : "1 / -1" }}
+                  >
                     {p.occurrences} events · {p.netDrift} units · {p.sites} sites
                   </span>
                 </div>

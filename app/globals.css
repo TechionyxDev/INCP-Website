@@ -101,7 +101,24 @@
 
   /* Geometry: sharp-edge shape lock. Nothing is rounder than 4px. */
   --radius: 2px;
-  --nav-h: 68px;
+  --nav-h: 64px;
+
+  /* ── Responsive rhythm ─────────────────────────────────────────
+     Fluid tokens so spacing and display type scale with the viewport
+     instead of jumping at breakpoints. Ranges are 320px → 1440px. */
+  --gutter: clamp(1rem, 4vw, 1.5rem);
+  --section-y: clamp(4rem, 10vw, 8rem);
+  --section-gap: clamp(2.5rem, 6vw, 4rem);
+  --fs-display: clamp(2.25rem, 1.1rem + 6.4vw, 4.75rem);
+  --fs-h2: clamp(1.75rem, 1.2rem + 2.4vw, 2.5rem);
+  --fs-h2-lg: clamp(1.875rem, 1rem + 3.4vw, 3.25rem);
+  --fs-lead: clamp(1.0625rem, 0.95rem + 0.6vw, 1.25rem);
+
+  /* Notched devices: honour the safe area on fixed chrome. */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
 
   /* Grayscale image treatment. */
   --media-filter: grayscale(1) contrast(1.02);
@@ -252,10 +269,53 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-geist), system-ui, sans-serif;
   letter-spacing: -0.022em;
+  text-wrap: balance;
+}
+
+/* A single long token (URL, e-mail, hash) must never widen the page.
+   Tables are excluded: they live inside horizontal scrollers. */
+h1, h2, h3, h4, h5, h6, p, li {
+  overflow-wrap: anywhere;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 section[id] {
   scroll-margin-top: calc(var(--nav-h) + 8px);
+}
+
+/* Media never overflows its container. */
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Native controls inherit type so mobile Safari does not zoom on focus. */
+input, select, textarea, button {
+  font: inherit;
+}
+
+/* Body scroll lock while the mobile navigation is open. */
+html.nav-open,
+html.nav-open body {
+  overflow: hidden;
+}
+
+/* Coarse pointers (touch) get bigger hit areas on hover-only affordances,
+   and text inputs sit at 16px so iOS Safari does not zoom on focus. */
+@media (hover: none) and (pointer: coarse) {
+  .tap-44 {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* The embedded product demo is a scaled-down replica and opts out. */
+  input:not([type="checkbox"]):not([type="radio"]):not([data-demo-frame] *),
+  select:not([data-demo-frame] *),
+  textarea:not([data-demo-frame] *) {
+    font-size: max(16px, 1em);
+  }
 }
 
 ::selection {
@@ -313,6 +373,71 @@ textarea::placeholder {
       linear-gradient(to right, rgb(var(--border-rgb)) 1px, transparent 1px),
       linear-gradient(to bottom, rgb(var(--border-rgb)) 1px, transparent 1px);
     background-size: 88px 88px;
+  }
+
+  /* ── Layout primitives ─────────────────────────────────────────── */
+
+  /* Horizontal gutter that grows with the viewport and respects notches. */
+  .px-gutter {
+    padding-left: calc(var(--gutter) + var(--safe-left));
+    padding-right: calc(var(--gutter) + var(--safe-right));
+  }
+
+  /* Vertical rhythm for top-level sections. */
+  .py-section {
+    padding-top: var(--section-y);
+    padding-bottom: var(--section-y);
+  }
+  .mt-section-gap {
+    margin-top: var(--section-gap);
+  }
+
+  /* Fluid display type. */
+  .text-display {
+    font-size: var(--fs-display);
+    line-height: 1.05;
+  }
+  .text-h2 {
+    font-size: var(--fs-h2);
+    line-height: 1.12;
+  }
+  .text-h2-lg {
+    font-size: var(--fs-h2-lg);
+    line-height: 1.08;
+  }
+  .text-lead {
+    font-size: var(--fs-lead);
+    line-height: 1.6;
+  }
+
+  /* Horizontal scroller with hidden scrollbar and snap points. */
+  .scroll-x {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  .scroll-x::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Full-bleed below `sm` so a scroller can run edge to edge; a no-op
+     from 640px up, where the same element is laid out as a grid. */
+  @media (max-width: 639.98px) {
+    .bleed-x {
+      margin-left: calc(-1 * (var(--gutter) + var(--safe-left)));
+      margin-right: calc(-1 * (var(--gutter) + var(--safe-right)));
+      padding-left: calc(var(--gutter) + var(--safe-left));
+      padding-right: calc(var(--gutter) + var(--safe-right));
+    }
+  }
+
+  .pb-safe {
+    padding-bottom: var(--safe-bottom);
+  }
+  .pt-safe {
+    padding-top: var(--safe-top);
   }
 }
 

@@ -93,8 +93,8 @@ export function TransfersTable({ rows, columns }: TransfersTableProps): React.JS
 
   return (
     <section className="overflow-hidden rounded-xl border border-border bg-surface-1 shadow-sm">
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-5 py-4">
-        <div>
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-4 py-4 sm:px-5">
+        <div className="min-w-0">
           <h2 className="text-sm font-semibold text-foreground">Active transfers</h2>
           <p className="text-xs text-muted-strong">
             {sortedRows.length} movements across the network
@@ -102,14 +102,14 @@ export function TransfersTable({ rows, columns }: TransfersTableProps): React.JS
         </div>
         <a
           href="#"
-          className="rounded-lg border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition-colors hover:border-border-hover hover:bg-surface-2"
+          className="inline-flex min-h-9 items-center rounded-lg border border-border px-3 text-xs font-semibold text-foreground transition-colors hover:border-border-hover hover:bg-surface-2"
         >
           View all
         </a>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[44rem] border-collapse text-sm">
+        <table className="w-full border-collapse text-sm">
           <caption className="sr-only">
             Active inventory transfers, sortable by column.
           </caption>
@@ -134,7 +134,7 @@ export function TransfersTable({ rows, columns }: TransfersTableProps): React.JS
                           : "descending"
                         : undefined
                     }
-                    className={`px-4 py-2.5 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-muted-strong ${alignClass} ${hideClass}`}
+                    className={`px-3 py-2.5 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-muted-strong sm:px-4 ${alignClass} ${hideClass}`}
                   >
                     {column.sortable ? (
                       <button
@@ -173,34 +173,34 @@ export function TransfersTable({ rows, columns }: TransfersTableProps): React.JS
                   key={row.id}
                   className="border-b border-border-subtle transition-colors last:border-b-0 hover:bg-surface-2"
                 >
-                  <td className="whitespace-nowrap px-4 py-3 font-medium text-foreground">
+                  <td className="whitespace-nowrap px-3 py-3 font-medium text-foreground sm:px-4">
                     {row.reference}
                   </td>
-                  <td className="hidden whitespace-nowrap px-4 py-3 text-muted-strong md:table-cell">
+                  <td className="hidden whitespace-nowrap px-3 py-3 text-muted-strong sm:px-4 md:table-cell">
                     {row.origin}
                   </td>
-                  <td className="whitespace-nowrap px-4 py-3 text-muted-strong">
+                  <td className="whitespace-nowrap px-3 py-3 text-muted-strong sm:px-4">
                     {row.destination}
                   </td>
-                  <td className="hidden whitespace-nowrap px-4 py-3 text-right tabular-nums text-muted-strong sm:table-cell">
+                  <td className="hidden whitespace-nowrap px-3 py-3 text-right tabular-nums text-muted-strong sm:table-cell sm:px-4">
                     {row.items}
                   </td>
-                  <td className="whitespace-nowrap px-4 py-3 text-right tabular-nums text-foreground">
+                  <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums text-foreground sm:px-4">
                     {currency.format(row.value)}
                   </td>
-                  <td className="whitespace-nowrap px-4 py-3">
+                  <td className="whitespace-nowrap px-3 py-3 sm:px-4">
                     <span
                       className={`inline-flex items-center rounded px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${TONE_CLASS[status.tone]}`}
                     >
                       {status.label}
                     </span>
                   </td>
-                  <td className="hidden whitespace-nowrap px-4 py-3 tabular-nums text-muted-strong lg:table-cell">
+                  <td className="hidden whitespace-nowrap px-3 py-3 tabular-nums text-muted-strong sm:px-4 lg:table-cell">
                     <time dateTime={row.updatedAt}>
                       {dateTime.format(new Date(row.updatedAt))}
                     </time>
                   </td>
-                  <td className="hidden whitespace-nowrap px-4 py-3 text-muted-strong lg:table-cell">
+                  <td className="hidden whitespace-nowrap px-3 py-3 text-muted-strong sm:px-4 lg:table-cell">
                     {row.owner}
                   </td>
                 </tr>

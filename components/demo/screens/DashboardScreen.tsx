@@ -44,7 +44,7 @@ export function DashboardScreen({ onNavigate }: { onNavigate: (id: ScreenId) => 
       </div>
 
       {/* KPI row */}
-      <div className="grid gap-3" style={cols(w > 900 ? 6 : w > 600 ? 3 : 2)}>
+      <div className="grid gap-3" style={cols(w > 900 ? 6 : w > 560 ? 3 : 2)}>
         <Kpi label="Locations" value="50" sub="Active" />
         <Kpi label="Items" value="132" sub="In catalogue" onClick={() => onNavigate("inventory")} />
         <Kpi label="Alerts" value="41" sub="Active" tone="danger" />
@@ -62,7 +62,7 @@ export function DashboardScreen({ onNavigate }: { onNavigate: (id: ScreenId) => 
           <CardHead
             title="INVENTORY HEALTH BY LOCATION"
             right={
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 shrink-0">
                 <GhostBtn onClick={() => setPage((p) => Math.max(0, p - 1))}>Prev</GhostBtn>
                 <span className="text-[10px] tabular-nums" style={{ color: "var(--a-muted)" }}>
                   {page + 1} / {pages}
@@ -71,7 +71,8 @@ export function DashboardScreen({ onNavigate }: { onNavigate: (id: ScreenId) => 
               </div>
             }
           />
-          <table className="w-full">
+          <div className="overflow-x-auto -mx-4 px-4">
+          <table className="w-full min-w-[440px]">
             <thead>
               <tr className="border-b" style={{ borderColor: "var(--a-border)" }}>
                 <Th>Location</Th>
@@ -107,6 +108,7 @@ export function DashboardScreen({ onNavigate }: { onNavigate: (id: ScreenId) => 
               ))}
             </tbody>
           </table>
+          </div>
         </Card>
 
         <Card>
@@ -132,7 +134,7 @@ export function DashboardScreen({ onNavigate }: { onNavigate: (id: ScreenId) => 
                   </div>
                 </div>
                 <span
-                  className="text-[10px] whitespace-nowrap"
+                  className="text-[10px] whitespace-nowrap shrink-0"
                   style={{ color: a.severity === "danger" ? "var(--a-danger)" : "var(--a-warning)" }}
                 >
                   {a.kind}

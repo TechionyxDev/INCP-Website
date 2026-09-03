@@ -16,7 +16,7 @@ function AreaChart({ range }: { range: Range }) {
   const hoveredPoint = hover === null ? undefined : data[hover];
   const { ref, width } = useMeasuredWidth<HTMLDivElement>();
 
-  const W = Math.max(420, Math.round(width));
+  const W = Math.max(280, Math.round(width));
   const H = 220;
   const P = { t: 16, r: 12, b: 26, l: 40 };
   const max = Math.max(...data.flatMap((d) => [d.issued, d.received])) * 1.12;
@@ -138,7 +138,7 @@ function Donut() {
   return (
     <div className="flex flex-col items-center">
       <div className="relative">
-        <svg viewBox="0 0 140 140" className="h-[190px] w-[190px] -rotate-90">
+        <svg viewBox="0 0 140 140" className="h-[160px] w-[160px] sm:h-[190px] sm:w-[190px] -rotate-90">
           {segments.map((s) => (
             <circle
               key={s.name}
@@ -215,15 +215,15 @@ export function AnalyticsScreen() {
       {/* Header row */}
       <div className="flex flex-wrap items-end justify-between gap-4 pb-4 border-b" style={{ borderColor: "var(--a-border)" }}>
         <div>
-          <h2 className="text-[24px] font-bold tracking-tight m-0" style={{ color: "var(--a-text)" }}>
+          <h2 className="text-[20px] sm:text-[24px] font-bold tracking-tight m-0" style={{ color: "var(--a-text)" }}>
             <em className="italic font-normal" style={{ color: "var(--a-faint)" }}>I. Movement</em> · issued vs received
           </h2>
           <p className="mt-1 text-[11px]" style={{ color: "var(--a-muted)" }}>
             Rolling consumption velocity across all 50 locations · live data
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="flex rounded-lg border overflow-hidden" style={{ borderColor: "var(--a-border)" }}>
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="flex rounded-lg border overflow-hidden shrink-0" style={{ borderColor: "var(--a-border)" }}>
             {(["7d", "30d", "90d"] as Range[]).map((r) => (
               <button
                 key={r}
@@ -289,7 +289,7 @@ export function AnalyticsScreen() {
           />
           <div className="flex flex-col gap-2.5">
             {TURNOVER.map((t) => (
-              <div key={t.name} className="grid grid-cols-[100px_1fr_54px] items-center gap-3">
+              <div key={t.name} className="grid grid-cols-[minmax(72px,100px)_1fr_44px] items-center gap-3">
                 <span className="text-[11px] truncate" style={{ color: "var(--a-text-2)" }}>{t.name}</span>
                 <div className="h-2 rounded-full overflow-hidden" style={{ background: "var(--a-slate-soft)" }}>
                   <div
@@ -365,11 +365,11 @@ export function AnalyticsScreen() {
           </table>
         </div>
         <div
-          className="flex items-center justify-between px-4 py-2.5 border-t text-[10px]"
+          className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-4 py-2.5 border-t text-[10px]"
           style={{ borderColor: "var(--a-border)", color: "var(--a-muted)" }}
         >
           <span>14 metrics tracked · Chromedp PDF export renders in under 2s</span>
-          <span>GET /api/v1/analytics/trends</span>
+          <span className="truncate">GET /api/v1/analytics/trends</span>
         </div>
       </Card>
     </div>

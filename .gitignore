@@ -38,3 +38,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local responsive audit scripts (depend on a machine-local Playwright install)
+.audit/

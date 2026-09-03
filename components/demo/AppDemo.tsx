@@ -99,10 +99,22 @@ export function AppDemo({
 }) {
   const { theme, toggle: toggleTheme } = useSiteTheme();
   const [collapsed, setCollapsed] = useState(false);
+  const [userToggled, setUserToggled] = useState(false);
   const [query, setQuery] = useState("");
   const [toast, setToast] = useState<string | null>(null);
   const { ref: scrollRef, width } = useMeasuredWidth<HTMLDivElement>();
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  /* Tablets start with the rail collapsed so the content surface is
+     usable; once the visitor toggles it we stop overriding them. */
+  useEffect(() => {
+    if (userToggled) return;
+    const mq = window.matchMedia("(max-width: 1023.98px)");
+    const apply = () => setCollapsed(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, [userToggled]);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0 });
@@ -121,34 +133,45 @@ export function AppDemo({
 
   const showLabels = !collapsed;
 
+  /* Modules that have a screen in this demo, for the phone tab bar. */
+  const LIVE_TABS = NAV.flatMap((s) => s.items).filter(
+    (i): i is NavItem & { screen: ScreenId } => Boolean(i.screen)
+  );
+
   return (
-    <div className="relative font-mono overflow-hidden rounded-2xl border border-[var(--border)] shadow-2xl">
+    <div
+      data-demo-frame
+      className="relative font-mono overflow-hidden rounded-2xl border border-[var(--border)] shadow-2xl"
+    >
       {/* Browser chrome */}
       <div
-        className="flex items-center gap-3 px-4 py-2.5 border-b"
+        className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 border-b"
         style={{ background: "var(--a-raised)", borderColor: "var(--a-border)" }}
       >
-        <div className="flex gap-1.5">
+        <div className="hidden xs:flex gap-1.5 shrink-0">
           {["var(--a-accent)", "var(--a-border-strong)", "var(--a-border-strong)"].map((c, i) => (
             <span key={i} className="h-2.5 w-2.5 rounded-full" style={{ background: c }} />
           ))}
         </div>
         <div
-          className="flex-1 flex items-center justify-center gap-2 rounded-md px-3 py-1 text-[10px] max-w-md mx-auto"
+          className="flex-1 min-w-0 flex items-center justify-center gap-2 rounded-md px-3 py-1 text-[10px] max-w-md mx-auto"
           style={{ background: "var(--a-card)", color: "var(--a-muted)" }}
         >
-          <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--a-accent)" }} />
-          iimcp.vercel.app{META[screen].path}
+          <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: "var(--a-accent)" }} />
+          <span className="truncate">iimcp.vercel.app{META[screen].path}</span>
         </div>
         <span
-          className="hidden sm:inline text-[9px] font-bold uppercase tracking-[0.14em] rounded px-2 py-1"
+          className="hidden md:inline shrink-0 text-[9px] font-bold uppercase tracking-[0.14em] rounded px-2 py-1"
           style={{ background: "var(--a-accent-soft)", color: "var(--a-accent)" }}
         >
           Interactive · sample data
         </span>
       </div>
 
-      <div className="flex h-[608px] sm:h-[708px]" style={{ background: "var(--a-bg)" }}>
+      <div
+        className="flex"
+        style={{ background: "var(--a-bg)", height: "clamp(520px, 78dvh, 708px)" }}
+      >
         {/* Sidebar */}
         <aside
           className={`hidden sm:flex flex-col shrink-0 min-h-0 transition-[width] duration-200 ${
@@ -238,7 +261,11 @@ export function AppDemo({
             </button>
             <button
               type="button"
-              onClick={() => setCollapsed((c) => !c)}
+              onClick={() => {
+                setUserToggled(true);
+                setCollapsed((c) => !c);
+              }}
+              aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
               className="w-full flex items-center gap-2.5 rounded-lg px-2 py-2"
               style={{ color: "var(--a-muted)" }}
             >
@@ -277,10 +304,10 @@ export function AppDemo({
 
         {/* Main column */}
         <div className="flex-1 min-w-0 flex flex-col">
-          {/* Top bar */}
-          <div className="flex items-center gap-3 px-3 sm:px-4 py-3">
-            <div className="shrink-0">
-              <div className="text-[15px] font-bold leading-none" style={{ color: "var(--a-text)" }}>
+          {/* Top bar: search drops to its own row below `sm` */}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 px-3 sm:px-4 py-2.5 sm:py-3">
+            <div className="shrink-0 min-w-0">
+              <div className="text-[15px] font-bold leading-none truncate" style={{ color: "var(--a-text)" }}>
                 {META[screen].title}
               </div>
               <div className="text-[9px] mt-1" style={{ color: "var(--a-muted)" }}>
@@ -288,7 +315,7 @@ export function AppDemo({
               </div>
             </div>
 
-            <div className="relative flex-1 min-w-0 max-w-lg mx-auto">
+            <div className="relative order-3 basis-full sm:order-none sm:basis-auto flex-1 min-w-0 sm:min-w-[140px] max-w-lg sm:mx-auto">
               <Search
                 className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5"
                 style={{ color: "var(--a-muted)" }}
@@ -297,18 +324,19 @@ export function AppDemo({
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search inventory, resources, tickets…"
-                className="w-full rounded pl-9 pr-12 py-2 text-[11px] outline-none"
+                aria-label="Search the demo"
+                className="w-full rounded pl-9 pr-3 md:pr-12 py-2 text-[11px] outline-none"
                 style={{ background: "var(--a-raised)", color: "var(--a-text)" }}
               />
               <span
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded px-1.5 py-[2px] text-[9px]"
+                className="hidden md:inline absolute right-2.5 top-1/2 -translate-y-1/2 rounded px-1.5 py-[2px] text-[9px]"
                 style={{ background: "var(--a-card)", color: "var(--a-muted)" }}
               >
                 ⌘K
               </span>
             </div>
 
-            <div className="flex items-center gap-1.5 shrink-0">
+            <div className="ml-auto flex items-center gap-1 sm:gap-1.5 shrink-0">
               <button
                 type="button"
                 onClick={toggleTheme}
@@ -343,11 +371,11 @@ export function AppDemo({
             </div>
           </div>
 
-          {/* Screen surface */}
-          <div className="px-2 sm:px-3 pb-3">
+          {/* Screen surface: fills whatever height the frame has left */}
+          <div className="flex-1 min-h-0 px-2 sm:px-3 pb-2 sm:pb-3">
             <div
               ref={scrollRef}
-              className="relative h-[540px] sm:h-[640px] overflow-y-auto rounded-2xl border p-4 sm:p-6"
+              className="relative h-full overflow-y-auto overscroll-contain rounded-2xl border p-3 sm:p-6"
               style={{ background: "var(--a-card)", borderColor: "var(--a-border)" }}
             >
               <WidthProvider value={width}>
@@ -359,17 +387,46 @@ export function AppDemo({
               </WidthProvider>
             </div>
           </div>
+
+          {/* Phone tab bar: replaces the sidebar below `sm` */}
+          <nav
+            aria-label="Demo modules"
+            className="sm:hidden grid grid-cols-5 border-t shrink-0"
+            style={{ borderColor: "var(--a-border)", background: "var(--a-bg)" }}
+          >
+            {LIVE_TABS.map((item) => {
+              const active = item.screen === screen;
+              return (
+                <button
+                  key={item.label}
+                  type="button"
+                  onClick={() => onScreenChange(item.screen)}
+                  aria-current={active ? "page" : undefined}
+                  className="flex flex-col items-center justify-center gap-1 min-h-[52px] px-1 py-1.5 text-[9px] font-bold uppercase tracking-wide"
+                  style={{
+                    color: active ? "var(--a-text)" : "var(--a-muted)",
+                    boxShadow: active ? "inset 0 2px 0 0 var(--a-accent)" : "none",
+                  }}
+                >
+                  <item.icon className="h-4 w-4" />
+                  <span className="truncate max-w-full">{item.label}</span>
+                </button>
+              );
+            })}
+          </nav>
         </div>
       </div>
 
       {/* Toast */}
       <div
-        className="pointer-events-none fixed sm:absolute bottom-4 right-4 z-20 transition-all duration-200"
+        className="pointer-events-none fixed sm:absolute inset-x-4 sm:inset-x-auto bottom-4 sm:right-4 z-20 flex justify-center sm:justify-end transition-all duration-200"
         style={{ opacity: toast ? 1 : 0, transform: toast ? "translateY(0)" : "translateY(6px)" }}
+        role="status"
+        aria-live="polite"
       >
         {toast && (
           <div
-            className="rounded-xl border px-3.5 py-2.5 text-[10px] shadow-lg max-w-[260px]"
+            className="rounded-xl border px-3.5 py-2.5 text-[10px] shadow-lg max-w-[320px] sm:max-w-[260px]"
             style={{ background: "var(--a-card)", borderColor: "var(--a-border)", color: "var(--a-text-2)" }}
           >
             {toast}

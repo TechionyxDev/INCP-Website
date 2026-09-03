@@ -76,10 +76,10 @@ export function Card({
 export function CardHead({ title, right }: { title: ReactNode; right?: ReactNode }) {
   return (
     <div
-      className="flex items-center justify-between gap-3 pb-3 mb-3 border-b"
+      className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 pb-3 mb-3 border-b"
       style={{ borderColor: "var(--a-border)" }}
     >
-      <span className="text-[12px] font-bold tracking-wide" style={{ color: "var(--a-text)" }}>
+      <span className="text-[12px] font-bold tracking-wide min-w-0" style={{ color: "var(--a-text)" }}>
         {title}
       </span>
       {right}
@@ -105,7 +105,7 @@ export function Kpi({
     <button
       type="button"
       onClick={onClick}
-      className="rounded-[14px] border px-4 py-3.5 text-left transition-all duration-150 hover:-translate-y-[2px]"
+      className="min-w-0 rounded-[14px] border px-3.5 py-3 sm:px-4 sm:py-3.5 text-left transition-all duration-150 hover:-translate-y-[2px]"
       style={{
         borderColor: "var(--a-border)",
         background: "var(--a-card)",
@@ -115,7 +115,7 @@ export function Kpi({
       <div className="text-[9px] uppercase tracking-[0.14em]" style={{ color: "var(--a-muted)" }}>
         {label}
       </div>
-      <div className="mt-1.5 text-[26px] leading-none font-bold tabular-nums" style={{ color }}>
+      <div className="mt-1.5 text-[22px] sm:text-[26px] leading-none font-bold tabular-nums truncate" style={{ color }}>
         {value}
       </div>
       {sub && (
@@ -162,7 +162,7 @@ export function GhostBtn({
     <button
       type="button"
       onClick={onClick}
-      className="rounded-md border px-2 py-[3px] text-[9px] font-bold uppercase tracking-wider transition-colors"
+      className="rounded-md border px-2 py-[5px] text-[9px] font-bold uppercase tracking-wider transition-colors whitespace-nowrap"
       style={{
         borderColor: active ? t.fg : "var(--a-border-strong)",
         color: active ? t.fg : tone === "slate" ? "var(--a-muted)" : t.fg,
